@@ -18,7 +18,7 @@ public class Aluno {
         /**
          *     name; cpf; registration; email; address;
          */
-        String name = "Joao Aluno";
+        String name = "Joao  Aluno";
         String cpf = "158147159-85";
         String registration = "12085218";
         String email = "emailAluno@gmail.com";
