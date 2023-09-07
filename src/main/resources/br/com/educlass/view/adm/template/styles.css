@@ -1,0 +1,32 @@
+.content {
+    -fx-background-color: white;
+}
+
+.sidebar {
+    -fx-background-color: #636363;
+}
+
+.sidebar-informations {
+    -fx-border-color: #505050;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.sidebar-image {
+     -fx-pref-width: 50;
+     -fx-pref-height: 50;
+     -fx-background-radius: 90;
+     -fx-border-radius: 90;
+}
+
+.sidebar-options {
+    -fx-background-radius: 90 0 0 90;
+}
+
+.sidebar-options:hover {
+    -fx-background-color: #D1D1D1;
+}
+
+.sidebar-exitButton {
+    -fx-background-color: #BA342B;
+}
+

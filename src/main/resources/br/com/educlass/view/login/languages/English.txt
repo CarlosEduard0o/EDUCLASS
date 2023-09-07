@@ -1,0 +1,6 @@
+userText:User
+passwordText:Password
+enterButton:Enter
+notFoundText1:The user cannot be found
+notFoundText2:or the password is incorrect
+notFoundText3:Please contact support
