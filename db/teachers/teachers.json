@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "joao",
+    "matricula": "168682",
+    "especialização": "mestrado em si",
+    "email": "jaoProfessor@email.com",
+    "subjects": ["1000000", "1000001"]
+  },
+  {
+    "nome": "pe de feijao",
+    "matricula": "788401",
+    "especialização": "bacharel em si",
+    "email": "pedefeijao@email.com",
+    "subjects": ["1000002", "1000003"]
+  }
+]

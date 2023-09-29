@@ -1,0 +1,6 @@
+nome:Joaozinho da roça
+curso:SI
+cpf:1asd4
+endereço:asduw
+email:dajnsdja
+matricula:2202300001

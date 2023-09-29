@@ -57,24 +57,24 @@ public class Controller implements Initializable {
         statusPane.setStyle("-fx-opacity: 1");
     }
 
-    private HashMap<String, String> getLoginObject(){
+    private HashMap<String, String> getLoginObject() {
         HashMap<String, String> result = new HashMap<>();
         String userInput = user.getText();
-        if(userInput.length() < 6 || userInput == null) {
+        if (userInput.length() < 6 || userInput == null) {
             return null;
         }
 
-        String year = userInput.substring(1,5);
-        String semester = userInput.substring(0,1);
+        String year = userInput.substring(1, 5);
+        String semester = userInput.substring(0, 1);
         String registration = userInput.substring(5);
 
-        String path = "db/users/"+year+"/"+semester+"/"+registration+"/login.txt";
+        String path = "db/users/students/" + year + "/" + semester + "/" + registration + "/login.txt";
 
         TextFile textFile = new TextFile();
         ArrayList<String> fileLines = textFile.readTextFile(path);
 
-        if(fileLines != null) {
-            for (String s: fileLines) {
+        if (fileLines != null) {
+            for (String s : fileLines) {
                 String[] lineSplited = s.split(":");
                 result.put(lineSplited[0], lineSplited[1]);
             }
@@ -83,23 +83,23 @@ public class Controller implements Initializable {
         return null;
     }
 
-    private  boolean verifyUserAndPassword() {
-        if(getLoginObject()!= null) {
+    private boolean verifyUserAndPassword() {
+        if (getLoginObject() != null) {
             return true;
         }
         return false;
     }
 
-
     private void loginUser() {
         boolean login = verifyUserAndPassword();
-        if(login == false) {
+        if (login == false) {
             userNotFound();
         } else {
             TextFile textFile = new TextFile();
 
             String path = "db/cache/user";
-            String content = "username:"+getLoginObject().get("username")+"\n"+"password:"+getLoginObject().get("password");
+            String content = "username:" + getLoginObject().get("username") + "\n" + "password:"
+                    + getLoginObject().get("password");
             textFile.writeTextFile(path, content);
 
             SceneController sceneController = new SceneController();

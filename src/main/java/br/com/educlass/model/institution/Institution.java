@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Institution {
     private String name;
     private String cnpj;
+    private String email;
     private ArrayList<Student> students;
     private ArrayList<Teacher> teachers;
     private ArrayList<ArrayList<Subject>> subjects;

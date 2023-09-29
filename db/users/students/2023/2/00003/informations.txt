@@ -1,0 +1,7 @@
+nome:Leandro
+curso:SI
+cpf:252525
+endereço:ansdubaidb
+email:lenafjn@gmail.com
+matricula:2202300003
+situation:matriculado
