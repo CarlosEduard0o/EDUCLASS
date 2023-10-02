@@ -1,15 +1,24 @@
 package br.com.educlass.view.adm.student.addStudent;
 
 import br.com.educlass.util.ContentContainer;
+import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.StudentController;
 import br.com.educlass.view.adm.student.addStudent.studentConfirmation.StudentConfirmationController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -38,6 +47,8 @@ public class AddStudentController implements Initializable {
     @FXML
     private TextField textFieldPassword;
 
+    private File profilePicture;
+
     @FXML
     protected void buttonCancelPressed() throws IOException {
         URL fxml = StudentController.class.getResource("students.fxml");
@@ -53,7 +64,7 @@ public class AddStudentController implements Initializable {
     }
 
     @FXML
-    protected void buttonSavePressed() {
+    protected void buttonSavePressed() throws IOException {
         if( inputsVerifications()) {
             HashMap<String,String> userInformations = new HashMap<>();
             userInformations.put("name", textFieldName.getText());
@@ -61,9 +72,19 @@ public class AddStudentController implements Initializable {
             userInformations.put("address", textFieldAddress.getText());
             userInformations.put("email", textFieldEmail.getText());
             userInformations.put("password", textFieldPassword.getText());
-            AddStudentService.addStudent(userInformations);
+            AddStudentService.addStudent(userInformations, profilePicture);
         }
     }
+
+    @FXML
+    protected void buttonUploadProfilePicturePressed() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("photo",   "*.jpeg"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        this.profilePicture = selectedFile;
+    }
+
+
 
     @FXML
     protected void buttonSaveReleased() throws IOException{

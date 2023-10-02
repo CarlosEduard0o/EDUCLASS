@@ -55,12 +55,12 @@ public class StudentService {
 
         student.setPeriodsSubjects(periods);
 
-        JSONArray courseInformationsArray = JsonFile.readJsonFile(pathUser+"courseInformations.json");
-        JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
-
-        student.setTeamId((String) courseInformations.get("team"));
-        student.setPeriod((Long) courseInformations.get("period"));
-        student.setSituation((String) courseInformations.get("situation"));
+//        JSONArray courseInformationsArray = JsonFile.readJsonFile(pathUser+"courseInformations.json");
+//        JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
+//
+//        student.setTeamId((String) courseInformations.get("team"));
+//        student.setPeriod((Long) courseInformations.get("period"));
+//        student.setSituation((String) courseInformations.get("situation"));
         student.setCourseId("si");
 
         StudentService.student = student;
@@ -106,13 +106,13 @@ public class StudentService {
 
         student.setPeriodsSubjects(periods);
 
-        JSONArray courseInformationsArray = JsonFile.readJsonFile(pathUser+"courseInformations.json");
-        if(courseInformationsArray != null) {
-            JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
-            student.setTeamId((String) courseInformations.get("team"));
-            student.setPeriod((Long) courseInformations.get("period"));
-            student.setSituation((String) courseInformations.get("situation"));
-        }
+//        JSONArray courseInformationsArray = JsonFile.readJsonFile(pathUser+"courseInformations.json");
+//        if(courseInformationsArray != null) {
+//            JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
+//            student.setTeamId((String) courseInformations.get("team"));
+//            student.setPeriod((Long) courseInformations.get("period"));
+//            student.setSituation((String) courseInformations.get("situation"));
+//        }
         student.setCourseId("si");
 
         return student;

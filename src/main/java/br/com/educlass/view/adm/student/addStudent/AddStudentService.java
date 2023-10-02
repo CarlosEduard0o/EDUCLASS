@@ -4,9 +4,14 @@ import br.com.educlass.model.person.student.Student;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.Folders;
 import br.com.educlass.util.TextFile;
+import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.StudentSituationEnum;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -83,7 +88,14 @@ public class AddStudentService {
                 loginInformations);
     }
 
-    public static void addStudent(HashMap<String, String> userInformation) {
+    private static void saveProfilePicture(File file, String registration) throws IOException {
+        if(file != null) {
+            Path path = Path.of(UserUtil.getStudentUserPathById(registration));
+            Files.copy(file.toPath(), path, StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
+
+    public static void addStudent(HashMap<String, String> userInformation, File profilePicture) throws IOException {
         HashMap<String, String> informations = createNecessaryFoldersAndGetInformations();
         userInformation.put("registration", informations.get("registration"));
         createFiles(informations.get("path"), userInformation);
@@ -95,6 +107,8 @@ public class AddStudentService {
         student.setEmail(userInformation.get("email"));
         student.setAddress(userInformation.get("address"));
         student.setSituation(String.valueOf(StudentSituationEnum.matriculado));
+
+        saveProfilePicture(profilePicture, student.getRegistration());
 
         AdmnistratorService.setNewStudent(student);
     }

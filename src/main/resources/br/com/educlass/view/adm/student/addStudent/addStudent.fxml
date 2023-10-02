@@ -42,6 +42,6 @@
       <Text fx:id="textPassword" layoutX="111.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" textAlignment="CENTER" wrappingWidth="60.0" />
       <Text fx:id="textEmail" layoutX="111.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="60.0" />
       <Button layoutX="141.0" layoutY="309.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="73.0" text="Cancelar" />
-      <Button layoutX="246.0" layoutY="270.0" mnemonicParsing="false" text="Inserir foto" />
+      <Button layoutX="246.0" layoutY="270.0" mnemonicParsing="false" onMousePressed="#buttonUploadProfilePicturePressed" text="Inserir foto" />
    </children>
 </AnchorPane>
