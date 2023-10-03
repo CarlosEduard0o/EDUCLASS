@@ -1,7 +1,7 @@
-nome:Joaozinho da roça
+nome:adas
 curso:SI
-cpf:1asd4
-endereço:asduw
-email:dajnsdja
+cpf:asda
+endereço:sdasd
+email:asdasda
 matricula:2202300001
 situation:matriculado

@@ -1,6 +1,0 @@
-nome:jbnj2525
-curso:SI
-cpf:ubi
-endereço:ub
-email:ub
-matricula:2202300004

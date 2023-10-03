@@ -27,7 +27,7 @@ public class Folders {
     }
 
     /**
-     * String path = "db/users/2023/1/10000";
+     * String path = "db/users/students/2023/1/10000";
      * 
      * @param file = new File(path);
      * @return number of items in the path

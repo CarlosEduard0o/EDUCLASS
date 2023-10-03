@@ -8,9 +8,13 @@ import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.StudentController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,7 +26,7 @@ public class StudentConfirmationController implements Initializable {
     private Text textTitle;
 
     @FXML
-    private ImageView profilePicture;
+    private Circle profilePicture;
 
     @FXML
     private Text textName;
@@ -62,6 +66,26 @@ public class StudentConfirmationController implements Initializable {
         TextFile textFile = new TextFile();
         ArrayList<String> fileLines = textFile.readTextFile(path);
         HashMap<String, String> result = new HashMap<>();
+
+
+        try {
+            String imagePath = "db/users/students/" + year + "/" + semester + "/" + registration + "/photo.jpeg";
+            File file = new File(imagePath);
+            if(file.exists()) {
+                Image image = new Image("file:"+imagePath, false);
+                profilePicture.setFill(new ImagePattern(image));
+            } else {
+                Image image = new Image(
+                        "file:src/main/resources/br/com/educlass/images/userIcon.png",
+                        false);
+                profilePicture.setFill(new ImagePattern(image));
+            }
+        } catch (Exception e) {
+            Image image = new Image("file:src/main/resources/br/com/educlass/images/userIcon.png",
+                    false);
+            profilePicture.setFill(new ImagePattern(image));
+        }
+
 
         for (String s : fileLines) {
             String[] lineSplited = s.split(":");

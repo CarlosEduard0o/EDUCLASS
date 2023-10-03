@@ -1,6 +1,0 @@
-nome:9juuhyuhygy
-curso:SI
-cpf:ghbgbgh
-endereço:41448
-email:988598959
-matricula:2202300002

@@ -18,7 +18,10 @@ import java.util.HashMap;
 
 public class AddStudentService {
     private static HashMap<String, String> createNecessaryFoldersAndGetInformations() {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        String timeStamp = new SimpleDateFormat(
+                "yyyyMMdd_HHmmss").format(
+                        Calendar.getInstance().getTime());
+
         String year = timeStamp.substring(0, 4);
         int semester = Integer.parseInt(timeStamp.substring(4, 6));
 
@@ -75,7 +78,8 @@ public class AddStudentService {
                 "cpf:" + userInformation.get("cpf") + "\n" +
                 "endereço:" + userInformation.get("address") + "\n" +
                 "email:" + userInformation.get("email") + "\n" +
-                "matricula:" + userInformation.get("registration");
+                "matricula:" + userInformation.get("registration") + "\n" +
+                "situation:" + StudentSituationEnum.matriculado;
         TextFile.writeTextFile(
                 path + "/informations",
                 informationsText);
@@ -90,8 +94,11 @@ public class AddStudentService {
 
     private static void saveProfilePicture(File file, String registration) throws IOException {
         if(file != null) {
-            Path path = Path.of(UserUtil.getStudentUserPathById(registration));
-            Files.copy(file.toPath(), path, StandardCopyOption.REPLACE_EXISTING);
+            String path = UserUtil.getStudentUserPathById(registration)+"photo.jpeg";
+            Path origem = file.toPath();
+            Files.copy(origem,
+                    (new File(path).toPath()),
+                    StandardCopyOption.REPLACE_EXISTING);
         }
     }
 

@@ -1,7 +1,7 @@
 nome:Alan Silva
 curso:SI
-identitade:12.345.678-9
 cpf:123.456.789-12
-email:alan@gmail.com
 endereço:Rua x; Número x; Bairro XXX XXXXX
+email:alan@gmail.com
 matricula:1202310000
+situation:matriculado
