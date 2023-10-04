@@ -5,10 +5,13 @@ import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.InformationsStudent;
 import br.com.educlass.view.adm.student.StudentController;
 import br.com.educlass.view.adm.student.addStudent.studentConfirmation.StudentConfirmationController;
+import br.com.educlass.view.adm.student.editStudent.EditStudentService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
@@ -36,6 +39,8 @@ public class AddStudentController implements Initializable {
     private Text textEmail;
     @FXML
     private Text textPassword;
+    @FXML
+    private Circle profilePictureContainer;
 
     @FXML
     private TextField textFieldName;
@@ -54,6 +59,14 @@ public class AddStudentController implements Initializable {
     protected void buttonCancelPressed() throws IOException {
         URL fxml = StudentController.class.getResource("students.fxml");
         ContentContainer.setSceneContentContainer(fxml);
+    }
+
+    private void profilePictureHasUploaded(File file) throws IOException {
+        if(file != null) {
+            String path = file.getPath();
+            Image image = new Image("file:"+path, false);
+            profilePictureContainer.setFill(new ImagePattern(image));
+        }
     }
 
     private boolean inputsVerifications() {
@@ -78,11 +91,12 @@ public class AddStudentController implements Initializable {
     }
 
     @FXML
-    protected void buttonUploadProfilePicturePressed() {
+    protected void buttonUploadProfilePicturePressed() throws IOException {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("photo",   "*.png", "*.jpg", "*.jpeg", "*.gif"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("photo",   "*.png", "*.jpg", "*.jpeg"));
         File selectedFile = fileChooser.showOpenDialog(null);
         this.profilePicture = selectedFile;
+        profilePictureHasUploaded(selectedFile);
     }
 
 
@@ -97,7 +111,9 @@ public class AddStudentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        Image image = new Image("file:src/main/resources/br/com/educlass/images/userIcon.png",
+                false);
+        profilePictureContainer.setFill(new ImagePattern(image));
     }
 
 }
