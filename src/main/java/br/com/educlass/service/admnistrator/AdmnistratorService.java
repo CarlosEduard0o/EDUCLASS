@@ -15,7 +15,6 @@ import org.json.simple.JSONObject;
 import java.io.File;
 import java.util.ArrayList;
 
-
 public class AdmnistratorService {
 
     private static Institution administrator;
@@ -38,17 +37,16 @@ public class AdmnistratorService {
         String[] yearFolders = Folders.getItemsInDir(file);
 
         ArrayList<Student> students = new ArrayList<>();
-        for(String year: yearFolders) {
-            path = "db/users/students/"+year;
+        for (String year : yearFolders) {
+            path = "db/users/students/" + year;
             file = new File(path);
             String[] semesterFolders = Folders.getItemsInDir(file);
-            for(String semester: semesterFolders) {
-                path = "db/users/students/"+year+"/"+semester;
+            for (String semester : semesterFolders) {
+                path = "db/users/students/" + year + "/" + semester;
                 file = new File(path);
                 String[] registersFolders = Folders.getItemsInDir(file);
-                for(String registration: registersFolders) {
-                    String pathStudent = "db/users/students/"+year+"/"+semester+"/"+registration+"/";
-                    System.out.println(pathStudent);
+                for (String registration : registersFolders) {
+                    String pathStudent = "db/users/students/" + year + "/" + semester + "/" + registration + "/";
                     students.add(StudentService.setStudentInfoForList(pathStudent));
                 }
             }
@@ -59,7 +57,7 @@ public class AdmnistratorService {
 
     private static ArrayList<Subject> setSubjectsInformations(ArrayList jsonArray) {
         ArrayList<Subject> subjects = new ArrayList<>();
-        for(Object objectOfSubjct : jsonArray) {
+        for (Object objectOfSubjct : jsonArray) {
             Subject subject = new Subject();
             JSONObject jsonObject = (JSONObject) objectOfSubjct;
             subject.setName((String) jsonObject.get("name"));
@@ -75,7 +73,7 @@ public class AdmnistratorService {
     private static ArrayList<Teacher> setTeatchersInformations(ArrayList jsonArray) {
         ArrayList<Teacher> teachers = new ArrayList<>();
 
-        for(Object teacherObject: jsonArray) {
+        for (Object teacherObject : jsonArray) {
             JSONObject teacherJson = (JSONObject) teacherObject;
             Teacher teacher = new Teacher();
             teacher.setName((String) teacherJson.get("nome"));
@@ -85,9 +83,9 @@ public class AdmnistratorService {
             teacher.setAddress((String) teacherJson.get("endereço"));
 
             ArrayList<Subject> subjects = new ArrayList<>();
-            ArrayList<String> subjectsJsonRead =  (ArrayList<String>) teacherJson.get("subjects");
-            for(String item: subjectsJsonRead) {
-                String filePath = "db/subjects/"+item+"/informations.json";
+            ArrayList<String> subjectsJsonRead = (ArrayList<String>) teacherJson.get("subjects");
+            for (String item : subjectsJsonRead) {
+                String filePath = "db/subjects/" + item + "/informations.json";
                 JSONObject subjectJson = (JSONObject) JsonFile.readJsonFile(filePath).get(0);
                 Subject subject = new Subject();
                 subject.setId((String) subjectJson.get("id"));
@@ -111,15 +109,15 @@ public class AdmnistratorService {
         File file = new File(path);
 
         ArrayList<Course> courses = new ArrayList<>();
-        for(String item: file.list()) {
+        for (String item : file.list()) {
             Course course = new Course();
-            String filePath = path+'/'+item+'/'+"informations.json";
+            String filePath = path + '/' + item + '/' + "informations.json";
 
             JSONObject courseInformations = (JSONObject) JsonFile.readJsonFile(filePath).get(0);
             course.setId((String) courseInformations.get("id"));
             course.setNome((String) courseInformations.get("nome"));
 
-            filePath = path+'/'+item+'/'+"subjects.json";
+            filePath = path + '/' + item + '/' + "subjects.json";
             JSONArray subjectsFile = JsonFile.readJsonFile(filePath);
             course.setSubjects(setSubjectsInformations(subjectsFile));
 
@@ -136,25 +134,26 @@ public class AdmnistratorService {
         return administrator;
     }
 
-
-    /**Student view -- add**/
+    /** Student view -- add **/
     public static void setNewStudent(Student student) {
         AdmnistratorStudentService.setNewStudent(student, administrator);
     }
+
     public static Student getNewStudent() {
         return AdmnistratorStudentService.getNewStudent();
     }
-    /**Student view -- edit**/
+
+    /** Student view -- edit **/
     public static void setEditStudent(Student student) {
         AdmnistratorStudentService.editStudent(student, administrator);
     }
+
     public static Student getEditStudent() {
         return AdmnistratorStudentService.getEditStudent();
     }
+
     public static void editStudent(Student student) {
         AdmnistratorStudentService.editStudent(student, administrator);
     }
 
 }
-
-

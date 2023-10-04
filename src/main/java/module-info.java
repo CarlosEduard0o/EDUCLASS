@@ -28,6 +28,8 @@ module br.com.educlass.educlass {
 
     opens br.com.educlass.view.adm.student.editStudent to javafx.fxml;
     exports br.com.educlass.view.adm.student.editStudent;
+    opens br.com.educlass.view.adm.student.editStudent.studentEditConfirmationController to javafx.fxml;
+    exports br.com.educlass.view.adm.student.editStudent.studentEditConfirmationController;
 
     opens br.com.educlass.view.adm.student.addStudent to javafx.fxml;
     exports br.com.educlass.view.adm.student.addStudent;

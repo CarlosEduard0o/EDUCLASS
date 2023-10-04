@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -27,23 +28,25 @@
             </ImageView>
          </children>
       </Pane>
-      <Text fx:id="textName" layoutX="111.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" textAlignment="CENTER" wrappingWidth="60.0">
+      <Text fx:id="textName" layoutX="58.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" textAlignment="CENTER" wrappingWidth="60.0">
          <rotationAxis>
             <Point3D />
          </rotationAxis>
       </Text>
-      <TextField fx:id="textFieldName" layoutX="171.0" layoutY="131.0" />
-      <Text fx:id="textCpf" layoutX="111.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cpf" textAlignment="CENTER" wrappingWidth="60.0" />
-      <TextField fx:id="textFieldCpf" layoutX="171.0" layoutY="157.0" />
-      <TextField fx:id="textFieldAddress" layoutX="171.0" layoutY="183.0" />
-      <Text fx:id="textAddress" layoutX="111.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" textAlignment="CENTER" wrappingWidth="60.0" />
-      <TextField fx:id="textFieldEmail" layoutX="171.0" layoutY="209.0" />
-      <Button layoutX="246.0" layoutY="309.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" prefHeight="26.0" prefWidth="73.0" text="Salvar" />
-      <TextField fx:id="textFieldPassword" layoutX="171.0" layoutY="235.0" />
-      <Text fx:id="textPassword" layoutX="111.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" textAlignment="CENTER" wrappingWidth="60.0" />
-      <Text fx:id="textEmail" layoutX="111.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="60.0" />
-      <Button layoutX="141.0" layoutY="309.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="73.0" text="Cancelar" />
-      <ComboBox fx:id="comboBoxSituation" layoutX="171.0" layoutY="261.0" prefWidth="150.0" />
-      <Text fx:id="textPassword1" layoutX="111.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Situação" textAlignment="CENTER" wrappingWidth="60.0" />
+      <TextField fx:id="textFieldName" layoutX="118.0" layoutY="123.0" />
+      <Text fx:id="textCpf" layoutX="58.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cpf" textAlignment="CENTER" wrappingWidth="60.0" />
+      <TextField fx:id="textFieldCpf" layoutX="118.0" layoutY="149.0" />
+      <TextField fx:id="textFieldAddress" layoutX="118.0" layoutY="175.0" />
+      <Text fx:id="textAddress" layoutX="58.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" textAlignment="CENTER" wrappingWidth="60.0" />
+      <TextField fx:id="textFieldEmail" layoutX="118.0" layoutY="201.0" />
+      <TextField fx:id="textFieldPassword" layoutX="118.0" layoutY="227.0" />
+      <Text fx:id="textPassword" layoutX="58.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="textEmail" layoutX="58.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="60.0" />
+      <ComboBox fx:id="comboBoxSituation" layoutX="118.0" layoutY="253.0" prefWidth="150.0" />
+      <Text fx:id="textPassword1" layoutX="58.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Situação" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Button layoutX="282.0" layoutY="289.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="150.0" text="Cancelar" />
+      <Button layoutX="282.0" layoutY="325.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" onMouseReleased="#buttonSaveReleased" prefHeight="26.0" prefWidth="150.0" text="Salvar" />
+      <Button layoutX="282.0" layoutY="252.0" mnemonicParsing="false" onMousePressed="#buttonEditProfilePicturePressed" prefHeight="26.0" prefWidth="150.0" text="Alterar foto" />
+      <Circle fx:id="profilePictureContainer" fill="#1f93ff00" layoutX="356.0" layoutY="162.0" radius="74.0" stroke="TRANSPARENT" strokeType="INSIDE" />
    </children>
 </AnchorPane>

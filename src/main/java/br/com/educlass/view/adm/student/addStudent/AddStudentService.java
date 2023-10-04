@@ -5,6 +5,7 @@ import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.Folders;
 import br.com.educlass.util.TextFile;
 import br.com.educlass.util.UserUtil;
+import br.com.educlass.view.adm.student.InformationsStudent;
 import br.com.educlass.view.adm.student.StudentSituationEnum;
 
 import java.io.File;

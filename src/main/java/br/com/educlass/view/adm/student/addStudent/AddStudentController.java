@@ -2,6 +2,7 @@ package br.com.educlass.view.adm.student.addStudent;
 
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.UserUtil;
+import br.com.educlass.view.adm.student.InformationsStudent;
 import br.com.educlass.view.adm.student.StudentController;
 import br.com.educlass.view.adm.student.addStudent.studentConfirmation.StudentConfirmationController;
 import javafx.fxml.FXML;
@@ -79,7 +80,7 @@ public class AddStudentController implements Initializable {
     @FXML
     protected void buttonUploadProfilePicturePressed() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("photo",   "*.jpeg"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("photo",   "*.png", "*.jpg", "*.jpeg", "*.gif"));
         File selectedFile = fileChooser.showOpenDialog(null);
         this.profilePicture = selectedFile;
     }

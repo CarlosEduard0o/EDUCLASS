@@ -71,14 +71,12 @@ public class TeacherController implements Initializable {
     protected void buttonEditStudentPress() throws IOException {
         URL fxml = EditTeacherController.class.getResource("editTeacher.fxml");
         ContentContainer.setSceneContentContainer(fxml);
-        System.out.println("add");
     }
 
     @FXML
     protected void buttonAddStudentPress() throws IOException {
         URL fxml = AddTeacherController.class.getResource("addTeacher.fxml");
         ContentContainer.setSceneContentContainer(fxml);
-        System.out.println("add");
     }
 
     @Override

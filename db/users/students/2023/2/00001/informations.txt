@@ -1,6 +1,6 @@
-nome:adas
+nome:Jooaoxza
 curso:SI
-cpf:asda
+cpf:asdasdfsdf
 endereço:sdasd
 email:asdasda
 matricula:2202300001
