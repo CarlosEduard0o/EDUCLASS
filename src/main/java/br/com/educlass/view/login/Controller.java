@@ -1,5 +1,6 @@
 package br.com.educlass.view.login;
 
+import br.com.educlass.view.adm.template.AdmTemplateController;
 import br.com.educlass.view.configuration.ConfigurationView;
 import br.com.educlass.util.Language;
 import br.com.educlass.util.TextFile;
@@ -53,6 +54,11 @@ public class Controller implements Initializable {
     @FXML
     private Button enterButton;
 
+    private boolean isAdminUser(String username) {
+        return username.equalsIgnoreCase("sadmin");
+
+    }
+
     private void userNotFound() {
         statusPane.setStyle("-fx-opacity: 1");
     }
@@ -60,9 +66,29 @@ public class Controller implements Initializable {
     private HashMap<String, String> getLoginObject() {
         HashMap<String, String> result = new HashMap<>();
         String userInput = user.getText();
-        if (userInput.length() < 6 || userInput == null) {
+
+        boolean userAdmin = isAdminUser(userInput);
+
+        if ((userInput.length() < 6 || userInput == null) &&
+                !userAdmin) {
             return null;
         }
+
+        if(userAdmin) {
+            String path = "db/users/_school/login.txt";
+            TextFile textFile = new TextFile();
+            ArrayList<String> fileLines = textFile.readTextFile(path);
+
+            if (fileLines != null) {
+                for (String s : fileLines) {
+                    String[] lineSplited = s.split(":");
+                    result.put(lineSplited[0], lineSplited[1]);
+                }
+                return result;
+            }
+        }
+
+
 
         String year = userInput.substring(1, 5);
         String semester = userInput.substring(0, 1);
@@ -98,13 +124,21 @@ public class Controller implements Initializable {
             TextFile textFile = new TextFile();
 
             String path = "db/cache/user";
-            String content = "username:" + getLoginObject().get("username") + "\n" + "password:"
-                    + getLoginObject().get("password");
+            HashMap<String, String> loginInformations =  getLoginObject();
+            String username = loginInformations.get("username");
+            String password = loginInformations.get("password");
+            String content = "username:" + username + "\n" + "password:"
+                    + password;
             textFile.writeTextFile(path, content);
 
             SceneController sceneController = new SceneController();
-            sceneController.switchScene(user.getScene().getWindow(),
-                    Template.class.getResource("template.fxml"));
+            if(isAdminUser(username)) {
+                sceneController.switchScene(user.getScene().getWindow(),
+                        AdmTemplateController.class.getResource("template_adm.fxml"));
+            } else {
+                sceneController.switchScene(user.getScene().getWindow(),
+                        Template.class.getResource("template.fxml"));
+            }
         }
     }
 

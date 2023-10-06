@@ -8,6 +8,8 @@ import br.com.educlass.util.TextFile;
 import br.com.educlass.util.UserUtil;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -32,28 +34,34 @@ public class StudentService {
         student.setAddress(userResult.get("endereço"));
         // --Fim Padrao--
 
-        JSONArray subjectsFile = JsonFile.readJsonFile(pathUser+"subjects.json");
 
-        ArrayList<ArrayList<Subject>> periods = new ArrayList<>();
-        for(Object arr: subjectsFile) {
-            JSONArray periodsFile = (JSONArray) arr;
-            ArrayList<Subject> subjects = new ArrayList<>();
-            for(Object objectOfSubjct : periodsFile) {
-                Subject subject = new Subject();
-                JSONObject jsonObject = (JSONObject) objectOfSubjct;
-                subject.setName((String) jsonObject.get("name"));
-                subject.setTime((Long) jsonObject.get("tempo"));
-                subject.setFrequency((ArrayList<String>) jsonObject.get("faltas"));
-                subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
-                subject.setSituation((String) jsonObject.get("situation"));
-                subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
-                subject.setPeriod((Long) jsonObject.get("period"));
-                subjects.add(subject);
+        File fileExist = new File(pathUser+"subjects.json");
+        if(fileExist.exists()) {
+            JSONArray subjectsFile = JsonFile.readJsonFile(pathUser+"subjects.json");
+
+            ArrayList<ArrayList<Subject>> periods = new ArrayList<>();
+
+            for(Object arr: subjectsFile) {
+                JSONArray periodsFile = (JSONArray) arr;
+                ArrayList<Subject> subjects = new ArrayList<>();
+                for(Object objectOfSubjct : periodsFile) {
+                    Subject subject = new Subject();
+                    JSONObject jsonObject = (JSONObject) objectOfSubjct;
+                    subject.setName((String) jsonObject.get("name"));
+                    subject.setTime((Long) jsonObject.get("tempo"));
+                    subject.setFrequency((ArrayList<String>) jsonObject.get("faltas"));
+                    subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
+                    subject.setSituation((String) jsonObject.get("situation"));
+                    subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
+                    subject.setPeriod((Long) jsonObject.get("period"));
+                    subjects.add(subject);
+                }
+                periods.add(subjects);
             }
-            periods.add(subjects);
+
+            student.setPeriodsSubjects(periods);
         }
 
-        student.setPeriodsSubjects(periods);
 
 //        JSONArray courseInformationsArray = JsonFile.readJsonFile(pathUser+"courseInformations.json");
 //        JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
