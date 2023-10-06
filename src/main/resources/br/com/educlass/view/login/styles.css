@@ -1,0 +1,27 @@
+.background-image {
+    -fx-background-color:linear-gradient(to bottom right, #2f466b, #662d60);
+}
+
+.login-background {
+    -fx-background-color: #FFFFFF;
+
+}
+
+.login-input {
+    -fx-padding:10px;
+}
+
+.login-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-cursor:hand;
+}
+
+.login-status {
+    -fx-opacity: 0;
+}
+
+
