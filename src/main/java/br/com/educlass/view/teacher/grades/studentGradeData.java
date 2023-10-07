@@ -14,17 +14,23 @@ public class studentGradeData {
     private TextField addGrade;
     private int currentGrade;
 
-    public studentGradeData(String name, int currentGrade, String addGrade) {
+    public studentGradeData(String name, int currentGrade) {
         this.studentName = name;
         this.currentGrade = currentGrade;
-        this.addGrade = new TextField(addGrade);
+        this.addGrade = new TextField();
     }
 
-    public void setAddGrade (TextField addGrade){
-        this.addGrade = addGrade;
+    public void setCurrentGrade (TextField grade){
+        if (!grade.getText().isEmpty()){
+            this.currentGrade += Integer.parseInt(grade.getText());
+        }
     }
 
     public TextField getAddGrade(){
         return addGrade;
+    }
+
+    public int getCurrentGrade(){
+        return this.currentGrade;
     }
 }

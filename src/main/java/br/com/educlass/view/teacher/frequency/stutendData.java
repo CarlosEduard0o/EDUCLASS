@@ -17,14 +17,13 @@ public class stutendData {
         this.skipClass = faltas;
         this.presence = new CheckBox();
     }
-    public void checkBoxAnalysis(){
-        System.out.println(this.presence.isSelected());
-    }
+//    public void checkBoxAnalysis(){
+//        System.out.println(this.presence.isSelected());
+//    }
     public CheckBox getPresenca() {
         return presence;
     }
-    public void setPresenca(CheckBox presence){
-        this.presence = presence;
-    }
-
+//    public void setPresenca(CheckBox presence){
+//        this.presence = presence;
+//    }
 }

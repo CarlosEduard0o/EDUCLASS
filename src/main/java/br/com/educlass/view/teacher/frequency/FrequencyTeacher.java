@@ -53,7 +53,7 @@ public class FrequencyTeacher implements Initializable {
 
     @FXML
     private void onSendButtonClick() {
-        String path = "C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json";
+        String path = "C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\disciplinas.json";
         String data = null;
         int i = 0;
         try {
@@ -66,18 +66,14 @@ public class FrequencyTeacher implements Initializable {
             JSONObject object = jsonArray.getJSONObject(i);
             String str = jsonArray.get(i).toString();
             JSONObject object1 = new JSONObject(str);
-            String name = object1.getString("name");
             int presence = object1.getInt("presenca");
             if(estudante.getPresenca().isSelected()) {
                 presence+=2;
-                System.out.println("True");
                 try {
                     object.put("presenca", presence);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            } else{
-                System.out.println("False");
             }
             i++;
         }
@@ -114,13 +110,13 @@ public class FrequencyTeacher implements Initializable {
         dadosDosAlunos = FXCollections.observableArrayList();
         String data = null;
         try {
-            data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json"))));
+            data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\disciplinas.json"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         JSONArray jsonArray = new JSONArray(data);
         for(int i = 0; i < jsonArray.length(); i++){
-            JSONObject object = jsonArray.getJSONObject(i);
+            //JSONObject object = jsonArray.getJSONObject(i);
             String str = jsonArray.get(i).toString();
             JSONObject object1 = new JSONObject(str);
             String name = object1.getString("name");
@@ -143,6 +139,4 @@ public class FrequencyTeacher implements Initializable {
         setSubjectSelectOptions();
         CursorUtil.handleCursorType(Cursor.DEFAULT);
     }
-
-
 }
