@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -48,50 +49,46 @@ public class FrequencyTeacher implements Initializable {
 
     ObservableList<stutendData> dadosDosAlunos;
 
-//    @FXML
-//    private void onSendButtonClick(){
-//        ObservableList<stutendData> dadosDosAlunosPresenca = FXCollections.observableArrayList();
-//        for(stutendData estudante : dadosDosAlunos) {
-//        }
-//        int actualpresenceValue;
-//        String path = "C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json";
-//        //final ObservableList<stutendData> dadosDosAlunos = FXCollections.observableArrayList();
-//        String data = null;
-//        try {
-//            data = new String(Files.readAllBytes((Paths.get(path))));
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        JSONArray jsonArray = new JSONArray(data);
-//        for(int i = 0; i < jsonArray.length(); i++){
-//            JSONObject object = jsonArray.getJSONObject(i);
-//            String str = jsonArray.get(i).toString();
-//            JSONObject object1 = new JSONObject(str);
-//            String name = object1.getString("name");
-//            int age = object1.getInt("presenca");
-//            //stutendData estudante = new stutendData(name, age);
-//            //dadosDosAlunos.add(estudante);
-//            //estudante.checkBoxAnalysis();
-//            if (estudante.getPresenca().isSelected()){
-//                //actualpresenceValue = age - 1;
-//                System.out.println("Valor CheckBox: True");
-////                try {
-////                    object.put("presenca", actualpresenceValue);
-////                } catch (JSONException e) {
-////                    e.printStackTrace();
-////                }
-//            } else{
-//                System.out.println("Valor CheckBox: False");
-//            }
-//        }
-//        try {
-//            // Escrever o arquivo uma vez após o loop
-//            Files.write(Paths.get(path), jsonArray.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
-//    }
+
+    @FXML
+    private void onSendButtonClick() {
+        String path = "C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json";
+        String data = null;
+        int i = 0;
+        try {
+            data = new String(Files.readAllBytes((Paths.get(path))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        JSONArray jsonArray = new JSONArray(data);
+        for (stutendData estudante : dadosDosAlunos) {
+            JSONObject object = jsonArray.getJSONObject(i);
+            String str = jsonArray.get(i).toString();
+            JSONObject object1 = new JSONObject(str);
+            String name = object1.getString("name");
+            int presence = object1.getInt("presenca");
+            if(estudante.getPresenca().isSelected()) {
+                presence+=2;
+                System.out.println("True");
+                try {
+                    object.put("presenca", presence);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else{
+                System.out.println("False");
+            }
+            i++;
+        }
+        try {
+            // Escrever o arquivo uma vez após o loop
+            Files.write(Paths.get(path), jsonArray.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        lerArquivo();
+    }
 
 
     private void setSubjectSelectOptions() {
@@ -110,39 +107,32 @@ public class FrequencyTeacher implements Initializable {
 
     @FXML
     private void handleSubjectSelect() {
+        lerArquivo();
+    }
+
+    public void lerArquivo(){
         dadosDosAlunos = FXCollections.observableArrayList();
         String data = null;
-            try {
-                data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            JSONArray jsonArray = new JSONArray(data);
-            for(int i = 0; i < jsonArray.length(); i++){
-                JSONObject object = jsonArray.getJSONObject(i);
-                String str = jsonArray.get(i).toString();
-                JSONObject object1 = new JSONObject(str);
-                String name = object1.getString("name");
-                int age = object1.getInt("presenca");
-                dadosDosAlunos.add(new stutendData(name, age));
-            }
+        try {
+            data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        JSONArray jsonArray = new JSONArray(data);
+        for(int i = 0; i < jsonArray.length(); i++){
+            JSONObject object = jsonArray.getJSONObject(i);
+            String str = jsonArray.get(i).toString();
+            JSONObject object1 = new JSONObject(str);
+            String name = object1.getString("name");
+            int age = object1.getInt("presenca");
+            dadosDosAlunos.add(new stutendData(name, age));
+        }
         tableView.getItems().clear();
         this.sendButton.setVisible(true);
         this.tableView.setVisible(true);
         tableView.setItems(dadosDosAlunos);
         subjectSelect.getValue();
     }
-
-//    @FXML
-//    private void onSendButtonClick() {
-//        for (stutendData estudante : dadosDosAlunos) {
-//            if(estudante.getPresenca().isSelected()) {
-//                System.out.println("True");
-//            } else{
-//                System.out.println("False");
-//            }
-//        }
-//    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
