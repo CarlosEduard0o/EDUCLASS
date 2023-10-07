@@ -20,10 +20,10 @@ public class stutendData {
     public void checkBoxAnalysis(){
         System.out.println(this.presence.isSelected());
     }
-    public CheckBox getSelect() {
+    public CheckBox getPresenca() {
         return presence;
     }
-    public void setSelect(CheckBox presence){
+    public void setPresenca(CheckBox presence){
         this.presence = presence;
     }
 

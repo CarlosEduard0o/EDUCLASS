@@ -1,4 +1,4 @@
-nome:Carlos Eduardo
+nome:Nome do professor(a)
 curso:SI
 identitade:12.345.678-9
 cpf:123.456.789-12

@@ -73,7 +73,7 @@ public class GradesTeacher implements Initializable {
         final ObservableList<studentGradeData> dadosDosAlunos = FXCollections.observableArrayList();
         String data = null;
         try {
-            data = new String(Files.readAllBytes((Paths.get("D:\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json"))));
+            data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\testes.json"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
