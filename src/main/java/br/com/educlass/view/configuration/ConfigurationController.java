@@ -31,7 +31,7 @@ public class ConfigurationController implements Initializable{
         HashMap<String, String> languageSelected = TextFile.readTextFileMapping(languageConfigurationsInDb);
         String selected = languageSelected.get("selected");
         prevLanguageSelected = selected;
-        String pathLanguageSelected = "src/main/resources/br/com/educlass/configuration/languages/"+selected+".txt";
+        String pathLanguageSelected = "src/main/resources/br/com/educlass/view/configuration/languages/"+selected+".txt";
 
         HashMap<String, String> allTexts = TextFile.readTextFileMapping(pathLanguageSelected);
         selectLanguage.setValue(selected);
@@ -39,7 +39,6 @@ public class ConfigurationController implements Initializable{
 
         languageText.setText(allTexts.get("languageText"));
         informationText.setText(allTexts.get("informationText"));
-
     }
 
     @FXML

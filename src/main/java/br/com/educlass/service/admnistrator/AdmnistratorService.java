@@ -6,7 +6,9 @@ import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.model.subjects.Subject;
 import br.com.educlass.service.admnistrator.AdmnistratorStudentService.AdmnistratorStudentService;
+import br.com.educlass.service.admnistrator.AdmnistratorTeacherService.AdmnistratorTeacherService;
 import br.com.educlass.service.student.StudentService;
+import br.com.educlass.service.teacher.TeacherService;
 import br.com.educlass.util.Folders;
 import br.com.educlass.util.JsonFile;
 import org.json.simple.JSONArray;
@@ -70,29 +72,15 @@ public class AdmnistratorService {
         return subjects;
     }
 
-    private static ArrayList<Teacher> setTeatchersInformations(ArrayList jsonArray) {
+    private static ArrayList<Teacher> setTeatchersInformations() {
+        String path = "db/users/teachers";
+        File file = new File(path);
+        String[] registrationFolders = Folders.getItemsInDir(file);
+
         ArrayList<Teacher> teachers = new ArrayList<>();
-
-        for (Object teacherObject : jsonArray) {
-            JSONObject teacherJson = (JSONObject) teacherObject;
-            Teacher teacher = new Teacher();
-            teacher.setName((String) teacherJson.get("nome"));
-            teacher.setCpf((String) teacherJson.get("cpf"));
-            teacher.setRegistration((String) teacherJson.get("matricula"));
-            teacher.setEmail((String) teacherJson.get("email"));
-            teacher.setAddress((String) teacherJson.get("endereço"));
-
-            ArrayList<Subject> subjects = new ArrayList<>();
-            ArrayList<String> subjectsJsonRead = (ArrayList<String>) teacherJson.get("subjects");
-            for (String item : subjectsJsonRead) {
-                String filePath = "db/subjects/" + item + "/informations.json";
-                JSONObject subjectJson = (JSONObject) JsonFile.readJsonFile(filePath).get(0);
-                Subject subject = new Subject();
-                subject.setId((String) subjectJson.get("id"));
-                subject.setName((String) subjectJson.get("name"));
-                subjects.add(subject);
-            }
-            teacher.setSubjects(subjects);
+        for (String registration : registrationFolders) {
+            String pathStudent = "db/users/teachers/" + registration + "/";
+            teachers.add(TeacherService.setTeacherInfoForList(pathStudent));
         }
         return teachers;
     }
@@ -121,13 +109,10 @@ public class AdmnistratorService {
             JSONArray subjectsFile = JsonFile.readJsonFile(filePath);
             course.setSubjects(setSubjectsInformations(subjectsFile));
 
-            filePath = "db/teachers/teachers.json";
-            JSONArray teachersFile = JsonFile.readJsonFile(filePath);
-            course.setTeachers(setTeatchersInformations(teachersFile));
-
             courses.add(course);
         }
 
+        institution.setTeachers(setTeatchersInformations());
         institution.setStudents(setStudentsInformations());
 
         AdmnistratorService.administrator = institution;
@@ -154,6 +139,28 @@ public class AdmnistratorService {
 
     public static void editStudent(Student student) {
         AdmnistratorStudentService.editStudent(student, administrator);
+    }
+
+    /** Teacher view -- add **/
+    public static void setNewTeacher(Teacher teacher) {
+        AdmnistratorTeacherService.setNewTeacher(teacher, administrator);
+    }
+
+    public static Teacher getNewTeacher() {
+        return AdmnistratorTeacherService.getNewTeacher();
+    }
+
+    /** Teacher view -- edit **/
+    public static void setEditTeacher(Teacher teacher) {
+        AdmnistratorTeacherService.editTeacher(teacher, administrator);
+    }
+
+    public static Teacher getEditTeacher() {
+        return AdmnistratorTeacherService.getEditTeacher();
+    }
+
+    public static void editTeacher(Teacher teacher) {
+        AdmnistratorTeacherService.editTeacher(teacher, administrator);
     }
 
 }

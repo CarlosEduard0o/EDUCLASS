@@ -34,4 +34,31 @@ public class UserUtil {
         String pathUser = "db/users/students/"+year+"/"+semester+"/"+id+"/";
         return  pathUser;
     }
+
+    public static String getPathTeacher() {
+        ArrayList<String> textResult = TextFile.readTextFile( "db/cache/user.txt");
+
+        for (String s : textResult) {
+            String[] stringSplited = s.split(":");
+            if(stringSplited[0].equals("username")) {
+                String username = stringSplited[0].substring(1);
+
+                String path = "db/users/teachers/"+username+"/";
+                return path;
+            }
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param registration
+     * @return db/users/students/"+year+"/"+semester+"/"+id/;
+     */
+    public static String getTeacherUserPathById(String registration) {
+        String id = registration.substring(1);
+
+        String pathUser = "db/users/teachers/"+id+"/";
+        return  pathUser;
+    }
 }

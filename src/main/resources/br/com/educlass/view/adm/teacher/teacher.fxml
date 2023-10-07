@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.student.StudentController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.teacher.TeacherController">
    <children>
       <Text layoutX="29.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione um professor" />
-      <ComboBox layoutX="27.0" layoutY="37.0" onAction="#handleStudentSelectedComboBox" prefHeight="25.0" prefWidth="397.0" promptText="Selecione um professor" />
-      <Button layoutX="246.0" layoutY="352.0" mnemonicParsing="false" onMousePressed="#buttonAddStudentPress" prefHeight="25.0" prefWidth="176.0" text="Adicionar um professor" />
-      <TableView layoutX="27.0" layoutY="81.0" onMousePressed="#tableselected" prefHeight="261.0" prefWidth="397.0">
+      <ComboBox fx:id="comboTeacherSelected" layoutX="27.0" layoutY="37.0" prefHeight="25.0" prefWidth="397.0" promptText="Selecione um professor" />
+      <Button fx:id="buttonCreateNewTeacher" layoutX="246.0" layoutY="352.0" mnemonicParsing="false" onMousePressed="#buttonAddTeacherPress" prefHeight="25.0" prefWidth="176.0" text="Adicionar um professor" />
+      <TableView fx:id="tableView" layoutX="27.0" layoutY="81.0" onMousePressed="#tableselected" prefHeight="261.0" prefWidth="397.0">
         <columns>
           <TableColumn fx:id="tableFirstColumn" prefWidth="97.0" text="Matrícula" />
           <TableColumn fx:id="tableSecondColumn" prefWidth="298.0" text="Nome" />
@@ -22,6 +22,6 @@
             <Point3D />
          </rotationAxis>
       </TableView>
-      <Button layoutX="25.0" layoutY="353.0" mnemonicParsing="false" onMousePressed="#buttonEditStudentPress" prefHeight="25.0" prefWidth="176.0" text="Editar" />
+      <Button fx:id="buttonEditTeacher" layoutX="25.0" layoutY="353.0" mnemonicParsing="false" onMousePressed="#buttonEditTeacherPress" prefHeight="25.0" prefWidth="176.0" text="Editar" />
    </children>
 </Pane>
