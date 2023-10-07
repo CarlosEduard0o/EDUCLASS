@@ -23,6 +23,29 @@ module br.com.educlass.educlass {
     opens br.com.educlass.view.adm.template to javafx.fxml;
     exports br.com.educlass.view.adm.template;
 
+    opens br.com.educlass.view.adm.student to javafx.fxml;
+    exports br.com.educlass.view.adm.student;
+
+    opens br.com.educlass.view.adm.student.editStudent to javafx.fxml;
+    exports br.com.educlass.view.adm.student.editStudent;
+    opens br.com.educlass.view.adm.student.editStudent.studentEditConfirmationController to javafx.fxml;
+    exports br.com.educlass.view.adm.student.editStudent.studentEditConfirmationController;
+
+    opens br.com.educlass.view.adm.student.addStudent to javafx.fxml;
+    exports br.com.educlass.view.adm.student.addStudent;
+
+    opens br.com.educlass.view.adm.student.addStudent.studentConfirmation to javafx.fxml;
+    exports br.com.educlass.view.adm.student.addStudent.studentConfirmation;
+
+    opens br.com.educlass.view.adm.teacher to javafx.fxml;
+    exports br.com.educlass.view.adm.teacher;
+
+    opens br.com.educlass.view.adm.teacher.addTeacher to javafx.fxml;
+    exports br.com.educlass.view.adm.teacher.addTeacher;
+
+    opens br.com.educlass.view.adm.teacher.editTeacher to javafx.fxml;
+    exports br.com.educlass.view.adm.teacher.editTeacher;
+
     opens br.com.educlass.view.login to javafx.fxml;
     exports br.com.educlass.view.login;
 

@@ -19,7 +19,7 @@ public class JsonFile {
             Object obj = jsonParser.parse(reader);
             return (JSONArray) obj;
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return null;
     }
@@ -49,7 +49,8 @@ public class JsonFile {
         ArrayList<JSONObject> jsonObjects = new ArrayList<>();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("asd", "asd");
-//        writeJsonFile();
+        jsonObjects.add(jsonObject);
+        writeJsonFile(jsonObjects, "db/t/", "teste");
     }
 }
 

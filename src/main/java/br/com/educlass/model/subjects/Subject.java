@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * Aqui podemos ter a disciplina cursada pelo aluno
  */
 public class Subject {
+    private String id;
     private String name;
     private Long time;
     private ArrayList<String> frequency;

@@ -29,6 +29,7 @@ import org.json.simple.JSONObject;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Template extends Application implements Initializable{
@@ -103,7 +104,7 @@ public class Template extends Application implements Initializable{
 
         JSONObject courseInfoJson = (JSONObject) courseInfoArray.get(0);
 
-        course.setText(texts.get("course")+": " + courseInfoJson.get("courseSimble"));
+        course.setText(texts.get("course")+": " + student.getCourseId().toUpperCase());
         register.setText(texts.get("register")+": " + student.getRegistration());
         frequencyText.setText(texts.get("frequencyText"));
         gradesText.setText(texts.get("gradesText"));

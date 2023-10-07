@@ -1,0 +1,7 @@
+nome:Jooaoxza
+curso:SI
+cpf:asdasdfsdf
+endereço:sdasd
+email:asdasda
+matricula:2202300001
+situation:matriculado

@@ -49,16 +49,26 @@ public class Grades implements Initializable {
     }
 
     private void setPeriodSelectOptions() {
-        int periodSize = student.getPeriodsSubjects().size();
-        int i = 1;
-        while(i <= periodSize){
-            periodSelect.getItems().add("Periodo: " + i);
-            i = i+1;
+        if(student.getPeriodsSubjects() != null) {
+            int periodSize = student.getPeriodsSubjects().size();
+            int i = 1;
+            while (i <= periodSize) {
+                periodSelect.getItems().add("Periodo: " + i);
+                i = i + 1;
+            }
+        } else {
+            periodSelect.getItems().add("Não há períodos disponíveis.");
         }
     }
 
     private int getPeriodSelected() {
-        return Integer.parseInt(periodSelect.getValue().split(":")[1].trim()) - 1;
+        int periodSelected;
+        try {
+            return Integer.parseInt(periodSelect.getValue().split(":")[1].trim()) - 1;
+        } catch (Exception e) {
+                periodSelected = -1;
+            return periodSelected;
+        }
     }
 
     @FXML
@@ -69,18 +79,22 @@ public class Grades implements Initializable {
         subjectSelect.getItems().clear();
         tableView.getItems().clear();
         int periodSelected = getPeriodSelected();
-        ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-        /*
-         * Aqui pega-se todas as disciplinas do periodo selecionado
-         */
-        for(Subject item: subjects){
+        if(periodSelected != -1) {
+            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
             /*
-             * Aqui pega-se todas as datas que houve falta daquela disciplina
+             * Aqui pega-se todas as disciplinas do periodo selecionado
              */
-            for(String grade: item.getGrades()) {
-                setDataInTable(grade.replace("-","/") ,item.getName());
+            for (Subject item : subjects) {
+                /*
+                 * Aqui pega-se todas as datas que houve falta daquela disciplina
+                 */
+                for (String grade : item.getGrades()) {
+                    setDataInTable(grade.replace("-", "/"), item.getName());
+                }
+                subjectSelect.getItems().add(item.getName());
             }
-            subjectSelect.getItems().add(item.getName());
+        } else {
+            subjectSelect.getItems().add("Não há matérias disponíveis.");
         }
     }
 
@@ -89,15 +103,19 @@ public class Grades implements Initializable {
         if(subjectSelect.getValue() != null) {
             tableView.getItems().clear();
             int periodSelected = getPeriodSelected();
-            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-            for(Subject subject:subjects) {
-                if(subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
-                    for(String grade: subject.getGrades()) {
-                        setDataInTable(grade.replace("-","/") ,subject.getName());
+            if(periodSelected != -1) {
+                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
+                for(Subject subject:subjects) {
+                    if(subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
+                        for(String grade: subject.getGrades()) {
+                            setDataInTable(grade.replace("-","/") ,subject.getName());
+                        }
                     }
                 }
+                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
+            } else {
+                infoText.setText("Não há disciplinas disponíveis");
             }
-            infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
         }
     }
 
