@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -35,7 +36,10 @@
                         <Text fx:id="subjectsTexts" layoutY="20.0" onMousePressed="#handleCursor" onMouseReleased="#subjectOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Subjects" textAlignment="CENTER" wrappingWidth="150.0" />
                      </children>
                   </Pane>
-                  <Button fx:id="exitButton" layoutX="41.0" layoutY="242.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" styleClass="sidebar-exitButton" stylesheets="@styles.css" text="SAIR" />
+                  <Button fx:id="exitButton" layoutX="41.0" layoutY="242.0" mnemonicParsing="false" onMousePressed="#exitButtonPressed" prefHeight="26.0" prefWidth="69.0" styleClass="sidebar-exitButton" stylesheets="@styles.css" text="SAIR">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                </children>
                <opaqueInsets>
                   <Insets />

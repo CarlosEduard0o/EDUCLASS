@@ -4,8 +4,10 @@ import br.com.educlass.model.institution.Institution;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.CursorUtil;
+import br.com.educlass.util.SceneController;
 import br.com.educlass.view.adm.student.StudentController;
 import br.com.educlass.view.adm.teacher.TeacherController;
+import br.com.educlass.view.login.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -127,6 +129,14 @@ public class AdmTemplateController extends Application implements Initializable 
         this.institution = AdmnistratorService.setAdmnistratorInfo();
 
         schoolNameText.setText("Nome : " + institution.getName());
+    }
+
+    @FXML
+    private void exitButtonPressed(){
+        SceneController sceneController = new SceneController();
+
+        sceneController.switchScene(templatePane.getScene().getWindow(),
+                Controller.class.getResource("view.fxml"));
     }
 
     @Override
