@@ -110,8 +110,14 @@ public class Controller implements Initializable {
     }
 
     private boolean verifyUserAndPassword() {
-        if (getLoginObject() != null) {
-            return true;
+        HashMap<String, String> loginInformations = getLoginObject();
+        if (loginInformations != null) {
+            if(loginInformations.get("password").equals(password.getText()) &&
+                    loginInformations.get("username").equalsIgnoreCase(user.getText())) {
+                return true;
+            } else {
+                return false;
+            }
         }
         return false;
     }

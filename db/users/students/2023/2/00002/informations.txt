@@ -1,0 +1,7 @@
+nome:Joao da capa
+curso:SI
+cpf:2525252
+endereço:1468sdfsdf
+email:askmdaksdna@asdfmaf
+matricula:2202300002
+situation:matriculado

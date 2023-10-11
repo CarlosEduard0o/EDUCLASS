@@ -58,13 +58,16 @@ public class StudentController implements Initializable {
 
     @FXML
     private void tableselected() {
-        editButton.setDisable(false);
-        String idStudentSelected = tableView.getSelectionModel().selectedItemProperty().get().getFirstColumn();
-        for (Student student : this.students) {
-            if (student.getRegistration().equalsIgnoreCase(idStudentSelected)) {
-                InformationsStudent.setStudentSelected(student);
+        try{
+            String idStudentSelected = tableView.getSelectionModel().selectedItemProperty().get().getFirstColumn();
+            for (Student student : this.students) {
+                if (student.getRegistration().equalsIgnoreCase(idStudentSelected)) {
+                    editButton.setDisable(false);
+                    InformationsStudent.setStudentSelected(student);
+                }
             }
-        }
+        } catch (Exception e) {}
+
     }
 
     @FXML

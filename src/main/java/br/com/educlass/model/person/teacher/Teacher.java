@@ -14,4 +14,5 @@ import java.util.ArrayList;
 @NoArgsConstructor
 public class Teacher extends Person {
     private ArrayList<Subject> subjects;
+    private String situation;
 }

@@ -43,8 +43,14 @@ module br.com.educlass.educlass {
     opens br.com.educlass.view.adm.teacher.addTeacher to javafx.fxml;
     exports br.com.educlass.view.adm.teacher.addTeacher;
 
+    opens br.com.educlass.view.adm.teacher.addTeacher.teacherConfirmation to javafx.fxml;
+    exports br.com.educlass.view.adm.teacher.addTeacher.teacherConfirmation;
+
     opens br.com.educlass.view.adm.teacher.editTeacher to javafx.fxml;
     exports br.com.educlass.view.adm.teacher.editTeacher;
+
+    opens br.com.educlass.view.adm.teacher.editTeacher.teacherEditConfirmation to javafx.fxml;
+    exports br.com.educlass.view.adm.teacher.editTeacher.teacherEditConfirmation;
 
     opens br.com.educlass.view.login to javafx.fxml;
     exports br.com.educlass.view.login;

@@ -1,6 +1,5 @@
 package br.com.educlass.view.adm.teacher;
 
-import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.view.adm.teacher.addTeacher.AddTeacherController;
@@ -24,13 +23,13 @@ import java.util.ResourceBundle;
 public class TeacherController implements Initializable {
 
     @FXML
-    private ComboBox<String> comboStudentSelected;
+    private ComboBox<String> comboTeacherSelected;
 
     @FXML
-    private Button buttonCreateNewStudent;
+    private Button buttonCreateNewTeacher;
 
     @FXML
-    private Button buttonEditStudent;
+    private Button buttonEditTeacher;
 
     @FXML
     private TableView<TeacherTable> tableView;
@@ -53,14 +52,27 @@ public class TeacherController implements Initializable {
     }
 
     private void setInitialPropsInComponents() {
+        buttonEditTeacher.setDisable(true);
         setFactoryTable();
         if (teachers != null) {
             for (Teacher teacher : this.teachers) {
-                comboStudentSelected.getItems().add(teacher.getRegistration() + " - " + teacher.getName());
+                comboTeacherSelected.getItems().add(teacher.getRegistration() + " - " + teacher.getName());
                 setDataInTable(teacher.getRegistration(), teacher.getName());
             }
         }
-        //
+    }
+
+    @FXML
+    private void tableselected() {
+        try {
+            String idStudentSelected = tableView.getSelectionModel().selectedItemProperty().get().getFirstColumn();
+            for (Teacher teacher : this.teachers) {
+                if (teacher.getRegistration().equalsIgnoreCase(idStudentSelected)) {
+                    buttonEditTeacher.setDisable(false);
+                    InformationsTeacher.setTeacherSelected(teacher);
+                }
+            }
+        } catch (Exception e) {}
     }
 
     /**
@@ -68,13 +80,13 @@ public class TeacherController implements Initializable {
      */
 
     @FXML
-    protected void buttonEditStudentPress() throws IOException {
+    protected void buttonEditTeacherPress() throws IOException {
         URL fxml = EditTeacherController.class.getResource("editTeacher.fxml");
         ContentContainer.setSceneContentContainer(fxml);
     }
 
     @FXML
-    protected void buttonAddStudentPress() throws IOException {
+    protected void buttonAddTeacherPress() throws IOException {
         URL fxml = AddTeacherController.class.getResource("addTeacher.fxml");
         ContentContainer.setSceneContentContainer(fxml);
     }
