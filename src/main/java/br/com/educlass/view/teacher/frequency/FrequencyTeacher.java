@@ -2,6 +2,7 @@ package br.com.educlass.view.teacher.frequency;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.service.teacher.TeacherService;
 import br.com.educlass.util.CursorUtil;
+import br.com.educlass.util.JsonFile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,10 +20,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class FrequencyTeacher implements Initializable {
@@ -53,7 +56,7 @@ public class FrequencyTeacher implements Initializable {
 
     @FXML
     private void onSendButtonClick() {
-        String path = "C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\disciplinas.json";
+        String path = "db/users/teachers/2/20000/disciplinas.json";
         String data = null;
         int i = 0;
         try {
@@ -88,9 +91,30 @@ public class FrequencyTeacher implements Initializable {
 
 
     private void setSubjectSelectOptions() {
+        ArrayList arrayElementos = new ArrayList<>();
+        String path = "db/users/teachers/2/20000/subjects.json";
+
+        JsonFile jSonFile = new JsonFile();
+        JSONArray jsonArray = new JSONArray(jSonFile.readJsonFile(path));
+        JSONObject jsonObject = (JSONObject) jsonArray.get(0);
+
+        JSONArray jsonArray1 = (JSONArray) jsonObject.get("list_of_subjects");
+
+        for (Object object: jsonArray1) {
+            String subjectId = (String) object;
+            String pathDiscipline = "db/discipline/"+ subjectId +"/informations.json";
+            JsonFile jSonFile1 = new JsonFile();
+            JSONArray jsonArray2 = new JSONArray(jSonFile1.readJsonFile(pathDiscipline));
+            JSONObject jsonObject1 = (JSONObject) jsonArray2.get(0);
+            String subjectName = (String) jsonObject1.get("name");
+//            System.out.println(jsonObject1.get("name"));
+            arrayElementos.add(subjectName);
+        }
+
+
         //Neste ponto teacher.getSubjects() está retornando null. Ver depois como fazer isso pegar as subjects do JSON
-        String[] elementos = {"Estatística Inferencial", "Algorítmos e Estrutura de Dados", "Introdução a Sistemas de Informações", "Tópicos Humanísticos"};
-        final ObservableList<String> dadosDasDisciplinas = FXCollections.observableArrayList(elementos);
+        //String[] elementos = {"Estatística Inferencial", "Algorítmos e Estrutura de Dados", "Introdução a Sistemas de Informações", "Tópicos Humanísticos"};
+        final ObservableList<String> dadosDasDisciplinas = FXCollections.observableArrayList(arrayElementos);
         subjectSelect.setItems(dadosDasDisciplinas);
     }
 
@@ -110,7 +134,7 @@ public class FrequencyTeacher implements Initializable {
         dadosDosAlunos = FXCollections.observableArrayList();
         String data = null;
         try {
-            data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\disciplinas.json"))));
+            data = new String(Files.readAllBytes((Paths.get("db/users/teachers/2/20000/disciplinas.json"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -53,7 +53,7 @@ public class GradesTeacher implements Initializable {
 
     @FXML
     public void onSendGradeButtonClick(){
-        String path = "C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\disciplinas.json";
+        String path = "db/users/teachers/2/20000/disciplinas.json";
         String data = null;
         int i = 0;
         try {
@@ -103,7 +103,7 @@ public class GradesTeacher implements Initializable {
         dadosDosAlunos = FXCollections.observableArrayList();
         String data = null;
         try {
-            data = new String(Files.readAllBytes((Paths.get("C:\\Users\\CarlosEduardodeAlmei\\Desktop\\FAITEC-EDUCLASS-master\\db\\users\\teachers\\2\\20000\\disciplinas.json"))));
+            data = new String(Files.readAllBytes((Paths.get("db/users/teachers/2/20000/disciplinas.json"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
