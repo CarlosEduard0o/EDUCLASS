@@ -14,6 +14,9 @@ module br.com.educlass.educlass {
     opens br.com.educlass.view.student.frequency to javafx.fxml;
     exports br.com.educlass.view.student.frequency;
 
+    opens br.com.educlass.view.student.extra to javafx.fxml;
+    exports br.com.educlass.view.student.extra;
+
     opens br.com.educlass.view.student.template to javafx.fxml;
     exports br.com.educlass.view.student.template;
 

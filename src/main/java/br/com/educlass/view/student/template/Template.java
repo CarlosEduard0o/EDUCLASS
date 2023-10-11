@@ -1,5 +1,6 @@
 package br.com.educlass.view.student.template;
 
+import br.com.educlass.view.student.extra.ExtraController;
 import br.com.educlass.view.student.grades.Grades;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.JsonFile;
@@ -71,10 +72,16 @@ public class Template extends Application implements Initializable{
     private Pane gradesOptionContainer;
 
     @FXML
+    private Pane extraOptionContainer;
+
+    @FXML
     private Text frequencyText;
 
     @FXML
     private Text gradesText;
+
+    @FXML
+    private Text extraText;
 
     @FXML
     private AnchorPane contentContainer; //w=450 h=400
@@ -122,6 +129,7 @@ public class Template extends Application implements Initializable{
         contentContainer.getChildren().clear();
         frequencyOptionContainer.setStyle("-fx-background-color: white");
         gradesOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
+        extraOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
 
         URL fxmlURl = Frequency.class.getResource("frequency.fxml");
 
@@ -136,9 +144,27 @@ public class Template extends Application implements Initializable{
         contentContainer.getChildren().clear();
         frequencyOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
         gradesOptionContainer.setStyle("-fx-background-color: white");
+        extraOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
 
         Parent root = FXMLLoader.load(Grades.class.getResource("grades.fxml"));
         contentContainer.getChildren().add(root);
+    }
+
+
+
+    @FXML
+    protected void extraOptionSelect() throws IOException {
+        contentContainer.getChildren().clear();
+        extraOptionContainer.setStyle("-fx-background-color: white");
+        gradesOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
+        frequencyOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
+
+        URL fxmlURl = ExtraController.class.getResource("extra.fxml");
+
+        if(fxmlURl != null) {
+            Parent root = FXMLLoader.load(fxmlURl);
+            contentContainer.getChildren().add(root);
+        }
     }
 
     @Override
