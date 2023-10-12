@@ -7,10 +7,11 @@ import javafx.scene.shape.Circle;
 public class ConfigurationIcon {
     public static void insertConfigurationIcon(Circle configurationContainer) {
         try {
-            Image image = new Image("file:src/main/resources/br/com/educlass/view/configuration/configuration_icon.png", false);
+            Image image = new Image("file:src/main/resources/br/com/educlass/view/configuration/configuration_icon.png",
+                    false);
             configurationContainer.setFill(new ImagePattern(image));
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class ConfigurationController implements Initializable{
+public class ConfigurationController implements Initializable {
     @FXML
     private Text languageText;
 
@@ -24,14 +24,14 @@ public class ConfigurationController implements Initializable{
     String prevLanguageSelected;
     String nowLanguageSelected;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String languageConfigurationsInDb = "db/configurations/language.txt";
         HashMap<String, String> languageSelected = TextFile.readTextFileMapping(languageConfigurationsInDb);
         String selected = languageSelected.get("selected");
         prevLanguageSelected = selected;
-        String pathLanguageSelected = "src/main/resources/br/com/educlass/configuration/languages/"+selected+".txt";
+        String pathLanguageSelected = "src/main/resources/br/com/educlass/view/configuration/languages/" + selected
+                + ".txt";
 
         HashMap<String, String> allTexts = TextFile.readTextFileMapping(pathLanguageSelected);
         selectLanguage.setValue(selected);
@@ -39,7 +39,6 @@ public class ConfigurationController implements Initializable{
 
         languageText.setText(allTexts.get("languageText"));
         informationText.setText(allTexts.get("informationText"));
-
     }
 
     @FXML
@@ -47,14 +46,12 @@ public class ConfigurationController implements Initializable{
         nowLanguageSelected = (String) selectLanguage.getValue();
         TextFile.writeTextFile("db/configurations/language", "selected:" + nowLanguageSelected);
 
-        if(!prevLanguageSelected.equalsIgnoreCase(nowLanguageSelected)) {
+        if (!prevLanguageSelected.equalsIgnoreCase(nowLanguageSelected)) {
             System.exit(0);
         } else {
             Stage stage = (Stage) selectLanguage.getScene().getWindow();
             stage.close();
         }
     }
-
-
 
 }

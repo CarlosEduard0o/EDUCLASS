@@ -1,6 +1,5 @@
 package br.com.educlass.model.subjects;
 
-
 import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import lombok.AllArgsConstructor;
@@ -17,6 +16,7 @@ import java.util.ArrayList;
  * Aqui podemos ter a disciplina cursada pelo aluno
  */
 public class Subject {
+    private String id;
     private String name;
     private Long time;
     private ArrayList<String> frequency;
@@ -24,5 +24,5 @@ public class Subject {
     private String situation;
     private ArrayList<Teacher> teachers;
     private Long period;
-    private ArrayList<String> enrolledStudents;  //Alunos matriculados nessa disciplina
+    private ArrayList<String> enrolledStudents; // Alunos matriculados nessa disciplina
 }

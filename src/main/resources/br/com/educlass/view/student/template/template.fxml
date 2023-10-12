@@ -8,46 +8,46 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-
-<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.template.Template">
-   <content>
-      <AnchorPane fx:id="templatePane" prefHeight="400.0" prefWidth="600.0" styleClass="content" stylesheets="@styles.css">
+<AnchorPane fx:id="templatePane" prefHeight="400.0" prefWidth="600.0" styleClass="content" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.template.Template">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="150.0" styleClass="sidebar" stylesheets="@styles.css">
          <children>
-            <AnchorPane prefHeight="400.0" prefWidth="150.0" styleClass="sidebar" stylesheets="@styles.css">
+            <AnchorPane layoutX="-1.0" prefHeight="119.0" prefWidth="150.0" styleClass="sidebar-informations" stylesheets="@styles.css">
                <children>
-                  <AnchorPane layoutX="-1.0" prefHeight="119.0" prefWidth="150.0" styleClass="sidebar-informations" stylesheets="@styles.css">
-                     <children>
-                        <Circle fx:id="userImageContainer" fill="TRANSPARENT" layoutX="75.0" layoutY="39.0" radius="25.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                        <Text fx:id="name" fill="WHITE" layoutX="5.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
-                        <Text fx:id="course" fill="WHITE" layoutX="5.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso:" />
-                        <Text fx:id="register" fill="WHITE" layoutX="5.0" layoutY="112.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matrícula:" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutY="118.0" prefHeight="283.0" prefWidth="150.0">
-                     <children>
-                        <Pane fx:id="frequencyOptionContainer" layoutY="12.0" onMousePressed="#handleCursor" onMouseReleased="#frequencyOptionSelect" prefHeight="43.0" prefWidth="150.0" styleClass="sidebar-options" stylesheets="@styles.css">
-                           <children>
-                              <Text fx:id="frequencyText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#frequencyOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequência" textAlignment="CENTER" wrappingWidth="150.0" />
-                           </children>
-                        </Pane>
-                        <Pane fx:id="gradesOptionContainer" layoutY="55.0" onMousePressed="#handleCursor" onMouseReleased="#notesOptionSelect" prefHeight="43.0" prefWidth="150.0" styleClass="sidebar-options" stylesheets="@styles.css">
-                           <children>
-                              <Text fx:id="gradesText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#notesOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Notas" textAlignment="CENTER" wrappingWidth="150.0" />
-                           </children>
-                        </Pane>
-                     </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </AnchorPane>
+                  <Circle fx:id="userImageContainer" fill="TRANSPARENT" layoutX="75.0" layoutY="39.0" radius="25.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Text fx:id="name" fill="WHITE" layoutX="5.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
+                  <Text fx:id="course" fill="WHITE" layoutX="5.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso:" />
+                  <Text fx:id="register" fill="WHITE" layoutX="5.0" layoutY="112.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matrícula:" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="contentContainer" layoutX="150.0" prefHeight="400.0" prefWidth="450.0">
-               <rotationAxis>
-                  <Point3D />
-               </rotationAxis>
+            <AnchorPane layoutY="118.0" prefHeight="283.0" prefWidth="150.0">
+               <children>
+                  <Pane fx:id="frequencyOptionContainer" layoutY="12.0" onMousePressed="#handleCursor" onMouseReleased="#frequencyOptionSelect" prefHeight="43.0" prefWidth="150.0" styleClass="sidebar-options" stylesheets="@styles.css">
+                     <children>
+                        <Text fx:id="frequencyText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#frequencyOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequência" textAlignment="CENTER" wrappingWidth="150.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="gradesOptionContainer" layoutY="55.0" onMousePressed="#handleCursor" onMouseReleased="#notesOptionSelect" prefHeight="43.0" prefWidth="150.0" styleClass="sidebar-options" stylesheets="@styles.css">
+                     <children>
+                        <Text fx:id="gradesText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#notesOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Notas" textAlignment="CENTER" wrappingWidth="150.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="extraOptionContainer" layoutY="99.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" prefHeight="43.0" prefWidth="150.0" styleClass="sidebar-options" stylesheets="@styles.css">
+                     <children>
+                        <Text fx:id="extraText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra" textAlignment="CENTER" wrappingWidth="150.0" />
+                     </children>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </AnchorPane>
          </children>
       </AnchorPane>
-   </content>
-</ScrollPane>
+      <AnchorPane fx:id="contentContainer" layoutX="150.0" prefHeight="400.0" prefWidth="450.0">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </AnchorPane>
+   </children>
+</AnchorPane>

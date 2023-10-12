@@ -21,7 +21,7 @@ public class ConfigurationView {
 
             telaSecundaria.showAndWait();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }

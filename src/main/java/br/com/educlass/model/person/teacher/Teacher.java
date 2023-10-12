@@ -13,5 +13,6 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Teacher extends Person {
-    private ArrayList<Subject> Subjects;
+    private ArrayList<Subject> subjects;
+    private String situation;
 }

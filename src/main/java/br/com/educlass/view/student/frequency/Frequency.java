@@ -10,6 +10,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.ComboBox;
 
 import java.net.URL;
+import java.security.spec.ECField;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -23,8 +24,8 @@ public class Frequency implements Initializable {
     @FXML
     private Text periodText;
 
-//    @FXML
-//    private Text
+    // @FXML
+    // private Text
 
     @FXML
     private ComboBox<String> periodSelect;
@@ -59,21 +60,31 @@ public class Frequency implements Initializable {
     }
 
     private void setPeriodSelectOptions() {
-        int periodSize = student.getPeriodsSubjects().size();
-        int i = 1;
-        while(i <= periodSize){
-            periodSelect.getItems().add("Periodo: " + i);
-            i = i+1;
+        if (student.getPeriodsSubjects() != null) {
+            int periodSize = student.getPeriodsSubjects().size();
+            int i = 1;
+            while (i <= periodSize) {
+                periodSelect.getItems().add("Periodo: " + i);
+                i = i + 1;
+            }
+        } else {
+            periodSelect.getItems().add("Não há períodos disponíveis.");
         }
     }
 
     private int getPeriodSelected() {
-        return Integer.parseInt(periodSelect.getValue().split(":")[1].trim()) - 1;
+        int periodSelected;
+        try {
+            periodSelected = Integer.parseInt(periodSelect.getValue().split(":")[1].trim()) - 1;
+        } catch (Exception e) {
+            periodSelected = -1;
+        }
+        return periodSelected;
     }
 
     private int getPercentPresenceInSubject(int quantityOfabscence, long totalTime) {
-        int abscenceInHours = (quantityOfabscence*50)/60;
-        return (int)(100 - (abscenceInHours*100)/totalTime);
+        int abscenceInHours = (quantityOfabscence * 50) / 60;
+        return (int) (100 - (abscenceInHours * 100) / totalTime);
     }
 
     @FXML
@@ -85,38 +96,47 @@ public class Frequency implements Initializable {
         subjectSelect.getItems().clear();
         tableView.getItems().clear();
         int periodSelected = getPeriodSelected();
-        ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-        /**
-         * Aqui pega-se todas as disciplinas do periodo selecionado
-         */
-        for(Subject item: subjects){
+        if (periodSelected != -1) {
+            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
             /**
-             * Aqui pega-se todas as datas que houve falta daquela disciplina
+             * Aqui pega-se todas as disciplinas do periodo selecionado
              */
-            for(String frequency: item.getFrequency()) {
-                setDataInTable(frequency ,item.getName());
+            for (Subject item : subjects) {
+                /**
+                 * Aqui pega-se todas as datas que houve falta daquela disciplina
+                 */
+                for (String frequency : item.getFrequency()) {
+                    setDataInTable(frequency, item.getName());
+                }
+                subjectSelect.getItems().add(item.getName());
             }
-            subjectSelect.getItems().add(item.getName());
+        } else {
+            subjectSelect.getItems().add("Não há matérias disponíveis.");
         }
     }
 
     @FXML
     private void handleSubjectSelect() {
-        if(subjectSelect.getValue() != null) {
+        if (subjectSelect.getValue() != null) {
             tableView.getItems().clear();
             int periodSelected = getPeriodSelected();
-            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-            String percentPrescenceSubject = "";
-            for(Subject subject:subjects) {
-                if(subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
-                    for(String frequency: subject.getFrequency()) {
-                        setDataInTable(frequency ,subject.getName());
+            if (periodSelected != -1) {
+                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
+                String percentPrescenceSubject = "";
+                for (Subject subject : subjects) {
+                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
+                        for (String frequency : subject.getFrequency()) {
+                            setDataInTable(frequency, subject.getName());
+                        }
+                        percentPrescenceSubject = String
+                                .valueOf(getPercentPresenceInSubject(subject.getFrequency().size(), subject.getTime()));
                     }
-                    percentPrescenceSubject = String.valueOf(getPercentPresenceInSubject(subject.getFrequency().size(), subject.getTime()));
                 }
+                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
+                percentText.setText(percentPrescenceSubject + "%");
+            } else {
+                infoText.setText("Não há disciplinas disponíveis");
             }
-            infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
-            percentText.setText(percentPrescenceSubject+"%");
         }
     }
 
