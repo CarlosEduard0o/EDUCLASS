@@ -20,11 +20,10 @@ public class StudentService {
         return student;
     }
 
-
     public static Student setStudentInfo() {
         Student student = new Student();
         String pathUser = UserUtil.getPathUser();
-        HashMap<String, String> userResult = TextFile.readTextFileMapping(pathUser+"informations.txt");
+        HashMap<String, String> userResult = TextFile.readTextFileMapping(pathUser + "informations.txt");
 
         // --Padrao--
         student.setName(userResult.get("nome"));
@@ -34,17 +33,16 @@ public class StudentService {
         student.setAddress(userResult.get("endereço"));
         // --Fim Padrao--
 
-
-        File fileExist = new File(pathUser+"subjects.json");
-        if(fileExist.exists()) {
-            JSONArray subjectsFile = JsonFile.readJsonFile(pathUser+"subjects.json");
+        File fileExist = new File(pathUser + "subjects.json");
+        if (fileExist.exists()) {
+            JSONArray subjectsFile = JsonFile.readJsonFile(pathUser + "subjects.json");
 
             ArrayList<ArrayList<Subject>> periods = new ArrayList<>();
 
-            for(Object arr: subjectsFile) {
+            for (Object arr : subjectsFile) {
                 JSONArray periodsFile = (JSONArray) arr;
                 ArrayList<Subject> subjects = new ArrayList<>();
-                for(Object objectOfSubjct : periodsFile) {
+                for (Object objectOfSubjct : periodsFile) {
                     Subject subject = new Subject();
                     JSONObject jsonObject = (JSONObject) objectOfSubjct;
                     subject.setName((String) jsonObject.get("name"));
@@ -62,13 +60,13 @@ public class StudentService {
             student.setPeriodsSubjects(periods);
         }
 
-
-//        JSONArray courseInformationsArray = JsonFile.readJsonFile(pathUser+"courseInformations.json");
-//        JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
-//
-//        student.setTeamId((String) courseInformations.get("team"));
-//        student.setPeriod((Long) courseInformations.get("period"));
-//        student.setSituation((String) courseInformations.get("situation"));
+        // JSONArray courseInformationsArray =
+        // JsonFile.readJsonFile(pathUser+"courseInformations.json");
+        // JSONObject courseInformations = (JSONObject) courseInformationsArray.get(0);
+        //
+        // student.setTeamId((String) courseInformations.get("team"));
+        // student.setPeriod((Long) courseInformations.get("period"));
+        // student.setSituation((String) courseInformations.get("situation"));
         student.setCourseId("si");
 
         StudentService.student = student;
@@ -77,7 +75,7 @@ public class StudentService {
 
     public static Student setStudentInfoForList(String pathUser) {
         Student student = new Student();
-        HashMap<String, String> userResult = TextFile.readTextFileMapping(pathUser+"informations.txt");
+        HashMap<String, String> userResult = TextFile.readTextFileMapping(pathUser + "informations.txt");
 
         // --Padrao--
         student.setName(userResult.get("nome"));
@@ -88,14 +86,14 @@ public class StudentService {
         student.setSituation(userResult.get("situation"));
         // --Fim Padrao--
 
-        JSONArray subjectsFile = JsonFile.readJsonFile(pathUser+"subjects.json");
+        JSONArray subjectsFile = JsonFile.readJsonFile(pathUser + "subjects.json");
 
         ArrayList<ArrayList<Subject>> periods = new ArrayList<>();
-        if(subjectsFile != null) {
-            for(Object arr: subjectsFile) {
+        if (subjectsFile != null) {
+            for (Object arr : subjectsFile) {
                 JSONArray periodsFile = (JSONArray) arr;
                 ArrayList<Subject> subjects = new ArrayList<>();
-                for(Object objectOfSubjct : periodsFile) {
+                for (Object objectOfSubjct : periodsFile) {
                     Subject subject = new Subject();
                     JSONObject jsonObject = (JSONObject) objectOfSubjct;
                     subject.setName((String) jsonObject.get("name"));
@@ -110,7 +108,6 @@ public class StudentService {
                 periods.add(subjects);
             }
         }
-
 
         student.setPeriodsSubjects(periods);
         student.setCourseId("si");

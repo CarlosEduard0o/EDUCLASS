@@ -26,14 +26,13 @@ import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class Template extends Application implements Initializable{
+public class Template extends Application implements Initializable {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -42,7 +41,6 @@ public class Template extends Application implements Initializable{
 
         Image icon = new Image("file:src/main/resources/br/com/educlass/images/icon.png");
         primaryStage.getIcons().add(icon);
-
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -84,13 +82,13 @@ public class Template extends Application implements Initializable{
     private Text extraText;
 
     @FXML
-    private AnchorPane contentContainer; //w=450 h=400
+    private AnchorPane contentContainer; // w=450 h=400
 
     private void setUserPicture() {
         this.pathUser = UserUtil.getPathUser();
 
         try {
-            Image image = new Image("file:"+pathUser+"photo.jpeg", false);
+            Image image = new Image("file:" + pathUser + "photo.jpeg", false);
             userImageContainer.setFill(new ImagePattern(image));
         } catch (Exception e) {
             Image image = new Image("file:src/main/resources/br/com/educlass/images/userIcon.png", false);
@@ -101,21 +99,19 @@ public class Template extends Application implements Initializable{
 
     private void setUserInformations() {
         Student student = StudentService.setStudentInfo();
-        HashMap<String, String> texts = Language.getTexts("src/main/resources/br/com/educlass/view/student/template/languages/");
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/student/template/languages/");
 
-        name.setText(texts.get("name")+": " + student.getName());
+        name.setText(texts.get("name") + ": " + student.getName());
 
-        JSONArray courseInfoArray = JsonFile.readJsonFile
-                ("db/course/"+student.getCourseId()+"/informations.json");
-
+        JSONArray courseInfoArray = JsonFile.readJsonFile("db/course/" + student.getCourseId() + "/informations.json");
 
         JSONObject courseInfoJson = (JSONObject) courseInfoArray.get(0);
 
-        course.setText(texts.get("course")+": " + student.getCourseId().toUpperCase());
-        register.setText(texts.get("register")+": " + student.getRegistration());
+        course.setText(texts.get("course") + ": " + student.getCourseId().toUpperCase());
+        register.setText(texts.get("register") + ": " + student.getRegistration());
         frequencyText.setText(texts.get("frequencyText"));
         gradesText.setText(texts.get("gradesText"));
-
 
     }
 
@@ -133,14 +129,14 @@ public class Template extends Application implements Initializable{
 
         URL fxmlURl = Frequency.class.getResource("frequency.fxml");
 
-        if(fxmlURl != null) {
+        if (fxmlURl != null) {
             Parent root = FXMLLoader.load(fxmlURl);
             contentContainer.getChildren().add(root);
         }
     }
 
     @FXML
-    protected void notesOptionSelect() throws IOException{
+    protected void notesOptionSelect() throws IOException {
         contentContainer.getChildren().clear();
         frequencyOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
         gradesOptionContainer.setStyle("-fx-background-color: white");
@@ -149,8 +145,6 @@ public class Template extends Application implements Initializable{
         Parent root = FXMLLoader.load(Grades.class.getResource("grades.fxml"));
         contentContainer.getChildren().add(root);
     }
-
-
 
     @FXML
     protected void extraOptionSelect() throws IOException {
@@ -161,7 +155,7 @@ public class Template extends Application implements Initializable{
 
         URL fxmlURl = ExtraController.class.getResource("extra.fxml");
 
-        if(fxmlURl != null) {
+        if (fxmlURl != null) {
             Parent root = FXMLLoader.load(fxmlURl);
             contentContainer.getChildren().add(root);
         }

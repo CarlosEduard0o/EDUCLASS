@@ -132,7 +132,7 @@ public class AdmTemplateController extends Application implements Initializable 
     }
 
     @FXML
-    private void exitButtonPressed(){
+    private void exitButtonPressed() {
         SceneController sceneController = new SceneController();
 
         sceneController.switchScene(templatePane.getScene().getWindow(),

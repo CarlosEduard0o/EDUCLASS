@@ -1,0 +1,27 @@
+[
+    [
+      {
+        "id": "20230000",
+        "faltas":2,
+        "notas": 40,
+        "period": 1
+      },
+      {
+        "id": "20230001",
+        "faltas":2,
+        "notas": 30,
+        "period": 1
+      },
+      {
+        "id": "20230002",
+        "faltas":2,
+        "notas": 20,
+        "period": 1
+      },{
+      "id": "20230003",
+      "faltas":2,
+      "notas": 10,
+      "period": 1
+    }
+    ]
+]

@@ -79,8 +79,8 @@ public class AdmnistratorService {
 
         ArrayList<Teacher> teachers = new ArrayList<>();
         for (String registration : registrationFolders) {
-            String pathStudent = "db/users/teachers/" + registration + "/";
-            teachers.add(TeacherService.setTeacherInfoForList(pathStudent));
+            String pathTeacher = "db/users/teachers/" + registration + "/";
+            teachers.add(TeacherService.setTeacherInfoForList(pathTeacher));
         }
         return teachers;
     }

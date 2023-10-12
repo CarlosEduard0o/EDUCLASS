@@ -49,7 +49,7 @@ public class Grades implements Initializable {
     }
 
     private void setPeriodSelectOptions() {
-        if(student.getPeriodsSubjects() != null) {
+        if (student.getPeriodsSubjects() != null) {
             int periodSize = student.getPeriodsSubjects().size();
             int i = 1;
             while (i <= periodSize) {
@@ -66,7 +66,7 @@ public class Grades implements Initializable {
         try {
             return Integer.parseInt(periodSelect.getValue().split(":")[1].trim()) - 1;
         } catch (Exception e) {
-                periodSelected = -1;
+            periodSelected = -1;
             return periodSelected;
         }
     }
@@ -79,7 +79,7 @@ public class Grades implements Initializable {
         subjectSelect.getItems().clear();
         tableView.getItems().clear();
         int periodSelected = getPeriodSelected();
-        if(periodSelected != -1) {
+        if (periodSelected != -1) {
             ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
             /*
              * Aqui pega-se todas as disciplinas do periodo selecionado
@@ -100,15 +100,15 @@ public class Grades implements Initializable {
 
     @FXML
     private void handleSubjectSelect() {
-        if(subjectSelect.getValue() != null) {
+        if (subjectSelect.getValue() != null) {
             tableView.getItems().clear();
             int periodSelected = getPeriodSelected();
-            if(periodSelected != -1) {
+            if (periodSelected != -1) {
                 ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-                for(Subject subject:subjects) {
-                    if(subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
-                        for(String grade: subject.getGrades()) {
-                            setDataInTable(grade.replace("-","/") ,subject.getName());
+                for (Subject subject : subjects) {
+                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
+                        for (String grade : subject.getGrades()) {
+                            setDataInTable(grade.replace("-", "/"), subject.getName());
                         }
                     }
                 }
@@ -118,7 +118,6 @@ public class Grades implements Initializable {
             }
         }
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

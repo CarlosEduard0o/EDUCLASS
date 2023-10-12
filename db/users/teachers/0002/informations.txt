@@ -1,6 +1,7 @@
-nome:Joazinho
-cpf:15151472
-endereço:alas,dlamsd
-email:akdmaksm
-matricula:T0002
-situation:ativo
+nome:Nome do professor(a)
+curso:SI
+identitade:12.345.678-9
+cpf:123.456.789-12
+email:carlos@gmail.com
+endereço:Rua x; Número x; Bairro XXX XXXXX
+matricula:T2023

@@ -1,6 +1,5 @@
 package br.com.educlass.model.subjects;
 
-
 import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import lombok.AllArgsConstructor;
@@ -25,4 +24,5 @@ public class Subject {
     private String situation;
     private ArrayList<Teacher> teachers;
     private Long period;
+    private ArrayList<String> enrolledStudents; // Alunos matriculados nessa disciplina
 }

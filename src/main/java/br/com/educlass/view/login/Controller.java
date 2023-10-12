@@ -7,6 +7,7 @@ import br.com.educlass.util.TextFile;
 import br.com.educlass.util.SceneController;
 import br.com.educlass.view.student.template.Template;
 import br.com.educlass.view.configuration.ConfigurationIcon;
+import br.com.educlass.view.teacher.template.TemplateTeacher;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -69,13 +70,14 @@ public class Controller implements Initializable {
 
         boolean userAdmin = isAdminUser(userInput);
 
-        if ((userInput.length() < 6 || userInput == null) &&
+        if ((userInput.length() < 6 && !userInput.contains("T") || userInput == null) &&
                 !userAdmin) {
             return null;
         }
 
-        if(userAdmin) {
-            String path = "db/users/_school/login.txt";
+        String path = "";
+        if (userAdmin) {
+            path = "db/users/_school/login.txt";
             TextFile textFile = new TextFile();
             ArrayList<String> fileLines = textFile.readTextFile(path);
 
@@ -86,15 +88,16 @@ public class Controller implements Initializable {
                 }
                 return result;
             }
+        } else if (userInput.toUpperCase().contains("T")) {
+            String id = userInput;
+            id = id.replace("T", "");
+            path = "db/users/teachers/"+id+"/login.txt";
+        }  else {
+            String year = userInput.substring(1, 5);
+            String semester = userInput.substring(0, 1);
+            String registration = userInput.substring(5);
+            path = "db/users/" + year + "/" + semester + "/" + registration + "/login.txt";
         }
-
-
-
-        String year = userInput.substring(1, 5);
-        String semester = userInput.substring(0, 1);
-        String registration = userInput.substring(5);
-
-        String path = "db/users/students/" + year + "/" + semester + "/" + registration + "/login.txt";
 
         TextFile textFile = new TextFile();
         ArrayList<String> fileLines = textFile.readTextFile(path);
@@ -112,7 +115,7 @@ public class Controller implements Initializable {
     private boolean verifyUserAndPassword() {
         HashMap<String, String> loginInformations = getLoginObject();
         if (loginInformations != null) {
-            if(loginInformations.get("password").equals(password.getText()) &&
+            if (loginInformations.get("password").equals(password.getText()) &&
                     loginInformations.get("username").equalsIgnoreCase(user.getText())) {
                 return true;
             } else {
@@ -124,13 +127,14 @@ public class Controller implements Initializable {
 
     private void loginUser() {
         boolean login = verifyUserAndPassword();
+        String userInput = user.getText();
         if (login == false) {
             userNotFound();
         } else {
             TextFile textFile = new TextFile();
 
             String path = "db/cache/user";
-            HashMap<String, String> loginInformations =  getLoginObject();
+            HashMap<String, String> loginInformations = getLoginObject();
             String username = loginInformations.get("username");
             String password = loginInformations.get("password");
             String content = "username:" + username + "\n" + "password:"
@@ -138,13 +142,19 @@ public class Controller implements Initializable {
             textFile.writeTextFile(path, content);
 
             SceneController sceneController = new SceneController();
-            if(isAdminUser(username)) {
+
+            if (userInput.toUpperCase().contains("T")) {
+                sceneController.switchScene(user.getScene().getWindow(),
+                        TemplateTeacher.class.getResource("template.fxml"));
+
+            } else if (isAdminUser(username)) {
                 sceneController.switchScene(user.getScene().getWindow(),
                         AdmTemplateController.class.getResource("template_adm.fxml"));
             } else {
                 sceneController.switchScene(user.getScene().getWindow(),
                         Template.class.getResource("template.fxml"));
             }
+
         }
     }
 

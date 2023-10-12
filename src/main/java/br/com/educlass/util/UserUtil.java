@@ -1,7 +1,6 @@
 package br.com.educlass.util;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class UserUtil {
     public static String getPathUser() {
@@ -27,23 +26,23 @@ public class UserUtil {
      * @return db/users/students/"+year+"/"+semester+"/"+id/;
      */
     public static String getStudentUserPathById(String registration) {
-        String year = registration.substring(1,5);
-        String semester = registration.substring(0,1);
+        String year = registration.substring(1, 5);
+        String semester = registration.substring(0, 1);
         String id = registration.substring(5);
 
-        String pathUser = "db/users/students/"+year+"/"+semester+"/"+id+"/";
-        return  pathUser;
+        String pathUser = "db/users/students/" + year + "/" + semester + "/" + id + "/";
+        return pathUser;
     }
 
     public static String getPathTeacher() {
-        ArrayList<String> textResult = TextFile.readTextFile( "db/cache/user.txt");
+        ArrayList<String> textResult = TextFile.readTextFile("db/cache/user.txt");
 
         for (String s : textResult) {
             String[] stringSplited = s.split(":");
-            if(stringSplited[0].equals("username")) {
-                String username = stringSplited[0].substring(1);
+            if (stringSplited[0].equals("username")) {
+                String username = stringSplited[1].substring(1);
 
-                String path = "db/users/teachers/"+username+"/";
+                String path = "db/users/teachers/" + username + "/";
                 return path;
             }
         }
@@ -58,7 +57,7 @@ public class UserUtil {
     public static String getTeacherUserPathById(String registration) {
         String id = registration.substring(1);
 
-        String pathUser = "db/users/teachers/"+id+"/";
-        return  pathUser;
+        String pathUser = "db/users/teachers/" + id + "/";
+        return pathUser;
     }
 }
