@@ -1,0 +1,7 @@
+nome:Milton Caraglio
+curso:SI
+cpf:78787878778
+endereço:rua alvorada
+email:caraglio.24@gmail.com
+matricula:2202300012
+situation:matriculado

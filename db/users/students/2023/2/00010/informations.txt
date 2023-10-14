@@ -1,0 +1,7 @@
+nome:Power Guidão
+curso:SI
+cpf:44422255585
+endereço:rua do Power
+email:p.guidao@gmail.com
+matricula:2202300010
+situation:matriculado

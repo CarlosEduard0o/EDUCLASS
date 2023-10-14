@@ -1,0 +1,7 @@
+nome:Deide Costa
+curso:SI
+cpf:24242424242
+endereço:rua deide
+email:d.costa@outlook.com
+matricula:2202300011
+situation:matriculado

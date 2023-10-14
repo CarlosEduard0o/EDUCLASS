@@ -1,0 +1,7 @@
+nome:Paula Trazz
+curso:SI
+cpf:52563685845
+endereço:rua margarida
+email:paula@gmail.com
+matricula:2202300008
+situation:matriculado

@@ -1,0 +1,7 @@
+nome:Kevin Mammar
+curso:SI
+cpf:85241252687
+endereço:rua fernaneds
+email:kevin.m@outlook.com
+matricula:2202300006
+situation:matriculado

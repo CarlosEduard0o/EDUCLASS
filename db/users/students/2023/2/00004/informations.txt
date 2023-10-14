@@ -1,0 +1,7 @@
+nome:Cimmaz Turbo
+curso:SI
+cpf:95175385245
+endereço:rua 24
+email:cim.tur@gmail.com
+matricula:2202300004
+situation:matriculado

@@ -1,0 +1,7 @@
+nome:Jalin Rabey
+curso:SI
+cpf:12345678924
+endereço:rua 13
+email:jalin.rabey@gmail
+matricula:2202300003
+situation:matriculado
