@@ -57,7 +57,7 @@ public class StudentService {
                 periods.add(subjects);
             }
 
-            student.setPeriodsSubjects(periods);
+//            student.setPeriodsSubjects(periods);
         }
 
         // JSONArray courseInformationsArray =
@@ -90,26 +90,26 @@ public class StudentService {
 
         ArrayList<ArrayList<Subject>> periods = new ArrayList<>();
         if (subjectsFile != null) {
-            for (Object arr : subjectsFile) {
-                JSONArray periodsFile = (JSONArray) arr;
-                ArrayList<Subject> subjects = new ArrayList<>();
-                for (Object objectOfSubjct : periodsFile) {
-                    Subject subject = new Subject();
-                    JSONObject jsonObject = (JSONObject) objectOfSubjct;
-                    subject.setName((String) jsonObject.get("name"));
-                    subject.setTime((Long) jsonObject.get("tempo"));
-                    subject.setFrequency((ArrayList<String>) jsonObject.get("faltas"));
-                    subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
-                    subject.setSituation((String) jsonObject.get("situation"));
-                    subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
-                    subject.setPeriod((Long) jsonObject.get("period"));
-                    subjects.add(subject);
-                }
-                periods.add(subjects);
-            }
+//            for (Object arr : subjectsFile) {
+//                JSONArray periodsFile = (JSONArray) arr;
+//                ArrayList<Subject> subjects = new ArrayList<>();
+//                for (Object objectOfSubjct : periodsFile) {
+//                    Subject subject = new Subject();
+//                    JSONObject jsonObject = (JSONObject) objectOfSubjct;
+//                    subject.setName((String) jsonObject.get("name"));
+//                    subject.setTime((Long) jsonObject.get("tempo"));
+//                    subject.setFrequency((ArrayList<String>) jsonObject.get("faltas"));
+//                    subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
+//                    subject.setSituation((String) jsonObject.get("situation"));
+//                    subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
+//                    subject.setPeriod((Long) jsonObject.get("period"));
+//                    subjects.add(subject);
+//                }
+//                periods.add(subjects);
+//            }
         }
 
-        student.setPeriodsSubjects(periods);
+//        student.setPeriodsSubjects(periods);
         student.setCourseId("si");
 
         return student;

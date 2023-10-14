@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student extends Person {
-   private ArrayList<ArrayList<Subject>> periodsSubjects;
+   private ArrayList<Subject> subjects;
    private String teamId;
    private Long period;
    private String Situation;

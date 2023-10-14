@@ -60,16 +60,16 @@ public class Frequency implements Initializable {
     }
 
     private void setPeriodSelectOptions() {
-        if (student.getPeriodsSubjects() != null) {
-            int periodSize = student.getPeriodsSubjects().size();
-            int i = 1;
-            while (i <= periodSize) {
-                periodSelect.getItems().add("Periodo: " + i);
-                i = i + 1;
-            }
-        } else {
-            periodSelect.getItems().add("Não há períodos disponíveis.");
-        }
+//        if (student.getPeriodsSubjects() != null) {
+//            int periodSize = student.getPeriodsSubjects().size();
+//            int i = 1;
+//            while (i <= periodSize) {
+//                periodSelect.getItems().add("Periodo: " + i);
+//                i = i + 1;
+//            }
+//        } else {
+//            periodSelect.getItems().add("Não há períodos disponíveis.");
+//        }
     }
 
     private int getPeriodSelected() {
@@ -96,48 +96,48 @@ public class Frequency implements Initializable {
         subjectSelect.getItems().clear();
         tableView.getItems().clear();
         int periodSelected = getPeriodSelected();
-        if (periodSelected != -1) {
-            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-            /**
-             * Aqui pega-se todas as disciplinas do periodo selecionado
-             */
-            for (Subject item : subjects) {
-                /**
-                 * Aqui pega-se todas as datas que houve falta daquela disciplina
-                 */
-                for (String frequency : item.getFrequency()) {
-                    setDataInTable(frequency, item.getName());
-                }
-                subjectSelect.getItems().add(item.getName());
-            }
-        } else {
-            subjectSelect.getItems().add("Não há matérias disponíveis.");
-        }
+//        if (periodSelected != -1) {
+//            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
+//            /**
+//             * Aqui pega-se todas as disciplinas do periodo selecionado
+//             */
+//            for (Subject item : subjects) {
+//                /**
+//                 * Aqui pega-se todas as datas que houve falta daquela disciplina
+//                 */
+//                for (String frequency : item.getFrequency()) {
+//                    setDataInTable(frequency, item.getName());
+//                }
+//                subjectSelect.getItems().add(item.getName());
+//            }
+//        } else {
+//            subjectSelect.getItems().add("Não há matérias disponíveis.");
+//        }
     }
 
     @FXML
     private void handleSubjectSelect() {
-        if (subjectSelect.getValue() != null) {
-            tableView.getItems().clear();
-            int periodSelected = getPeriodSelected();
-            if (periodSelected != -1) {
-                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-                String percentPrescenceSubject = "";
-                for (Subject subject : subjects) {
-                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
-                        for (String frequency : subject.getFrequency()) {
-                            setDataInTable(frequency, subject.getName());
-                        }
-                        percentPrescenceSubject = String
-                                .valueOf(getPercentPresenceInSubject(subject.getFrequency().size(), subject.getTime()));
-                    }
-                }
-                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
-                percentText.setText(percentPrescenceSubject + "%");
-            } else {
-                infoText.setText("Não há disciplinas disponíveis");
-            }
-        }
+//        if (subjectSelect.getValue() != null) {
+//            tableView.getItems().clear();
+//            int periodSelected = getPeriodSelected();
+//            if (periodSelected != -1) {
+//                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
+//                String percentPrescenceSubject = "";
+//                for (Subject subject : subjects) {
+//                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
+//                        for (String frequency : subject.getFrequency()) {
+//                            setDataInTable(frequency, subject.getName());
+//                        }
+//                        percentPrescenceSubject = String
+//                                .valueOf(getPercentPresenceInSubject(subject.getFrequency().size(), subject.getTime()));
+//                    }
+//                }
+//                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
+//                percentText.setText(percentPrescenceSubject + "%");
+//            } else {
+//                infoText.setText("Não há disciplinas disponíveis");
+//            }
+//        }
     }
 
     @Override

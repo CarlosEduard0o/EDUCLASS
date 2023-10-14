@@ -24,5 +24,6 @@ public class Subject {
     private String situation;
     private ArrayList<Teacher> teachers;
     private Long period;
-    private ArrayList<String> enrolledStudents; // Alunos matriculados nessa disciplina
+    private Teacher uniqueTeacher;
+    private ArrayList<Student> enrolledStudents; // Alunos matriculados nessa disciplina
 }

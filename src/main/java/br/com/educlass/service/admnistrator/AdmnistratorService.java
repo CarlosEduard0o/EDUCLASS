@@ -6,6 +6,7 @@ import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.model.subjects.Subject;
 import br.com.educlass.service.admnistrator.AdmnistratorStudentService.AdmnistratorStudentService;
+import br.com.educlass.service.admnistrator.AdmnistratorSubjectService.AdmnistratorSubjectService;
 import br.com.educlass.service.admnistrator.AdmnistratorTeacherService.AdmnistratorTeacherService;
 import br.com.educlass.service.student.StudentService;
 import br.com.educlass.service.teacher.TeacherService;
@@ -21,8 +22,12 @@ public class AdmnistratorService {
 
     private static Institution administrator;
 
-    public static Institution getStudent() {
+    public static Institution getAdmnistrator() {
         return administrator;
+    }
+
+    public static void setAdmnistrator(Institution institution) {
+        administrator = institution;
     }
 
     public static ArrayList<Student> getListOfStudents() {
@@ -116,6 +121,7 @@ public class AdmnistratorService {
         institution.setStudents(setStudentsInformations());
 
         AdmnistratorService.administrator = institution;
+        AdmnistratorService.administrator.setSubjects(AdmnistratorSubjectService.getAllSubjects());
         return administrator;
     }
 
