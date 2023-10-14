@@ -48,19 +48,6 @@ public class Grades implements Initializable {
         tableView.getItems().add(new GradeTable(date, subject));
     }
 
-    private void setPeriodSelectOptions() {
-        if (student.getPeriodsSubjects() != null) {
-            int periodSize = student.getPeriodsSubjects().size();
-            int i = 1;
-            while (i <= periodSize) {
-                periodSelect.getItems().add("Periodo: " + i);
-                i = i + 1;
-            }
-        } else {
-            periodSelect.getItems().add("Não há períodos disponíveis.");
-        }
-    }
-
     private int getPeriodSelected() {
         int periodSelected;
         try {
@@ -73,58 +60,66 @@ public class Grades implements Initializable {
 
     @FXML
     private void handlePeriodSelect() {
-        this.tableView.setVisible(true);
-        setFactoryTable();
-        infoText.setText("Selecione uma disciplina para obter mais informações.");
-        subjectSelect.getItems().clear();
-        tableView.getItems().clear();
-        int periodSelected = getPeriodSelected();
-        if (periodSelected != -1) {
-            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
+//        this.tableView.setVisible(true);
+//        setFactoryTable();
+//        infoText.setText("Selecione uma disciplina para obter mais informações.");
+//        subjectSelect.getItems().clear();
+//        tableView.getItems().clear();
+//        int periodSelected = getPeriodSelected();
+//        if (periodSelected != -1) {
+//            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
             /*
              * Aqui pega-se todas as disciplinas do periodo selecionado
              */
-            for (Subject item : subjects) {
-                /*
-                 * Aqui pega-se todas as datas que houve falta daquela disciplina
-                 */
-                for (String grade : item.getGrades()) {
-                    setDataInTable(grade.replace("-", "/"), item.getName());
-                }
-                subjectSelect.getItems().add(item.getName());
-            }
-        } else {
-            subjectSelect.getItems().add("Não há matérias disponíveis.");
-        }
+//            for (Subject item : subjects) {
+//                /*
+//                 * Aqui pega-se todas as datas que houve falta daquela disciplina
+//                 */
+//                for (String grade : item.getGrades()) {
+//                    setDataInTable(grade.replace("-", "/"), item.getName());
+//                }
+//                subjectSelect.getItems().add(item.getName());
+//            }
+//        } else {
+//            subjectSelect.getItems().add("Não há matérias disponíveis.");
+//        }
     }
 
     @FXML
     private void handleSubjectSelect() {
-        if (subjectSelect.getValue() != null) {
-            tableView.getItems().clear();
-            int periodSelected = getPeriodSelected();
-            if (periodSelected != -1) {
-                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-                for (Subject subject : subjects) {
-                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
-                        for (String grade : subject.getGrades()) {
-                            setDataInTable(grade.replace("-", "/"), subject.getName());
-                        }
-                    }
-                }
-                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
-            } else {
-                infoText.setText("Não há disciplinas disponíveis");
+//        if (subjectSelect.getValue() != null) {
+//            tableView.getItems().clear();
+//            int periodSelected = getPeriodSelected();
+//            if (periodSelected != -1) {
+////                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
+////                for (Subject subject : subjects) {
+////                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
+////                        for (String grade : subject.getGrades()) {
+////                            setDataInTable(grade.replace("-", "/"), subject.getName());
+////                        }
+////                    }
+////                }
+////                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
+//            } else {
+//                infoText.setText("Não há disciplinas disponíveis");
+//            }
+//        }
+    }
+
+    private void setInitialInformations() {
+        if (student.getSubjects() != null) {
+            for (Subject subject : student.getSubjects()) {
+//                setDataInTable(subject.getGrades(), subject.getName());
             }
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.tableView.setVisible(false);
+        this.tableView.setVisible(true);
         this.student = StudentService.getStudent();
-
-        setPeriodSelectOptions();
+        setFactoryTable();
+        setInitialInformations();
         CursorUtil.handleCursorType(Cursor.DEFAULT);
     }
 }

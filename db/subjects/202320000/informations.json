@@ -1,0 +1,9 @@
+[
+  {
+    "name":"Algoritmos e Estrutura de dados",
+    "id": "1000000",
+    "teacher": "T2023",
+    "students": ["1202310000", "2202300001"],
+    "quantidade_de_aulas": 130
+  }
+]

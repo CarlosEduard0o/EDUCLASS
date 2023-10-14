@@ -6,6 +6,14 @@
     -fx-background-color: #636363;
 }
 
+.text {
+    -fx-font-size: 16;
+}
+
+.name-text {
+    -fx-font-size: 14;
+}
+
 .sidebar-informations {
     -fx-border-color: #505050;
     -fx-border-width: 0 0 1px 0;
@@ -28,5 +36,7 @@
 
 .sidebar-exitButton {
     -fx-background-color: #BA342B;
+    -fx-font-size: 18;
+    -fx-text-fill: white;
 }
 
