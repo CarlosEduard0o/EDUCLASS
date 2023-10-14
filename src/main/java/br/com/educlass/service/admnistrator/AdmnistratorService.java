@@ -69,7 +69,7 @@ public class AdmnistratorService {
             JSONObject jsonObject = (JSONObject) objectOfSubjct;
             subject.setName((String) jsonObject.get("name"));
             subject.setTime((Long) jsonObject.get("tempo"));
-            subject.setFrequency((ArrayList<String>) jsonObject.get("faltas"));
+            subject.setFrequency((Long) jsonObject.get("faltas"));
             subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
             subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
             subjects.add(subject);

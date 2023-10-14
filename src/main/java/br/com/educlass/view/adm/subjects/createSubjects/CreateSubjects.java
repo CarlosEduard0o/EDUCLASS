@@ -59,6 +59,8 @@ public class CreateSubjects implements Initializable {
 
     ObservableList<CreateSubjectTable> subjectsData;
 
+    String disciplineID;
+
     private void setFactoryTable() {
         selectColumn.setCellValueFactory( new PropertyValueFactory<CreateSubjectTable, String>("selectColumn"));
         idColumn.setCellValueFactory(new PropertyValueFactory<CreateSubjectTable, String>("idColumn"));
@@ -144,10 +146,12 @@ public class CreateSubjects implements Initializable {
         path = "db/subjects/"+year+semester+itemsLengthString+"/";
         Folders.createFolder(new File(path));
 
+        this.disciplineID = (year+semester+itemsLengthString);
+
         ArrayList<JSONObject> jsonObjects = new ArrayList<>();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", nameInput);
-        jsonObject.put("id", (year+semester+itemsLengthString));
+        jsonObject.put("id", disciplineID);
         jsonObject.put("teacher", comboboxTeacher.split("-")[0].trim());
         jsonObject.put("students", studentsIds);
         jsonObject.put("quantidade_de_aulas", quantityInput);
@@ -188,16 +192,18 @@ public class CreateSubjects implements Initializable {
                         jsonObject.put("teacher", itemInMemory.get("teacher"));
                         jsonObject.put("situation", itemInMemory.get("situation"));
                         jsonObject.put("tempo", itemInMemory.get("tempo"));
+                        jsonObject.put("faltas", itemInMemory.get("faltas"));
                         jsonObject.put("notas", itemInMemory.get("notas"));
                         jsonObject.put("period", itemInMemory.get("period"));
                         subjects.add(jsonObject);
                     }
                     JSONObject jsonObject = new JSONObject();
                     jsonObject.put("name", nameInput);
-                    jsonObject.put("id", (year+semester+itemsLengthString));
+                    jsonObject.put("id", disciplineID);
                     jsonObject.put("teacher", comboboxTeacher.split("-")[1].trim());
                     jsonObject.put("situation", "Cursando");
                     jsonObject.put("tempo", 0);
+                    jsonObject.put("faltas", 0);
                     jsonObject.put("notas", 0);
                     jsonObject.put("period", semester);
                     subjects.add(jsonObject);
@@ -207,10 +213,11 @@ public class CreateSubjects implements Initializable {
                     ArrayList<JSONObject> jsonObjects = new ArrayList<>();
                     JSONObject jsonObject = new JSONObject();
                     jsonObject.put("name", nameInput);
-                    jsonObject.put("id", (year+semester+itemsLengthString));
+                    jsonObject.put("id", disciplineID);
                     jsonObject.put("teacher", comboboxTeacher.split("-")[1].trim());
                     jsonObject.put("situation", "Cursando");
                     jsonObject.put("tempo", 0);
+                    jsonObject.put("faltas", 0);
                     jsonObject.put("notas", 0);
                     jsonObject.put("period", semester);
                     jsonObjects.add(jsonObject);
@@ -245,7 +252,7 @@ public class CreateSubjects implements Initializable {
                 String s = (String) o;
                 listOfSubjects.add(s);
             }
-            listOfSubjects.add( (year+semester+itemsLengthString));
+            listOfSubjects.add(disciplineID);
             JSONObject writeJson = new JSONObject();
             writeJson.put("list_of_subjects", listOfSubjects);
             ArrayList<JSONObject> jsonObjects = new ArrayList<>();
@@ -256,7 +263,7 @@ public class CreateSubjects implements Initializable {
             ArrayList<JSONObject> jsonObjects = new ArrayList<>();
             JSONObject jsonObject = new JSONObject();
             ArrayList<String> subjects = new ArrayList<>();
-            subjects.add((year+semester+itemsLengthString));
+            subjects.add(disciplineID);
             jsonObject.put("list_of_subjects", subjects);
             jsonObjects.add(jsonObject);
             JsonFile.writeJsonFile(jsonObjects, path, "subjects");

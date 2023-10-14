@@ -37,27 +37,21 @@ public class StudentService {
         if (fileExist.exists()) {
             JSONArray subjectsFile = JsonFile.readJsonFile(pathUser + "subjects.json");
 
-            ArrayList<ArrayList<Subject>> periods = new ArrayList<>();
-
-            for (Object arr : subjectsFile) {
-                JSONArray periodsFile = (JSONArray) arr;
-                ArrayList<Subject> subjects = new ArrayList<>();
-                for (Object objectOfSubjct : periodsFile) {
-                    Subject subject = new Subject();
-                    JSONObject jsonObject = (JSONObject) objectOfSubjct;
-                    subject.setName((String) jsonObject.get("name"));
-                    subject.setTime((Long) jsonObject.get("tempo"));
-                    subject.setFrequency((ArrayList<String>) jsonObject.get("faltas"));
-                    subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
-                    subject.setSituation((String) jsonObject.get("situation"));
-                    subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
-                    subject.setPeriod((Long) jsonObject.get("period"));
-                    subjects.add(subject);
-                }
-                periods.add(subjects);
+            ArrayList<Subject> subjects = new ArrayList<>();
+            for (Object o: subjectsFile) {
+                JSONObject jsonObject = (JSONObject) o;
+                Subject subject = new Subject();
+                subject.setName((String) jsonObject.get("name"));
+                subject.setTime((Long) jsonObject.get("tempo"));
+                subject.setFrequency((Long) jsonObject.get("faltas"));
+//                subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
+                subject.setSituation((String) jsonObject.get("situation"));
+                subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
+                subject.setPeriod(Long.valueOf((String) jsonObject.get("period")));
+                subject.setId((String) jsonObject.get("id"));
+                subjects.add(subject);
             }
-
-//            student.setPeriodsSubjects(periods);
+            student.setSubjects(subjects);
         }
 
         // JSONArray courseInformationsArray =

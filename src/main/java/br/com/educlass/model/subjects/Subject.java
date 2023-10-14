@@ -19,7 +19,7 @@ public class Subject {
     private String id;
     private String name;
     private Long time;
-    private ArrayList<String> frequency;
+    private Long frequency;
     private ArrayList<String> grades;
     private String situation;
     private ArrayList<Teacher> teachers;

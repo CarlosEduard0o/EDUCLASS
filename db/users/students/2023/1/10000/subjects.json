@@ -6,7 +6,8 @@
     "situation": "Cursando",
     "teacher": "T2023",
     "notas": ["25-25","45-75"],
-    "period": 1
+    "period": 1,
+    "id": "0"
   },
   {
     "name":"algoritmos 2",
@@ -15,7 +16,8 @@
     "situation": "Cursando",
     "notas": ["25-25","45-75"],
     "teacher": "T2023",
-    "period": 2
+    "period": 2,
+    "id": "1"
   },
   {
     "name":"2algoritmos",
@@ -24,7 +26,8 @@
     "situation": "Cursando",
     "teacher": "T2023",
     "notas": ["25-25","45-75"],
-    "period": 1
+    "period": 1,
+    "id": "2"
   },
   {
     "name":"2algoritmos 2",
@@ -33,6 +36,7 @@
     "situation": "Cursando",
     "notas": ["25-25","45-75"],
     "teacher": "T2023",
-    "period": 2
+    "period": 2,
+    "id": "3"
   }
 ]
