@@ -1,7 +1,6 @@
-nome:Nome do professor(a)
-curso:SI
-identitade:12.345.678-9
-cpf:123.456.789-12
-email:carlos@gmail.com
-endereço:Rua x; Número x; Bairro XXX XXXXX
-matricula:T2023
+nome:JAO
+cpf:1451
+endereço:ASDASDA
+email:SDAD2@GMAIL.COM
+matricula:T0002
+situation:ativo

@@ -19,10 +19,11 @@ public class Subject {
     private String id;
     private String name;
     private Long time;
-    private ArrayList<String> frequency;
+    private Long frequency;
     private ArrayList<String> grades;
     private String situation;
     private ArrayList<Teacher> teachers;
     private Long period;
-    private ArrayList<String> enrolledStudents; // Alunos matriculados nessa disciplina
+    private Teacher uniqueTeacher;
+    private ArrayList<Student> enrolledStudents; // Alunos matriculados nessa disciplina
 }

@@ -96,8 +96,10 @@ public class Controller implements Initializable {
             String year = userInput.substring(1, 5);
             String semester = userInput.substring(0, 1);
             String registration = userInput.substring(5);
-            path = "db/users/" + year + "/" + semester + "/" + registration + "/login.txt";
+            path = "db/users/students/" + year + "/" + semester + "/" + registration + "/login.txt";
         }
+
+        System.out.println(path);
 
         TextFile textFile = new TextFile();
         ArrayList<String> fileLines = textFile.readTextFile(path);

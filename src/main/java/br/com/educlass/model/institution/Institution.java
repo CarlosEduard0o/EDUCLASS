@@ -19,6 +19,6 @@ public class Institution {
     private String email;
     private ArrayList<Student> students;
     private ArrayList<Teacher> teachers;
-    private ArrayList<ArrayList<Subject>> subjects;
+    private ArrayList<Subject> subjects;
     private ArrayList<Course> courses;
 }

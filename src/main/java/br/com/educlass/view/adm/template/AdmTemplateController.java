@@ -1,11 +1,13 @@
 package br.com.educlass.view.adm.template;
 
 import br.com.educlass.model.institution.Institution;
+import br.com.educlass.model.subjects.Subject;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.SceneController;
 import br.com.educlass.view.adm.student.StudentController;
+import br.com.educlass.view.adm.subjects.SubjectsController;
 import br.com.educlass.view.adm.teacher.TeacherController;
 import br.com.educlass.view.login.Controller;
 import javafx.application.Application;
@@ -99,6 +101,7 @@ public class AdmTemplateController extends Application implements Initializable 
 
     @FXML
     private void studentOptionSelect() throws IOException {
+        contentContainer.getChildren().clear();
         studentsOptionContainer.setStyle("-fx-background-color: white");
         subjectsOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
         teacherOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
@@ -108,11 +111,14 @@ public class AdmTemplateController extends Application implements Initializable 
     }
 
     @FXML
-    private void subjectOptionSelect() {
+    private void subjectOptionSelect() throws IOException{
         contentContainer.getChildren().clear();
         studentsOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
         subjectsOptionContainer.setStyle("-fx-background-color: white");
         teacherOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
+
+        URL fxml = SubjectsController.class.getResource("subjects.fxml");
+        ContentContainer.setSceneContentContainer(fxml);
     }
 
     private void setAdmnistratorInfo() {

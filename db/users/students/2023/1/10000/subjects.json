@@ -1,42 +1,42 @@
 [
-    [
-      {
-        "name":"algoritmos",
-        "tempo":10,
-        "faltas":["26-07-2023","27-07-2023"],
-        "situation": "Cursando",
-        "teachers": [1202210086, 125810074],
-        "notas": ["25-25","45-75"],
-        "period": 1
-      },
-      {
-        "name":"algoritmos 2",
-        "tempo":40,
-        "faltas":["26-07-2023","27-07-2023"],
-        "situation": "Cursando",
-        "notas": ["25-25","45-75"],
-        "teachers": [1202210086, 125810074],
-        "period": 2
-      }
-    ],
-  [
-    {
-      "name":"2algoritmos",
-      "tempo":50,
-      "faltas":["26-07-2023","27-07-2023"],
-      "situation": "Cursando",
-      "teachers": [1202210086, 125810074],
-      "notas": ["25-25","45-75"],
-      "period": 1
-    },
-    {
-      "name":"2algoritmos 2",
-      "tempo":60,
-      "faltas":["26-07-2023","27-07-2023"],
-      "situation": "Cursando",
-      "notas": ["25-25","45-75"],
-      "teachers": [1202210086, 125810074],
-      "period": 2
-    }
-  ]
+  {
+    "name":"Algorítmos e Estrutura da Dados",
+    "tempo":10,
+    "faltas":0,
+    "situation": "Cursando",
+    "teacher": "T2023",
+    "notas": ["25-25","45-75"],
+    "period": 1,
+    "id": "0"
+  },
+  {
+    "name":"algoritmos 2",
+    "tempo":40,
+    "faltas":0,
+    "situation": "Cursando",
+    "notas": ["25-25","45-75"],
+    "teacher": "T2023",
+    "period": 2,
+    "id": "1"
+  },
+  {
+    "name":"2algoritmos",
+    "tempo":50,
+    "faltas":0,
+    "situation": "Cursando",
+    "teacher": "T2023",
+    "notas": ["25-25","45-75"],
+    "period": 1,
+    "id": "2"
+  },
+  {
+    "name":"2algoritmos 2",
+    "tempo":60,
+    "faltas":0,
+    "situation": "Cursando",
+    "notas": ["25-25","45-75"],
+    "teacher": "T2023",
+    "period": 2,
+    "id": "3"
+  }
 ]

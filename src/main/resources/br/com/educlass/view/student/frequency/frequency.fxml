@@ -9,25 +9,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.frequency.Frequency">
+<AnchorPane prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.frequency.Frequency">
    <children>
-<!--      <Gauge layoutX="25.0" layoutY="152.0" prefHeight="168.0" prefWidth="175.0" skinType="BAR" />-->
-      <ComboBox fx:id="periodSelect" layoutX="21.0" layoutY="48.0" onAction="#handlePeriodSelect" prefHeight="26.0" prefWidth="175.0" promptText="Selecione um período" />
-      <ComboBox fx:id="subjectSelect" layoutX="204.0" layoutY="48.0" onAction="#handleSubjectSelect" prefHeight="26.0" prefWidth="227.0" promptText="Selecione uma disciplina" />
-      <TableView fx:id="tableView" layoutX="20.0" layoutY="95.0" prefHeight="200.0" prefWidth="410.0">
+      <ComboBox fx:id="subjectSelect" layoutX="23.0" layoutY="61.0" onAction="#handleSubjectSelect" prefHeight="26.0" prefWidth="1042.0" promptText="Selecione uma disciplina" styleClass="comboBox" />
+      <TableView fx:id="tableView" layoutX="24.0" layoutY="99.0" prefHeight="539.0" prefWidth="1042.0" styleClass="tableView">
         <columns>
-          <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Data" />
-          <TableColumn fx:id="subjectColumn" prefWidth="310.0" text="Disciplina" />
+          <TableColumn fx:id="dateColumn" prefWidth="170.0" styleClass="centralize-column-table" text="quantidade" />
+          <TableColumn fx:id="subjectColumn" prefWidth="867.0" text="Disciplina" />
         </columns>
       </TableView>
-      <Text layoutX="23.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Período" wrappingWidth="42.971858978271484" />
-      <Text layoutX="205.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disciplina" wrappingWidth="65.37182235717773" />
-            <Text fx:id="percentText" layoutX="333.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+      <Text layoutX="23.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Disciplina" wrappingWidth="146.37182235717773" />
+            <Text fx:id="percentText" layoutX="24.0" layoutY="701.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1042.0">
                <font>
                   <Font name="Tw Cen MT" size="43.0" />
                </font>
             </Text>
-            <Text fx:id="infoText" layoutX="23.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="282.5386962890625">
+            <Text fx:id="infoText" layoutX="23.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" wrappingWidth="1042.0">
 <!--                Selecione um período e em seguida uma disciplina para obter mais informações.-->
                <font>
                   <Font size="14.0" />
