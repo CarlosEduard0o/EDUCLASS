@@ -1,7 +1,0 @@
-nome:Jacinto Leite Aquino Rego
-curso:SI
-cpf:85896974725
-endereço:rua maristela
-email:j.cinto@gmail.com
-matricula:2202300007
-situation:matriculado

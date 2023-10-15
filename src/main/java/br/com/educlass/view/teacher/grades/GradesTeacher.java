@@ -123,6 +123,8 @@ public class GradesTeacher implements Initializable {
                             arrayNotas.add(jsonObject.get("notas").toString());
                         }
                     }
+//                    System.out.println(arrayNotas);
+                    calcularMedia(arrayNotas);
                     try {
                         FileReader fileReader = new FileReader(pathInformations);
                         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -151,6 +153,13 @@ public class GradesTeacher implements Initializable {
         this.testValue.setVisible(true);
         this.testMessage.setVisible(true);
         tableView.setItems(dadosDosAlunos);
+    }
+
+//    private ArrayList<Integer> calcularMedia(ArrayList<String> arrayNotas){
+        private void calcularMedia(ArrayList<String> arrayNotas){
+        for (String elemento :arrayNotas){
+//            System.out.println(elemento);
+        }
     }
 
     private void setSubjectSelectOptions() {
@@ -186,6 +195,7 @@ public class GradesTeacher implements Initializable {
         ArrayList<Subject> arrayListSubject = new ArrayList<>();
         String path = UserUtil.getPathTeacher() + "subjects.json";
         JSONArray jsonArray =  JsonFile.readJsonFile(path);
+        if (jsonArray != null) {
         JSONObject jsonObject = (JSONObject) jsonArray.get(0);
         JSONArray jsonArrayListOfSubjects = (JSONArray) jsonObject.get("list_of_subjects");
         for (Object object : jsonArrayListOfSubjects) {
@@ -200,6 +210,7 @@ public class GradesTeacher implements Initializable {
             subject.setName(subjectName);
             subject.setEnrolledStudents(enrolledStudents);
             arrayListSubject.add(subject);
+        }
         }
         return arrayListSubject;
     }

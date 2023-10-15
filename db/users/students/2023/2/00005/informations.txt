@@ -1,7 +1,0 @@
-nome:Bejamin Aholla
-curso:SI
-cpf:12345678984
-endereço:rua do benja
-email:b.aholla@hotmail.com
-matricula:2202300005
-situation:matriculado

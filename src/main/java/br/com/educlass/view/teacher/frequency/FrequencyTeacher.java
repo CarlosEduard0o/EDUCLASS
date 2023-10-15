@@ -147,20 +147,22 @@ public class FrequencyTeacher implements Initializable {
         ArrayList<Subject> arrayListSubject = new ArrayList<>();
         String path = UserUtil.getPathTeacher() + "subjects.json";
         JSONArray jsonArray =  JsonFile.readJsonFile(path);
-        JSONObject jsonObject = (JSONObject) jsonArray.get(0);
-        JSONArray jsonArrayListOfSubjects = (JSONArray) jsonObject.get("list_of_subjects");
-        for (Object object : jsonArrayListOfSubjects) {
-            Subject subject = new Subject();
-            String subjectId = (String) object;
-            subject.setId(subjectId);
-            String pathDiscipline = "db/discipline/" + subjectId + "/informations.json";
-            JSONArray jsonArray2 = JsonFile.readJsonFile(pathDiscipline);
-            JSONObject jsonObject1 = (JSONObject) jsonArray2.get(0);
-            String subjectName = (String) jsonObject1.get("name");
-            ArrayList<String> enrolledStudents = (ArrayList<String>) jsonObject1.get("students");
-            subject.setName(subjectName);
-            subject.setEnrolledStudents(enrolledStudents);
-            arrayListSubject.add(subject);
+        if (jsonArray != null) {
+            JSONObject jsonObject = (JSONObject) jsonArray.get(0);
+            JSONArray jsonArrayListOfSubjects = (JSONArray) jsonObject.get("list_of_subjects");
+            for (Object object : jsonArrayListOfSubjects) {
+                Subject subject = new Subject();
+                String subjectId = (String) object;
+                subject.setId(subjectId);
+                String pathDiscipline = "db/discipline/" + subjectId + "/informations.json";
+                JSONArray jsonArray2 = JsonFile.readJsonFile(pathDiscipline);
+                JSONObject jsonObject1 = (JSONObject) jsonArray2.get(0);
+                String subjectName = (String) jsonObject1.get("name");
+                ArrayList<String> enrolledStudents = (ArrayList<String>) jsonObject1.get("students");
+                subject.setName(subjectName);
+                subject.setEnrolledStudents(enrolledStudents);
+                arrayListSubject.add(subject);
+            }
         }
         return arrayListSubject;
     }

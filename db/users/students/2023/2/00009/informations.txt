@@ -1,7 +1,0 @@
-nome:Paula Tejando
-curso:SI
-cpf:15126245487
-endereço:endereco desconhecido
-email:tejando@latras.com
-matricula:2202300009
-situation:matriculado
