@@ -20,9 +20,6 @@ import java.util.ResourceBundle;
 public class Grades implements Initializable {
 
     @FXML
-    private ComboBox<String> periodSelect;
-
-    @FXML
     private ComboBox<String> subjectSelect;
 
     @FXML
@@ -48,68 +45,36 @@ public class Grades implements Initializable {
         tableView.getItems().add(new GradeTable(date, subject));
     }
 
-    private int getPeriodSelected() {
-        int periodSelected;
-        try {
-            return Integer.parseInt(periodSelect.getValue().split(":")[1].trim()) - 1;
-        } catch (Exception e) {
-            periodSelected = -1;
-            return periodSelected;
-        }
-    }
-
-    @FXML
-    private void handlePeriodSelect() {
-//        this.tableView.setVisible(true);
-//        setFactoryTable();
-//        infoText.setText("Selecione uma disciplina para obter mais informações.");
-//        subjectSelect.getItems().clear();
-//        tableView.getItems().clear();
-//        int periodSelected = getPeriodSelected();
-//        if (periodSelected != -1) {
-//            ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-            /*
-             * Aqui pega-se todas as disciplinas do periodo selecionado
-             */
-//            for (Subject item : subjects) {
-//                /*
-//                 * Aqui pega-se todas as datas que houve falta daquela disciplina
-//                 */
-//                for (String grade : item.getGrades()) {
-//                    setDataInTable(grade.replace("-", "/"), item.getName());
-//                }
-//                subjectSelect.getItems().add(item.getName());
-//            }
-//        } else {
-//            subjectSelect.getItems().add("Não há matérias disponíveis.");
-//        }
-    }
-
     @FXML
     private void handleSubjectSelect() {
-//        if (subjectSelect.getValue() != null) {
-//            tableView.getItems().clear();
-//            int periodSelected = getPeriodSelected();
-//            if (periodSelected != -1) {
-////                ArrayList<Subject> subjects = student.getPeriodsSubjects().get(periodSelected);
-////                for (Subject subject : subjects) {
-////                    if (subjectSelect.getValue().equalsIgnoreCase(subject.getName())) {
-////                        for (String grade : subject.getGrades()) {
-////                            setDataInTable(grade.replace("-", "/"), subject.getName());
-////                        }
-////                    }
-////                }
-////                infoText.setText("Sua frequencia projetada pra essa disciplina é de:");
-//            } else {
-//                infoText.setText("Não há disciplinas disponíveis");
-//            }
-//        }
+        if (subjectSelect.getValue() != null) {
+            tableView.getItems().clear();
+                ArrayList<Subject> subjects = student.getSubjects();
+                double mediaFinalNecessaria = 0;
+                for (Subject subject : subjects) {
+                    if (subjectSelect.getValue().split("-")[0].trim().equalsIgnoreCase(subject.getId())) {
+                        for (String grade : subject.getGrades()) {
+                            setDataInTable(grade.replace("-", "/"), subject.getName());
+                            System.out.println(grade);
+                            if(!grade.replace("-", "/").equals("Sem notas")) {
+                                mediaFinalNecessaria =mediaFinalNecessaria + Integer.parseInt(grade.replace("-", "/"));
+                            }
+                        }
+                    }
+                    mediaFinalNecessaria = (1 * ((500 - (mediaFinalNecessaria * 6)) / 4));
+                    mediaFinalNecessaria = mediaFinalNecessaria >= 100 ? 100 : mediaFinalNecessaria;
+                }
+            infoText.setText("Sua média para a prova final é de: "  + mediaFinalNecessaria);
+        }
     }
 
     private void setInitialInformations() {
         if (student.getSubjects() != null) {
             for (Subject subject : student.getSubjects()) {
-//                setDataInTable(subject.getGrades(), subject.getName());
+                subjectSelect.getItems().add(subject.getId() + " - " + subject.getName());
+                for (String grade: subject.getGrades()) {
+                    setDataInTable(grade, subject.getName());
+                }
             }
         }
     }

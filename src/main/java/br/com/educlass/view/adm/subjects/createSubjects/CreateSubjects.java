@@ -166,6 +166,9 @@ public class CreateSubjects implements Initializable {
         String nameInput = textFieldNameSubject.getText();
         String comboboxTeacher = comboBoxSelectTeacher.getValue();
 
+        ArrayList<String> gradesNotFound = new ArrayList<>();
+        gradesNotFound.add("Sem notas");
+
         for (CreateSubjectTable createSubjectTable: subjectsData) {
             if(createSubjectTable.getSelectColumn().isSelected()) {
                 String studentId = createSubjectTable.getIdColumn();
@@ -204,7 +207,7 @@ public class CreateSubjects implements Initializable {
                     jsonObject.put("situation", "Cursando");
                     jsonObject.put("tempo", 0);
                     jsonObject.put("faltas", 0);
-                    jsonObject.put("notas", 0);
+                    jsonObject.put("notas", gradesNotFound);
                     jsonObject.put("period", semester);
                     subjects.add(jsonObject);
 
@@ -218,7 +221,7 @@ public class CreateSubjects implements Initializable {
                     jsonObject.put("situation", "Cursando");
                     jsonObject.put("tempo", 0);
                     jsonObject.put("faltas", 0);
-                    jsonObject.put("notas", 0);
+                    jsonObject.put("notas", gradesNotFound);
                     jsonObject.put("period", semester);
                     jsonObjects.add(jsonObject);
                     JsonFile.writeJsonFile(jsonObjects, path, "subjects");
