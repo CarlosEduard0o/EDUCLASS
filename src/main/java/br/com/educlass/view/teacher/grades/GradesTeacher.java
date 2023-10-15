@@ -70,9 +70,16 @@ public class GradesTeacher implements Initializable {
                 for (Object element : jsonArray) {
                     JSONObject jsonObject = (JSONObject) element;
                     if (jsonObject.get("name").equals(subjectSelect.getValue())) {
-                        stutendGradeData.setCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
+                        if (converterEmInt(stutendGradeData.getAddGrade()) > Integer.valueOf(valorProva)){
+                            showAlert("O valor da nota não pode ser maior que o valor da prova!");
+                        } else {
+                        if (jsonObject.get("notas").toString().equals("[\"Sem notas\"]")) {
+                            stutendGradeData.setFirstCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
+                        } else {
+                            stutendGradeData.setCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
+                        }
                         jsonObject.put("notas", stutendGradeData.getCurrentGrade());
-                    }
+                    }}
                     try {
                         // Escrever o arquivo uma vez após o loop
                         Files.write(Paths.get(path), jsonArray.toString().getBytes(), StandardOpenOption.CREATE,
@@ -83,10 +90,12 @@ public class GradesTeacher implements Initializable {
                 }
             }
             refreshTable();
+            testValue.clear();
         } else {
-            showAlert("É necessário colocar o valor da prova!");
-        }
+        showAlert("É necessário colocar o valor da prova!");
     }
+}
+
      private void showAlert(String message){
          Alert alert = new Alert(Alert.AlertType.WARNING);
          alert.setTitle("Alerta");
@@ -94,7 +103,6 @@ public class GradesTeacher implements Initializable {
          alert.setContentText(message);
          alert.showAndWait();
      }
-
 
     private void refreshTable(){
         dadosDosAlunos = FXCollections.observableArrayList();
@@ -134,9 +142,7 @@ public class GradesTeacher implements Initializable {
         }
         for (int i = 0; i < arrayNotas.size(); i++){
             studentGradeData studentData = new studentGradeData(arrayNomesAlunos.get(i), arrayMatricula.get(i));
-            if (!arrayNotas.get(i).equals("[]") || !arrayNotas.get(i).isEmpty()){
-                studentData.initializeArrayCurrentGrade(arrayNotas.get(i).replaceAll("[\\[\\]\"]", ""));
-            }
+            studentData.initializeArrayCurrentGrade(arrayNotas.get(i).replaceAll("[\\[\\]\"]", ""));
             dadosDosAlunos.add(studentData);
         }
         tableView.getItems().clear();
@@ -162,6 +168,18 @@ public class GradesTeacher implements Initializable {
         addGradeColumn.setCellValueFactory(new PropertyValueFactory<studentGradeData, String>("addGrade"));
         currentGradeColumn.setCellValueFactory(new PropertyValueFactory<studentGradeData, String>("currentGrade"));
         this.tableView.setTableMenuButtonVisible(true);
+    }
+
+    private int converterEmInt (TextField grade){
+        String textGrade = grade.getText(); // Sua String de entrada
+        try {
+            Integer intGrade = Integer.valueOf(textGrade);
+            int numero = intGrade.intValue(); // Para obter o valor primitivo int
+            return numero;
+        } catch (NumberFormatException e) {
+            System.err.println("Erro na conversão: " + e.getMessage());
+        }
+        return 0;
     }
 
     private ArrayList initData() {
@@ -224,11 +242,9 @@ public class GradesTeacher implements Initializable {
             }
         }
         for (int i = 0; i < arrayNotas.size(); i++){
-            studentGradeData studentData = new studentGradeData(arrayNomesAlunos.get(i), arrayMatricula.get(i));
-            if (!arrayNotas.get(i).equals("[]") || !arrayNotas.get(i).isEmpty()){
+                studentGradeData studentData = new studentGradeData(arrayNomesAlunos.get(i), arrayMatricula.get(i));
                 studentData.initializeArrayCurrentGrade(arrayNotas.get(i).replaceAll("[\\[\\]\"]", ""));
-            }
-            dadosDosAlunos.add(studentData);
+                dadosDosAlunos.add(studentData);
             }
         tableView.getItems().clear();
         this.sendGradeButton.setVisible(true);

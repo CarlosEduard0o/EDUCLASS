@@ -24,9 +24,16 @@ public class studentGradeData {
         this.idStudent = idStudent;
     }
 
-    public void setCurrentGrade (TextField grade, String tetValue){
+    public void setCurrentGrade (TextField grade, String testValue){
         if (!grade.getText().isEmpty()){
-            this.currentGrade.add(grade.getText() + " de " + tetValue);
+            this.currentGrade.add(" " + grade.getText() + " de " + testValue);
+        }
+    }
+
+    public void setFirstCurrentGrade (TextField grade, String testValue){
+        if (!grade.getText().isEmpty()){
+            this.currentGrade.remove(0);
+            this.currentGrade.add(0,  grade.getText() + " de " + testValue);
         }
     }
 
