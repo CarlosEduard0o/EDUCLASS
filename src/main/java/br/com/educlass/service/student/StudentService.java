@@ -44,7 +44,7 @@ public class StudentService {
                 subject.setName((String) jsonObject.get("name"));
                 subject.setTime((Long) jsonObject.get("tempo"));
                 subject.setFrequency((Long) jsonObject.get("faltas"));
-//                subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
+                subject.setGrades((ArrayList<String>) jsonObject.get("notas"));
                 subject.setSituation((String) jsonObject.get("situation"));
                 subject.setTeachers((ArrayList<Teacher>) jsonObject.get("teachers"));
                 subject.setPeriod(Long.valueOf((String) jsonObject.get("period")));
