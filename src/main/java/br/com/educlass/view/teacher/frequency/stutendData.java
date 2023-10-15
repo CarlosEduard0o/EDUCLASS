@@ -11,11 +11,13 @@ public class stutendData {
     private String studentName;
     private int skipClass;
     private CheckBox presence;
+    private String idStudent;
 
-    public stutendData(String name, int faltas) {
+    public stutendData(String name, int faltas, String idStudent) {
         this.studentName = name;
         this.skipClass = faltas;
         this.presence = new CheckBox();
+        this.idStudent = idStudent;
     }
 //    public void checkBoxAnalysis(){
 //        System.out.println(this.presence.isSelected());

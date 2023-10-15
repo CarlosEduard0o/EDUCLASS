@@ -6,31 +6,46 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class studentGradeData {
     private String studentName;
     private TextField addGrade;
-    private int currentGrade;
+    private ArrayList<String> currentGrade;
+    private String idStudent;
 
-    public studentGradeData(String name, int currentGrade) {
+    public studentGradeData(String name, String idStudent) {
         this.studentName = name;
-        this.currentGrade = currentGrade;
+        this.currentGrade = new ArrayList<>();
         this.addGrade = new TextField();
+        this.idStudent = idStudent;
     }
 
-    public void setCurrentGrade (TextField grade){
+    public void setCurrentGrade (TextField grade, String testValue){
         if (!grade.getText().isEmpty()){
-            this.currentGrade += Integer.parseInt(grade.getText());
+            this.currentGrade.add(" " + grade.getText() + " de " + testValue);
         }
+    }
+
+    public void setFirstCurrentGrade (TextField grade, String testValue){
+        if (!grade.getText().isEmpty()){
+            this.currentGrade.remove(0);
+            this.currentGrade.add(0,  grade.getText() + " de " + testValue);
+        }
+    }
+
+    public void initializeArrayCurrentGrade(String grade){
+        this.currentGrade.add(grade);
     }
 
     public TextField getAddGrade(){
         return addGrade;
     }
 
-    public int getCurrentGrade(){
+    public ArrayList<String> getCurrentGrade(){
         return this.currentGrade;
     }
 }
