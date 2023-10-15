@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.teacher.grades.GradesTeacher">
+<AnchorPane prefHeight="400.0" prefWidth="450.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.teacher.grades.GradesTeacher">
    <children>
       <ComboBox fx:id="subjectSelect" layoutX="20.0" layoutY="51.0" onAction="#handleSubjectSelect" prefHeight="26.0" prefWidth="410.0" promptText="Selecione uma disciplina" />
       <TableView fx:id="tableView" layoutX="20.0" layoutY="101.0" prefHeight="214.0" prefWidth="410.0">
@@ -21,7 +21,7 @@
             <TableColumn fx:id="currentGradeColumn" prefWidth="152.0" text="Notas" />
         </columns>
       </TableView>
-      <Text layoutX="209.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notas" />
+      <Text layoutX="209.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Notas" />
       <Button fx:id="sendGradeButton" layoutX="370.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#onSendGradeButtonClick" text="Enviar" />
       <Label fx:id="testMessage" layoutX="20.0" layoutY="346.0" text="Valor da prova: " />
       <TextField fx:id="testValue" layoutX="135.0" layoutY="341.0" prefHeight="31.0" prefWidth="60.0" />

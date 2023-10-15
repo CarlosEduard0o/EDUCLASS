@@ -1,7 +1,9 @@
 package br.com.educlass.view.teacher.grades;
 
+import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.model.subjects.Subject;
+import br.com.educlass.service.student.StudentService;
 import br.com.educlass.service.teacher.TeacherService;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.JsonFile;
@@ -112,7 +114,8 @@ public class GradesTeacher implements Initializable {
         ArrayList<Subject> subjects = initData();
         for (Subject subject : subjects) {
             if (subject.getName().equals(subjectSelect.getValue())) {
-                for (String idAlunos : subject.getEnrolledStudents()) {
+                for (Student student : subject.getEnrolledStudents()) {
+                    String idAlunos = student.getRegistration();
                     arrayMatricula.add(idAlunos);
                     String pathSubject = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/subjects.json";
                     String pathInformations = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/informations.txt";
@@ -202,13 +205,18 @@ public class GradesTeacher implements Initializable {
             Subject subject = new Subject();
             String subjectId = (String) object;
             subject.setId(subjectId);
-            String pathDiscipline = "db/discipline/" + subjectId + "/informations.json";
+            String pathDiscipline = "db/subjects/" + subjectId + "/informations.json";
             JSONArray jsonArray2 = JsonFile.readJsonFile(pathDiscipline);
             JSONObject jsonObject1 = (JSONObject) jsonArray2.get(0);
             String subjectName = (String) jsonObject1.get("name");
             ArrayList<String> enrolledStudents = (ArrayList<String>) jsonObject1.get("students");
             subject.setName(subjectName);
-            subject.setEnrolledStudents(enrolledStudents);
+            ArrayList<Student> students = new ArrayList<>();
+            for (String student : enrolledStudents){
+                Student atualStudent = StudentService.setStudentInfoForList(UserUtil.getStudentUserPathById(student));
+                students.add(atualStudent);
+            }
+            subject.setEnrolledStudents(students);
             arrayListSubject.add(subject);
         }
         }
@@ -224,7 +232,8 @@ public class GradesTeacher implements Initializable {
         ArrayList<Subject> subjects = initData();
         for (Subject subject : subjects) {
             if (subject.getName().equals(subjectSelect.getValue())) {
-                for (String idAlunos : subject.getEnrolledStudents()) {
+                for (Student student : subject.getEnrolledStudents()) {
+                    String idAlunos = student.getRegistration();
                     arrayMatricula.add(idAlunos);
                     String pathSubject = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/subjects.json";
                     String pathInformations = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/informations.txt";
