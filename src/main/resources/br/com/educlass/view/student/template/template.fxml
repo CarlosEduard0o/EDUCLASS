@@ -49,7 +49,7 @@
                   </Pane>
                   <Pane fx:id="extraOptionContainer" layoutY="100.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" prefHeight="43.0" prefWidth="190.0" styleClass="sidebar-options" stylesheets="@styles.css">
                      <children>
-                        <Text fx:id="extraText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra" textAlignment="CENTER" wrappingWidth="190.0">
+                        <Text fx:id="extraText" layoutY="28.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra" textAlignment="CENTER" wrappingWidth="190.0">
                            <font>
                               <Font size="16.0" />
                            </font></Text>

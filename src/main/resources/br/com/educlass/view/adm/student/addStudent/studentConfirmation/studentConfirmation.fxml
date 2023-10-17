@@ -10,11 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.student.addStudent.studentConfirmation.StudentConfirmationController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.student.addStudent.studentConfirmation.StudentConfirmationController">
    <children>
-      <Pane prefHeight="73.0" prefWidth="447.0" style="-fx-background-color: #3857;">
+      <Pane prefHeight="73.0" prefWidth="447.0" styleClass="header">
          <children>
-            <Text fx:id="textTitle" layoutX="185.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revisão">
+            <Text fx:id="textTitle" layoutX="507.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Revisão">
                <font>
                   <Font name="Yu Gothic Bold" size="20.0" />
                </font>
@@ -26,17 +26,17 @@
             </ImageView>
          </children>
       </Pane>
-      <Text fx:id="textName" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" textAlignment="CENTER" wrappingWidth="447.0">
+      <Text fx:id="textName" layoutX="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Nome" textAlignment="CENTER" wrappingWidth="720.0">
          <rotationAxis>
             <Point3D />
          </rotationAxis>
       </Text>
-      <Text fx:id="textCpf" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cpf" textAlignment="CENTER" wrappingWidth="447.0" />
-      <Text fx:id="textAddress" layoutX="1.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" textAlignment="CENTER" wrappingWidth="447.0" />
-      <Button layoutX="186.0" layoutY="319.0" mnemonicParsing="false" onMousePressed="#okButtonPressed" prefHeight="26.0" prefWidth="73.0" text="Ok" />
-      <Text fx:id="textPassword" layoutX="-1.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" textAlignment="CENTER" wrappingWidth="447.0" />
-      <Text fx:id="textEmail" layoutX="1.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="447.0" />
-      <Text fx:id="textRegistration" layoutX="-1.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matrícula" textAlignment="CENTER" wrappingWidth="447.0" />
-      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="223.0" layoutY="134.0" radius="29.0" stroke="#f5f5f500" strokeType="INSIDE" />
+      <Text fx:id="textCpf" layoutX="56.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Cpf" textAlignment="CENTER" wrappingWidth="720.0" />
+      <Text fx:id="textAddress" layoutX="56.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Endereço" textAlignment="CENTER" wrappingWidth="720.0" />
+      <Button layoutX="509.0" layoutY="610.0" mnemonicParsing="false" onMousePressed="#okButtonPressed" prefHeight="26.0" prefWidth="73.0" text="Ok" />
+      <Text fx:id="textPassword" layoutX="56.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Senha" textAlignment="CENTER" wrappingWidth="720.0" />
+      <Text fx:id="textEmail" layoutX="56.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Email" textAlignment="CENTER" wrappingWidth="720.0" />
+      <Text fx:id="textRegistration" layoutX="56.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Matrícula" textAlignment="CENTER" wrappingWidth="720.0" />
+      <Circle fx:id="profilePicture" fill="#8f393900" layoutX="924.0" layoutY="349.0" radius="115.0" stroke="#f5f5f500" strokeType="INSIDE" />
    </children>
 </AnchorPane>
