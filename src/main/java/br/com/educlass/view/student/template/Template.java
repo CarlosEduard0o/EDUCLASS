@@ -3,7 +3,6 @@ package br.com.educlass.view.student.template;
 import br.com.educlass.view.student.extra.ExtraController;
 import br.com.educlass.view.student.grades.Grades;
 import br.com.educlass.util.CursorUtil;
-import br.com.educlass.util.JsonFile;
 import br.com.educlass.util.Language;
 import br.com.educlass.util.UserUtil;
 import br.com.educlass.model.person.student.Student;
@@ -23,13 +22,10 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Template extends Application implements Initializable {
@@ -97,16 +93,12 @@ public class Template extends Application implements Initializable {
 
     }
 
-    private void setUserInformations() {
+    private void setLanguage() {
         Student student = StudentService.setStudentInfo();
         HashMap<String, String> texts = Language
                 .getTexts("src/main/resources/br/com/educlass/view/student/template/languages/");
 
         name.setText(texts.get("name") + ": " + student.getName());
-
-        JSONArray courseInfoArray = JsonFile.readJsonFile("db/course/" + student.getCourseId() + "/informations.json");
-
-        JSONObject courseInfoJson = (JSONObject) courseInfoArray.get(0);
 
         course.setText(texts.get("course") + ": " + student.getCourseId().toUpperCase());
         register.setText(texts.get("register") + ": " + student.getRegistration());
@@ -165,7 +157,7 @@ public class Template extends Application implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         CursorUtil.setMainPane(this.templatePane);
         setUserPicture();
-        setUserInformations();
+        setLanguage();
     }
 
 }

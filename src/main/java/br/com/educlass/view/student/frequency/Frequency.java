@@ -5,6 +5,7 @@ import br.com.educlass.model.subjects.Subject;
 import br.com.educlass.service.student.StudentService;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.JsonFile;
+import br.com.educlass.util.Language;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -13,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import java.net.URL;
 import java.security.spec.ECField;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.TableView;
@@ -26,6 +28,9 @@ public class Frequency implements Initializable {
 
     @FXML
     private Text periodText;
+
+    @FXML
+    private Text titleText;
 
     // @FXML
     // private Text
@@ -53,6 +58,8 @@ public class Frequency implements Initializable {
 
     Student student;
 
+    private String percentTextWithLanguage = null;
+
     private void setFactoryTable() {
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         subjectColumn.setCellValueFactory(new PropertyValueFactory<>("subject"));
@@ -75,7 +82,7 @@ public class Frequency implements Initializable {
 
     @FXML
     private void handleSubjectSelect() {
-        infoText.setText("Sua presença prevista para esta disciplina é de:");
+        infoText.setText(percentTextWithLanguage + ": ");
         if (student.getSubjects() != null) {
             String quantidadeSting = "";
             for (Subject subject : student.getSubjects()) {
@@ -103,10 +110,23 @@ public class Frequency implements Initializable {
         setSubjectOptions();
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/student/frequency/languages/");
+
+        titleText.setText(texts.get("titleText"));
+        subjectSelect.setPromptText(texts.get("subjectSelect"));
+        dateColumn.setText(texts.get("dateColumn"));
+        subjectColumn.setText(texts.get("subjectColumn"));
+
+        this.percentTextWithLanguage = texts.get("percentText");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.student = StudentService.getStudent();
         setInitialProps();
+        setLanguage();
         CursorUtil.handleCursorType(Cursor.DEFAULT);
     }
 }

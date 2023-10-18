@@ -1,0 +1,5 @@
+titleText:Disciplina
+subjectSelect:Selecione uma disciplina
+subjectColumn:Disciplina
+dateColumn:Nota
+infoText:Pontos necessários para a prova final
