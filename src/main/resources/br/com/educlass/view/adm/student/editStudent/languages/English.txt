@@ -1,0 +1,6 @@
+textTitle:Edit Student
+textCpf:CPF
+textAddress:Address
+textEmail:E-mail
+textPassword:Password
+textPassword1:Situation

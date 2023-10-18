@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.teacher.editTeacher.EditTeacherController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.teacher.editTeacher.EditTeacherController">
    <children>
       <Pane prefHeight="73.0" prefWidth="447.0" style="-fx-background-color: #3857;">
          <children>
@@ -44,9 +44,9 @@
       <Text fx:id="textEmail" layoutX="58.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="60.0" />
       <ComboBox fx:id="comboBoxSituation" layoutX="118.0" layoutY="253.0" prefWidth="150.0" />
       <Text fx:id="textPassword1" layoutX="58.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Situação" textAlignment="CENTER" wrappingWidth="60.0" />
-      <Button layoutX="282.0" layoutY="289.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="150.0" text="Cancelar" />
-      <Button layoutX="282.0" layoutY="325.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" onMouseReleased="#buttonSaveReleased" prefHeight="26.0" prefWidth="150.0" text="Salvar" />
-      <Button layoutX="282.0" layoutY="252.0" mnemonicParsing="false" onMousePressed="#buttonEditProfilePicturePressed" prefHeight="26.0" prefWidth="150.0" text="Alterar foto" />
+      <Button fx:id="buttonCancel" layoutX="282.0" layoutY="289.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="150.0" text="Cancelar" />
+      <Button fx:id="buttonSave" layoutX="282.0" layoutY="325.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" onMouseReleased="#buttonSaveReleased" prefHeight="26.0" prefWidth="150.0" text="Salvar" />
+      <Button fx:id="buttonUploadPicture" layoutX="282.0" layoutY="252.0" mnemonicParsing="false" onMousePressed="#buttonEditProfilePicturePressed" prefHeight="26.0" prefWidth="150.0" text="Alterar foto" />
       <Circle fx:id="profilePictureContainer" fill="#1f93ff00" layoutX="356.0" layoutY="162.0" radius="74.0" stroke="TRANSPARENT" strokeType="INSIDE" />
    </children>
 </AnchorPane>

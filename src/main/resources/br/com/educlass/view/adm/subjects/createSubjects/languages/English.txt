@@ -1,5 +1,10 @@
-name:Name
-course:Course
-register:Register
-frequencyText:Frequency
-gradesText:Grades
+textTitle:Criar Disciplina
+textSubjectName:Enter a name for the course
+textQuantityLessions:Enter the number of classes (only numbers are considered)
+comboBoxSelectTeacher:Select a teacher
+textInserrtStudent:Enter students
+selectColumn:Selection
+idColumn:ID
+nameColumn:Name
+buttonCancel:Cancel
+buttonConfirm:Confirm

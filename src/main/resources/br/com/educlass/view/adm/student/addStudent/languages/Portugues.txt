@@ -1,0 +1,6 @@
+textTitle:Adicionar Aluno
+textName:Nome
+textCpf:CPF
+textAddress:Endereço
+textEmail:E-mail
+textPassword:Senha

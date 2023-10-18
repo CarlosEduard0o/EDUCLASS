@@ -1,0 +1,9 @@
+textTitle:Adicionar Professor
+textName:Nome
+textCpf:CPF
+textAddress:Endereço
+textEmail:E-mail
+textPassword:Senha
+buttonUploadPicture:Inserir foto
+buttonCancel:Cancelar
+buttonSave:Salvar

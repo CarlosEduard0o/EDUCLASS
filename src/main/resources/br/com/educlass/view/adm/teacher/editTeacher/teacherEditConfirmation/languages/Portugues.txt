@@ -1,0 +1,8 @@
+textTitle:Revisão
+textName:Nome
+textCpf:CPF
+textAddress:Endereço
+textEmail:E-mail
+textRegistration:Matrícula
+textPassword:Senha
+buttonOk:OK

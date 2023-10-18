@@ -1,0 +1,7 @@
+textTitle:Editar Aluno
+textName:Nome
+textCpf:CPF
+textAddress:Endereço
+textEmail:E-mail
+textPassword:Senha
+textPassword1:Situação

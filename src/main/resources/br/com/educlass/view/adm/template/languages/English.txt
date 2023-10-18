@@ -1,5 +1,4 @@
-name:Name
-course:Course
-register:Register
-frequencyText:Frequency
-gradesText:Grades
+schoolNameText: Institution
+studentsTexts: Students
+teachersTexts: Teachers
+subjectsTexts: Subjects

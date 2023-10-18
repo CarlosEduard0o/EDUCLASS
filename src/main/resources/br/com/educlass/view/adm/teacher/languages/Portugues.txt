@@ -1,0 +1,6 @@
+textTitle:Selecione um professor
+comboTeacherSelected:Selecione um professor
+tableFirstColumn:Matrícula
+tableSecondColumn:Nome
+buttonEditTeacher:Editar
+buttonCreateNewTeacher:Adicionar um professor

@@ -1,0 +1,6 @@
+textTitle: Revisão
+textCpf:CPF
+textAddress:Endereço
+textEmail:E-mail
+textRegistration:Matrícula
+textPassword:Senha

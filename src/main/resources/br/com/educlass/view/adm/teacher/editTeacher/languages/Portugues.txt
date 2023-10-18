@@ -1,0 +1,10 @@
+textTitle:Editar Professor
+textName:Nome
+textCpf:CPF
+textAddress:Endereço
+textEmail:E-mail
+textPassword:Senha
+textPassword1:Situação
+buttonUploadPicture:Alterar foto
+buttonCancel:Cancelar
+buttonSave:Salvar

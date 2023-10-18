@@ -1,0 +1,9 @@
+textTitle: Add Teacher
+textName: Name
+textCpf: CPF
+textAddress: Address
+textEmail: Email
+textPassword: Password
+buttonUploadPicture: Upload Picture
+buttonCancel: Cancel
+buttonSave: Save

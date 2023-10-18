@@ -1,0 +1,7 @@
+textTitle: Review
+textName: Name
+textCpf: CPF
+textAddress: Address
+textEmail: Email
+textRegistration: Registration
+textPassword: Password

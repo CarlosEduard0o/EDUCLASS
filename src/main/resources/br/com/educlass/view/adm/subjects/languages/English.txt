@@ -1,5 +1,7 @@
-name:Name
-course:Course
-register:Register
-frequencyText:Frequency
-gradesText:Grades
+titleText: Discipline
+comboSubjectSelected: Select a Discipline
+tableFirstColumn: Discipline
+tableSecondColumn: Professor
+tableThirdColumn: Number of Lessons
+buttonEditSubject: Edit
+buttonCreateNewSubject: Add a Discipline

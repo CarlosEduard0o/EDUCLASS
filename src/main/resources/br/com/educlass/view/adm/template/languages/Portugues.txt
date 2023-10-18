@@ -1,5 +1,4 @@
-name:Nome
-course:Curso
-register:Matrícula
-frequencyText:Frequência
-gradesText:Notas
+schoolNameText:Instituição
+studentsTexts:Alunos
+teatchersTexts:Professores
+subjectsTexts:Disciplinas
