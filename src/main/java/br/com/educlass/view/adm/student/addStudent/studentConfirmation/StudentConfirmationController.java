@@ -3,6 +3,7 @@ package br.com.educlass.view.adm.student.addStudent.studentConfirmation;
 import br.com.educlass.model.person.student.Student;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.ContentContainer;
+import br.com.educlass.util.Language;
 import br.com.educlass.util.TextFile;
 import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.StudentController;
@@ -47,17 +48,30 @@ public class StudentConfirmationController implements Initializable {
         ContentContainer.setSceneContentContainer(fxml);
     }
 
+    private void setLanguage(Student student, ArrayList<String> fileLines, HashMap<String, String> result ) {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/student/addStudent/studentConfirmation/languages/");
+        textTitle.setText(texts.get("textTitle"));
+
+        textName.setText(texts.get("textName")+": " + student.getName());
+        textCpf.setText(texts.get("textCpf")+": " + student.getCpf());;
+        textAddress.setText(texts.get("textAddress")+": " + student.getAddress());;
+        textEmail.setText(texts.get("textEmail")+": " + student.getEmail());
+        textRegistration.setText(texts.get("textRegistration")+ ": "+ student.getRegistration());
+
+        for (String s : fileLines) {
+            String[] lineSplited = s.split(":");
+            result.put(lineSplited[0], lineSplited[1]);
+        }
+
+        textPassword.setText(texts.get("textPassword") + ": " + result.get("password"));
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Student student = AdmnistratorService.getNewStudent();
-        textName.setText("Nome: " + student.getName());
-        textCpf.setText("CPF: " + student.getCpf());
-        ;
-        textAddress.setText("Endereço: " + student.getAddress());
-        ;
-        textEmail.setText("Email: " + student.getEmail());
-        ;
-        textRegistration.setText("Matrícula: " + student.getRegistration());
+
         String year = student.getRegistration().substring(1, 5);
         String semester = student.getRegistration().substring(0, 1);
         String registration = student.getRegistration().substring(5);
@@ -86,13 +100,7 @@ public class StudentConfirmationController implements Initializable {
             profilePicture.setFill(new ImagePattern(image));
         }
 
+        setLanguage(student, fileLines, result);
 
-        for (String s : fileLines) {
-            String[] lineSplited = s.split(":");
-            result.put(lineSplited[0], lineSplited[1]);
-        }
-
-        textPassword.setText("Senha: " + result.get("password"));
-        ;
     }
 }

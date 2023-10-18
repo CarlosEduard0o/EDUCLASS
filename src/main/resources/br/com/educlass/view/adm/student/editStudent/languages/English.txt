@@ -1,4 +1,5 @@
 textTitle:Edit Student
+textName:Name
 textCpf:CPF
 textAddress:Address
 textEmail:E-mail

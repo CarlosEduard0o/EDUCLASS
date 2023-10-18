@@ -1,4 +1,5 @@
 textTitle:Add Student
+textName:Name
 textCpf:CPF
 textAddress:Address
 textEmail:E-mail

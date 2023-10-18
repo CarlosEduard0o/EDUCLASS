@@ -3,6 +3,7 @@ package br.com.educlass.view.adm.student.editStudent;
 import br.com.educlass.model.person.student.Student;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.ContentContainer;
+import br.com.educlass.util.Language;
 import br.com.educlass.util.TextFile;
 import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.InformationsStudent;
@@ -43,6 +44,8 @@ public class EditStudentController implements Initializable {
     private Text textEmail;
     @FXML
     private Text textPassword;
+    @FXML
+    private Text textPassword1;
     @FXML
     private Circle profilePictureContainer;
 
@@ -129,7 +132,7 @@ public class EditStudentController implements Initializable {
         String year = registration.substring(1,5);
         String semester = registration.substring(0,1);
         String id = registration.substring(5);
-
+//        Alan Silva25252525
         String pathUsers = "db/users/students/"+year+"/"+semester+"/"+id+"/login.txt";
         String password = TextFile.readTextFileMapping(pathUsers).get("password");
         textFieldPassword.setText(password);
@@ -151,10 +154,24 @@ public class EditStudentController implements Initializable {
         comboBoxSituation.setValue(studentSelected.getSituation());
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/student/editStudent/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        textName.setText(texts.get("textName"));
+        textCpf.setText(texts.get("textCpf"));
+        textAddress.setText(texts.get("textAddress"));
+        textEmail.setText(texts.get("textEmail"));
+        textPassword.setText(texts.get("textPassword"));
+        textPassword1.setText(texts.get("textPassword1"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AdmnistratorService.setEditStudent(InformationsStudent.getStudentSelected());
         studentSelected = InformationsStudent.getStudentSelected();
         setAllInformations();
+        setLanguage();
     }
 }

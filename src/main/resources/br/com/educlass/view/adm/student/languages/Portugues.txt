@@ -1,0 +1,6 @@
+textTitle:Selecione um aluno
+comboStudentSelected:Selecione um aluno
+tableFirstColumn:Matrícula
+tableSecondColumn:Nome
+editButton:Editar
+AddButton:Adicionar Aluno

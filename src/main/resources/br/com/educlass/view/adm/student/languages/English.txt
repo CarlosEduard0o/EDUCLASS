@@ -1,0 +1,6 @@
+textTitle:Select a student
+comboStudentSelected:Select a student
+tableFirstColumn:Registration
+tableSecondColumn:Name
+editButton:Edit
+AddButton:Add a student

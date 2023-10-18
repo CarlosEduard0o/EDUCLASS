@@ -1,6 +1,7 @@
 package br.com.educlass.view.adm.student.addStudent;
 
 import br.com.educlass.util.ContentContainer;
+import br.com.educlass.util.Language;
 import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.adm.student.InformationsStudent;
 import br.com.educlass.view.adm.student.StudentController;
@@ -23,6 +24,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -99,8 +101,6 @@ public class AddStudentController implements Initializable {
         profilePictureHasUploaded(selectedFile);
     }
 
-
-
     @FXML
     protected void buttonSaveReleased() throws IOException{
         if( inputsVerifications()) {
@@ -109,11 +109,23 @@ public class AddStudentController implements Initializable {
         }
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/student/addStudent/languages/");
+        textTitle.setText(texts.get("textTitle"));
+        textName.setText(texts.get("textName"));
+        textCpf.setText(texts.get("textCpf"));
+        textAddress.setText(texts.get("textAddress"));
+        textEmail.setText(texts.get("textEmail"));
+        textPassword.setText(texts.get("textPassword"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Image image = new Image("file:src/main/resources/br/com/educlass/images/userIcon.png",
                 false);
         profilePictureContainer.setFill(new ImagePattern(image));
+        setLanguage();
     }
 
 }

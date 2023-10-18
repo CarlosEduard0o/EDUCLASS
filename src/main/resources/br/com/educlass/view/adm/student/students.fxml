@@ -10,9 +10,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.student.StudentController">
    <children>
-      <Text layoutX="27.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Selecione um aluno" />
+      <Text fx:id="textTitle" layoutX="27.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Selecione um aluno" />
       <ComboBox fx:id="comboStudentSelected" layoutX="27.0" layoutY="59.0" onAction="#handleStudentSelectedComboBox" prefHeight="33.0" prefWidth="1040.0" promptText="Selecione um aluno" styleClass="comboBox" />
-      <Button layoutX="891.0" layoutY="666.0" mnemonicParsing="false" onMousePressed="#buttonAddStudentPress" prefHeight="25.0" prefWidth="176.0" text="Adicionar um aluno" />
+      <Button fx:id="AddButton" layoutX="891.0" layoutY="666.0" mnemonicParsing="false" onMousePressed="#buttonAddStudentPress" prefHeight="25.0" prefWidth="176.0" text="Adicionar um aluno" />
       <TableView fx:id="tableView" layoutX="27.0" layoutY="104.0" onMousePressed="#tableselected" prefHeight="551.0" prefWidth="1040.0" styleClass="tableView">
         <columns>
           <TableColumn fx:id="tableFirstColumn" prefWidth="252.0" text="Matrícula" />

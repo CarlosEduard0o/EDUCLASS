@@ -4,6 +4,7 @@ import br.com.educlass.model.person.student.Student;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.CursorUtil;
+import br.com.educlass.util.Language;
 import br.com.educlass.view.adm.student.addStudent.AddStudentController;
 import br.com.educlass.view.adm.student.editStudent.EditStudentController;
 import javafx.fxml.FXML;
@@ -14,10 +15,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
@@ -36,6 +39,11 @@ public class StudentController implements Initializable {
 
     @FXML
     private Button editButton;
+
+    @FXML
+    private Text textTitle;
+
+    @FXML Button AddButton;
 
     ArrayList<Student> students;
 
@@ -104,11 +112,24 @@ public class StudentController implements Initializable {
         ContentContainer.setSceneContentContainer(fxml);
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/student/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        comboStudentSelected.setPromptText(texts.get("comboStudentSelected"));
+        tableFirstColumn.setText(texts.get("tableFirstColumn"));
+        tableSecondColumn.setText(texts.get("tableSecondColumn"));
+        editButton.setText(texts.get("editButton"));
+        AddButton.setText(texts.get("AddButton"));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         editButton.setDisable(true);
         this.students = AdmnistratorService.getListOfStudents();
         setInitialPropsInComponents();
+        setLanguage();
         CursorUtil.handleCursorType(Cursor.DEFAULT);
     }
 }

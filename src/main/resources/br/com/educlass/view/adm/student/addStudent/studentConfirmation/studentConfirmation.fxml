@@ -26,7 +26,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Text fx:id="textName" layoutX="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Nome" textAlignment="CENTER" wrappingWidth="720.0">
+      <Text fx:id="textName" layoutX="56.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Nome" textAlignment="CENTER" wrappingWidth="720.0">
          <rotationAxis>
             <Point3D />
          </rotationAxis>

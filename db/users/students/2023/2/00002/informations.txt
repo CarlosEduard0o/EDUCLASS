@@ -1,0 +1,7 @@
+nome:Testando
+curso:SI
+cpf:58481
+endereço:Eheaun
+email:SDMAIKDM2@GMAIL.COM
+matricula:2202300002
+situation:matriculado

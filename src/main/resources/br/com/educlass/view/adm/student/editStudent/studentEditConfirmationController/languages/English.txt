@@ -1,4 +1,5 @@
 textTitle:Revision
+textName:Name
 textCpf:CPF
 textAddress:Address
 textEmail:E-mail
