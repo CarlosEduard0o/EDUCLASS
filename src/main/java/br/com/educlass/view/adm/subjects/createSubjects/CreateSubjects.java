@@ -27,6 +27,7 @@ import java.net.URL;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class CreateSubjects implements Initializable {
@@ -290,10 +291,27 @@ public class CreateSubjects implements Initializable {
         ContentContainer.setSceneContentContainer(fxml);
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/subjects/createSubjects/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        textSubjectName.setText(texts.get("textSubjectName"));
+        textQuantityLessions.setText(texts.get("textQuantityLessions"));
+        comboBoxSelectTeacher.setPromptText(texts.get("comboBoxSelectTeacher"));
+        textInserrtStudent.setText(texts.get("textInserrtStudent"));
+        selectColumn.setText(texts.get("selectColumn"));
+        idColumn.setText(texts.get("idColumn"));
+        nameColumn.setText(texts.get("nameColumn"));
+        buttonCancel.setText(texts.get("buttonCancel"));
+        buttonConfirm.setText(texts.get("buttonConfirm"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setFactoryTable();
         buttonConfirm.setDisable(true);
         setInitializeInformations();
+        setLanguage();
     }
 }

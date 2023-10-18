@@ -1,4 +1,4 @@
-textTitle:Criar Disciplina
+textTitle:Create a Subject
 textSubjectName:Enter a name for the course
 textQuantityLessions:Enter the number of classes (only numbers are considered)
 comboBoxSelectTeacher:Select a teacher

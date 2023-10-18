@@ -19,7 +19,7 @@
       <Text fx:id="textInserrtStudent" layoutX="27.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Insira os alunos:" />
       <TableView fx:id="tableView" layoutX="27.0" layoutY="210.0" prefHeight="447.0" prefWidth="1029.0">
         <columns>
-          <TableColumn fx:id="selectColumn" prefWidth="87.99996566772461" style="-fx-position-shape: center;" text="Seleção" />
+          <TableColumn fx:id="selectColumn" prefWidth="87.99996566772461" styleClass="centralize-column-table" text="Seleção" />
             <TableColumn fx:id="idColumn" prefWidth="146.40000915527344" text="ID" />
             <TableColumn fx:id="nameColumn" prefWidth="794.3999633789062" text="Nome" />
         </columns>

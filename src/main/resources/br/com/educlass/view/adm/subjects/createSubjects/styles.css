@@ -21,3 +21,7 @@
 .input {
   -fx-font-size: 10;
 }
+
+.centralize-column-table {
+    -fx-alignment: center;
+}

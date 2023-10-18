@@ -5,6 +5,7 @@ import br.com.educlass.service.admnistrator.AdmnistratorService;
 import br.com.educlass.service.admnistrator.AdmnistratorSubjectService.AdmnistratorSubjectService;
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.CursorUtil;
+import br.com.educlass.util.Language;
 import br.com.educlass.view.adm.subjects.createSubjects.CreateSubjects;
 import br.com.educlass.view.adm.teacher.TeacherTable;
 import br.com.educlass.view.adm.teacher.editTeacher.EditTeacherController;
@@ -16,13 +17,19 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class SubjectsController implements Initializable {
+
+    @FXML
+    private Text textTitle;
+
     @FXML
     private ComboBox<String> comboSubjectSelected;
 
@@ -87,11 +94,24 @@ public class SubjectsController implements Initializable {
 
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/subjects/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        comboSubjectSelected.setPromptText(texts.get("comboSubjectSelected"));
+        tableFirstColumn.setText(texts.get("tableFirstColumn"));
+        tableSecondColumn.setText(texts.get("tableSecondColumn"));
+        tableThirdColumn.setText(texts.get("tableThirdColumn"));
+        buttonEditSubject.setText(texts.get("buttonEditSubject"));
+        buttonCreateNewSubject.setText(texts.get("buttonCreateNewSubject"));
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         subjects = AdmnistratorService.getAdmnistrator().getSubjects();
         setInitialInformations();
+        setLanguage();
         CursorUtil.handleCursorType(Cursor.DEFAULT);
     }
 }
