@@ -37,6 +37,6 @@
       <Text fx:id="textPassword" layoutX="66.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Senha" wrappingWidth="670.0" />
       <Text fx:id="textEmail" layoutX="66.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Email" wrappingWidth="670.0" />
       <Text fx:id="textRegistration" layoutX="66.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Matrícula" wrappingWidth="670.0" />
-      <Circle fx:id="profilePicture" fill="#b53838e2" layoutX="924.0" layoutY="349.0" radius="115.0" stroke="#f5f5f500" strokeType="INSIDE" />
+      <Circle fx:id="profilePicture" fill="#b2373700" layoutX="924.0" layoutY="349.0" radius="115.0" stroke="#f5f5f500" strokeType="INSIDE" />
    </children>
 </AnchorPane>

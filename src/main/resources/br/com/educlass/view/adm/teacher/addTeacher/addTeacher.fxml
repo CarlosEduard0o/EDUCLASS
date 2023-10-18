@@ -11,11 +11,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.teacher.addTeacher.AddTeacherController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.teacher.addTeacher.AddTeacherController">
    <children>
-      <Pane prefHeight="73.0" prefWidth="447.0" style="-fx-background-color: #3857;">
+      <Pane prefHeight="73.0" prefWidth="447.0" styleClass="header">
          <children>
-            <Text fx:id="textTitle" layoutX="128.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Professor">
+            <Text fx:id="textTitle" layoutX="449.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Professor">
                <font>
                   <Font name="Yu Gothic Bold" size="20.0" />
                </font>
@@ -27,23 +27,23 @@
             </ImageView>
          </children>
       </Pane>
-      <Text fx:id="textName" layoutX="61.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" textAlignment="CENTER" wrappingWidth="60.0">
+      <Text fx:id="textName" layoutX="120.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Nome" textAlignment="CENTER" wrappingWidth="600.0">
          <rotationAxis>
             <Point3D />
          </rotationAxis>
       </Text>
-      <TextField fx:id="textFieldName" layoutX="121.0" layoutY="134.0" />
-      <Text fx:id="textCpf" layoutX="61.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cpf" textAlignment="CENTER" wrappingWidth="60.0" />
-      <TextField fx:id="textFieldCpf" layoutX="121.0" layoutY="160.0" />
-      <TextField fx:id="textFieldAddress" layoutX="121.0" layoutY="186.0" />
-      <Text fx:id="textAddress" layoutX="61.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" textAlignment="CENTER" wrappingWidth="60.0" />
-      <TextField fx:id="textFieldEmail" layoutX="121.0" layoutY="212.0" />
-      <TextField fx:id="textFieldPassword" layoutX="121.0" layoutY="238.0" />
-      <Text fx:id="textPassword" layoutX="61.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" textAlignment="CENTER" wrappingWidth="60.0" />
-      <Text fx:id="textEmail" layoutX="61.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="60.0" />
-      <Button fx:id="buttonCancel" layoutX="283.0" layoutY="310.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="154.0" text="Cancelar" />
-      <Button fx:id="buttonUploadPicture" layoutX="283.0" layoutY="270.0" mnemonicParsing="false" onMousePressed="#buttonUploadProfilePicturePressed" prefHeight="26.0" prefWidth="154.0" text="Inserir foto" />
-      <Button fx:id="buttonSave" layoutX="283.0" layoutY="349.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" onMouseReleased="#buttonSaveReleased" prefHeight="26.0" prefWidth="154.0" text="Salvar" />
-      <Circle fx:id="profilePictureContainer" fill="#1f93ff00" layoutX="360.0" layoutY="186.0" radius="77.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <TextField fx:id="textFieldName" layoutY="216.0" styleClass="input" />
+      <Text fx:id="textCpf" layoutX="120.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Cpf" textAlignment="CENTER" wrappingWidth="600.0" />
+      <TextField fx:id="textFieldCpf" layoutY="275.0" styleClass="input" />
+      <TextField fx:id="textFieldAddress" layoutY="335.0" styleClass="input" />
+      <Text fx:id="textAddress" layoutX="120.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Endereço" textAlignment="CENTER" wrappingWidth="600.0" />
+      <TextField fx:id="textFieldEmail" layoutY="392.0" styleClass="input" />
+      <TextField fx:id="textFieldPassword" layoutY="448.0" styleClass="input" />
+      <Text fx:id="textPassword" layoutX="120.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Senha" textAlignment="CENTER" wrappingWidth="600.0" />
+      <Text fx:id="textEmail" layoutX="120.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Email" textAlignment="CENTER" wrappingWidth="600.0" />
+      <Button fx:id="buttonCancel" layoutX="844.0" layoutY="627.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="154.0" text="Cancelar" />
+      <Button fx:id="buttonUploadPicture" layoutX="844.0" layoutY="506.0" mnemonicParsing="false" onMousePressed="#buttonUploadProfilePicturePressed" prefHeight="26.0" prefWidth="154.0" text="Inserir foto" />
+      <Button fx:id="buttonSave" layoutX="844.0" layoutY="568.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" onMouseReleased="#buttonSaveReleased" prefHeight="26.0" prefWidth="154.0" text="Salvar" />
+      <Circle fx:id="profilePictureContainer" fill="#1f93ff00" layoutX="911.0" layoutY="297.0" radius="148.0" stroke="TRANSPARENT" strokeType="INSIDE" />
    </children>
 </AnchorPane>

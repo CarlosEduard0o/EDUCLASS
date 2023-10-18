@@ -1,0 +1,22 @@
+.header {
+  -fx-pref-width: 1090;
+  -fx-background-color: #8acdf8;
+}
+
+.input {
+ -fx-pref-width: 600;
+ -fx-translate-x: 120px;
+}
+
+.text {
+ -fx-font-size: 16;
+ -fx-text-alignment: left;
+}
+
+.title {
+  -fx-font-size: 18;
+}
+
+.button {
+    -fx-font-size: 16;
+}
