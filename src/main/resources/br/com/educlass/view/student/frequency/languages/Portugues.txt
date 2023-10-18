@@ -1,5 +1,5 @@
 titleText:Disciplina
 subjectSelect:Select a subject
-dateColumn:Quantity
+dateColumn:Quantidade
 subjectColumn:Subject
 percentText:Sua presença prevista para esta disciplina é de

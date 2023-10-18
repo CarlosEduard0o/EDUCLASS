@@ -1,10 +1,13 @@
 package br.com.educlass.view.adm.template;
 
 import br.com.educlass.model.institution.Institution;
+import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.subjects.Subject;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
+import br.com.educlass.service.student.StudentService;
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.CursorUtil;
+import br.com.educlass.util.Language;
 import br.com.educlass.util.SceneController;
 import br.com.educlass.view.adm.student.StudentController;
 import br.com.educlass.view.adm.subjects.SubjectsController;
@@ -29,6 +32,7 @@ import javafx.stage.Stage;
 import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class AdmTemplateController extends Application implements Initializable {
@@ -61,7 +65,7 @@ public class AdmTemplateController extends Application implements Initializable 
     private Pane teacherOptionContainer;
 
     @FXML
-    private Text teatchersTexts;
+    private Text teachersTexts;
 
     @FXML
     private Pane studentsOptionContainer;
@@ -133,8 +137,6 @@ public class AdmTemplateController extends Application implements Initializable 
         }
 
         this.institution = AdmnistratorService.setAdmnistratorInfo();
-
-        schoolNameText.setText("Nome : " + institution.getName());
     }
 
     @FXML
@@ -145,10 +147,21 @@ public class AdmTemplateController extends Application implements Initializable 
                 Controller.class.getResource("view.fxml"));
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/template/languages/");
+
+        schoolNameText.setText(texts.get("schoolNameText") + ": " + institution.getName());
+        studentsTexts.setText(texts.get("studentsTexts"));
+        teachersTexts.setText(texts.get("teachersTexts"));
+        subjectsTexts.setText(texts.get("subjectsTexts"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ContentContainer.setContentContainer(contentContainer);
         CursorUtil.setMainPane(this.templatePane);
         setAdmnistratorInfo();
+        setLanguage();
     }
 }

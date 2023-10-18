@@ -1,4 +1,4 @@
-schoolNameText: Institution
-studentsTexts: Students
-teachersTexts: Teachers
-subjectsTexts: Subjects
+schoolNameText:Institution
+studentsTexts:Students
+teachersTexts:Teachers
+subjectsTexts:Subjects

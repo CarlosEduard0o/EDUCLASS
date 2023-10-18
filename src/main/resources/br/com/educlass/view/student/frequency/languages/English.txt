@@ -1,5 +1,5 @@
 titleText:Subject
 subjectSelect:Select a subject
-dateColumn:Subject
+dateColumn:Quantity
 subjectColumn:Subject
 percentText:Your expected presence for this discipline is

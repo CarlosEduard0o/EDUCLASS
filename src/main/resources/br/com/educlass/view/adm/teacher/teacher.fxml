@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.teacher.TeacherController">
    <children>
-      <Text layoutX="29.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Selecione um professor" />
+      <Text fx:id="textTitle" layoutX="29.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Selecione um professor" />
       <ComboBox fx:id="comboTeacherSelected" layoutX="27.0" layoutY="60.0" prefHeight="33.0" prefWidth="1015.0" promptText="Selecione um professor" styleClass="comboBox" />
       <Button fx:id="buttonCreateNewTeacher" layoutX="820.0" layoutY="652.0" mnemonicParsing="false" onMousePressed="#buttonAddTeacherPress" prefHeight="35.0" prefWidth="222.0" text="Adicionar um professor" />
       <TableView fx:id="tableView" layoutX="27.0" layoutY="101.0" onMousePressed="#tableselected" prefHeight="543.0" prefWidth="1015.0" styleClass="tableView">

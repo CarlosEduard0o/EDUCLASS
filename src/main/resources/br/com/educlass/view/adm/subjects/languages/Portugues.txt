@@ -1,5 +1,5 @@
 titleText:Disciplina
-comboSubjectSelected: Selecione uma Disciplina
+comboSubjectSelected:Selecione uma Disciplina
 tableFirstColumn:Disciplina
 tableSecondColumn:Professor
 tableThirdColumn:Quantidade de aulas

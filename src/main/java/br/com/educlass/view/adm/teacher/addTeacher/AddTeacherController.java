@@ -1,10 +1,12 @@
 package br.com.educlass.view.adm.teacher.addTeacher;
 
 import br.com.educlass.util.ContentContainer;
+import br.com.educlass.util.Language;
 import br.com.educlass.view.adm.teacher.TeacherController;
 import br.com.educlass.view.adm.teacher.addTeacher.teacherConfirmation.TeacherConfirmationController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
@@ -44,6 +46,13 @@ public class AddTeacherController implements Initializable {
     private TextField textFieldEmail;
     @FXML
     private TextField textFieldPassword;
+
+    @FXML
+    private Button buttonUploadPicture;
+    @FXML
+    private Button buttonCancel;
+    @FXML
+    private Button buttonSave;
 
     private File profilePicture;
 
@@ -101,11 +110,27 @@ public class AddTeacherController implements Initializable {
         }
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        textName.setText(texts.get("textName"));
+        textCpf.setText(texts.get("textCpf"));
+        textAddress.setText(texts.get("textAddress"));
+        textEmail.setText(texts.get("textEmail"));
+        textPassword.setText(texts.get("textPassword"));
+        buttonUploadPicture.setText(texts.get("buttonUploadPicture"));
+        buttonCancel.setText(texts.get("buttonCancel"));
+        buttonSave.setText(texts.get("buttonSave"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Image image = new Image("file:src/main/resources/br/com/educlass/images/userIcon.png",
                 false);
         profilePictureContainer.setFill(new ImagePattern(image));
+        setLanguage();
     }
 
 }

@@ -1,8 +1,11 @@
 package br.com.educlass.view.adm.teacher.editTeacher;
 
+import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
+import br.com.educlass.service.student.StudentService;
 import br.com.educlass.util.ContentContainer;
+import br.com.educlass.util.Language;
 import br.com.educlass.util.TextFile;
 import br.com.educlass.view.adm.teacher.InformationsTeacher;
 import br.com.educlass.view.adm.teacher.editTeacher.teacherEditConfirmation.TeacherEditConfirmation;
@@ -10,6 +13,7 @@ import br.com.educlass.view.adm.teacher.TeacherController;
 import br.com.educlass.view.adm.teacher.TeacherSituationEnum;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -39,6 +43,8 @@ public class EditTeacherController implements Initializable {
     @FXML
     private Text textPassword;
     @FXML
+    private Text textPassword1;
+    @FXML
     private Circle profilePictureContainer;
 
     @FXML
@@ -51,6 +57,14 @@ public class EditTeacherController implements Initializable {
     private TextField textFieldEmail;
     @FXML
     private TextField textFieldPassword;
+
+    @FXML
+    private Button buttonUploadPicture;
+    @FXML
+    private Button buttonCancel;
+    @FXML
+    private Button buttonSave;
+
 
 
     @FXML
@@ -143,8 +157,25 @@ public class EditTeacherController implements Initializable {
         comboBoxSituation.setValue(teacherSelected.getSituation());
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        textName.setText(texts.get("textName"));
+        textCpf.setText(texts.get("textCpf"));
+        textAddress.setText(texts.get("textAddress"));
+        textEmail.setText(texts.get("textEmail"));
+        textPassword.setText(texts.get("textPassword"));
+        textPassword1.setText(texts.get("textPassword1"));
+        buttonUploadPicture.setText(texts.get("buttonUploadPicture"));
+        buttonCancel.setText(texts.get("buttonCancel"));
+        buttonSave.setText(texts.get("buttonSave"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setLanguage();
         AdmnistratorService.setEditTeacher(InformationsTeacher.getTeacherSelected());
         teacherSelected = InformationsTeacher.getTeacherSelected();
         setAllInformations();

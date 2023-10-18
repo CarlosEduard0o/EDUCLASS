@@ -1,7 +1,10 @@
 package br.com.educlass.view.adm.teacher;
 
+import br.com.educlass.model.person.student.Student;
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
+import br.com.educlass.service.student.StudentService;
+import br.com.educlass.util.Language;
 import br.com.educlass.view.adm.teacher.addTeacher.AddTeacherController;
 import br.com.educlass.view.adm.teacher.editTeacher.EditTeacherController;
 import br.com.educlass.util.ContentContainer;
@@ -14,10 +17,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class TeacherController implements Initializable {
@@ -27,6 +32,9 @@ public class TeacherController implements Initializable {
 
     @FXML
     private Button buttonCreateNewTeacher;
+
+    @FXML
+    private Text textTitle;
 
     @FXML
     private Button buttonEditTeacher;
@@ -91,10 +99,23 @@ public class TeacherController implements Initializable {
         ContentContainer.setSceneContentContainer(fxml);
     }
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language
+                .getTexts("src/main/resources/br/com/educlass/view/adm/teacher/languages/");
+
+        textTitle.setText(texts.get("textTitle"));
+        comboTeacherSelected.setPromptText(texts.get("comboTeacherSelected"));
+        tableFirstColumn.setText(texts.get("tableFirstColumn"));
+        tableSecondColumn.setText(texts.get("tableSecondColumn"));
+        buttonEditTeacher.setText(texts.get("buttonEditTeacher"));
+        buttonCreateNewTeacher.setText(texts.get("buttonCreateNewTeacher"));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.teachers = AdmnistratorService.getListOfTeachers();
         setInitialPropsInComponents();
+        setLanguage();
         CursorUtil.handleCursorType(Cursor.DEFAULT);
     }
 }

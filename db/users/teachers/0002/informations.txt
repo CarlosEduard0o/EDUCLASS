@@ -1,4 +1,5 @@
-nome:JAO
+nome:JAOZINHO
+curso:SI
 cpf:1451
 endereço:ASDASDA
 email:SDAD2@GMAIL.COM

@@ -67,21 +67,24 @@ public class GradesTeacher implements Initializable {
             String valorProva = testValue.getText();
             int i = 0;
             for (studentGradeData stutendGradeData : dadosDosAlunos) {
-                String path = "db/users/students/" + stutendGradeData.getIdStudent().substring(1, 5) + "/" + stutendGradeData.getIdStudent().substring(0, 1) + "/" + stutendGradeData.getIdStudent().substring(5) + "/subjects.json";
+                String path = "db/users/students/" + stutendGradeData.getIdStudent().substring(1, 5) + "/"
+                        + stutendGradeData.getIdStudent().substring(0, 1) + "/"
+                        + stutendGradeData.getIdStudent().substring(5) + "/subjects.json";
                 JSONArray jsonArray = JsonFile.readJsonFile(path);
                 for (Object element : jsonArray) {
                     JSONObject jsonObject = (JSONObject) element;
                     if (jsonObject.get("name").equals(subjectSelect.getValue())) {
-                        if (converterEmInt(stutendGradeData.getAddGrade()) > Integer.valueOf(valorProva)){
+                        if (converterEmInt(stutendGradeData.getAddGrade()) > Integer.valueOf(valorProva)) {
                             showAlert("O valor da nota não pode ser maior que o valor da prova!");
                         } else {
-                        if (jsonObject.get("notas").toString().equals("[\"Sem notas\"]")) {
-                            stutendGradeData.setFirstCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
-                        } else {
-                            stutendGradeData.setCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
+                            if (jsonObject.get("notas").toString().equals("[\"Sem notas\"]")) {
+                                stutendGradeData.setFirstCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
+                            } else {
+                                stutendGradeData.setCurrentGrade(stutendGradeData.getAddGrade(), valorProva);
+                            }
+                            jsonObject.put("notas", stutendGradeData.getCurrentGrade());
                         }
-                        jsonObject.put("notas", stutendGradeData.getCurrentGrade());
-                    }}
+                    }
                     try {
                         // Escrever o arquivo uma vez após o loop
                         Files.write(Paths.get(path), jsonArray.toString().getBytes(), StandardOpenOption.CREATE,
@@ -94,19 +97,19 @@ public class GradesTeacher implements Initializable {
             refreshTable();
             testValue.clear();
         } else {
-        showAlert("É necessário colocar o valor da prova!");
+            showAlert("É necessário colocar o valor da prova!");
+        }
     }
-}
 
-     private void showAlert(String message){
-         Alert alert = new Alert(Alert.AlertType.WARNING);
-         alert.setTitle("Alerta");
-         alert.setHeaderText(null);
-         alert.setContentText(message);
-         alert.showAndWait();
-     }
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Alerta");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 
-    private void refreshTable(){
+    private void refreshTable() {
         dadosDosAlunos = FXCollections.observableArrayList();
         ArrayList<String> arrayNotas = new ArrayList<>();
         ArrayList<String> arrayNomesAlunos = new ArrayList<>();
@@ -117,16 +120,18 @@ public class GradesTeacher implements Initializable {
                 for (Student student : subject.getEnrolledStudents()) {
                     String idAlunos = student.getRegistration();
                     arrayMatricula.add(idAlunos);
-                    String pathSubject = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/subjects.json";
-                    String pathInformations = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/informations.txt";
+                    String pathSubject = "db/users/students/" + idAlunos.substring(1, 5) + "/"
+                            + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/subjects.json";
+                    String pathInformations = "db/users/students/" + idAlunos.substring(1, 5) + "/"
+                            + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/informations.txt";
                     JSONArray jsonArray = JsonFile.readJsonFile(pathSubject);
-                    for (Object element: jsonArray) {
+                    for (Object element : jsonArray) {
                         JSONObject jsonObject = (JSONObject) element;
-                        if(jsonObject.get("name").equals(subjectSelect.getValue())){
+                        if (jsonObject.get("name").equals(subjectSelect.getValue())) {
                             arrayNotas.add(jsonObject.get("notas").toString());
                         }
                     }
-//                    System.out.println(arrayNotas);
+                    // System.out.println(arrayNotas);
                     calcularMedia(arrayNotas);
                     try {
                         FileReader fileReader = new FileReader(pathInformations);
@@ -145,7 +150,7 @@ public class GradesTeacher implements Initializable {
                 }
             }
         }
-        for (int i = 0; i < arrayNotas.size(); i++){
+        for (int i = 0; i < arrayNotas.size(); i++) {
             studentGradeData studentData = new studentGradeData(arrayNomesAlunos.get(i), arrayMatricula.get(i));
             studentData.initializeArrayCurrentGrade(arrayNotas.get(i).replaceAll("[\\[\\]\"]", ""));
             dadosDosAlunos.add(studentData);
@@ -158,17 +163,17 @@ public class GradesTeacher implements Initializable {
         tableView.setItems(dadosDosAlunos);
     }
 
-//    private ArrayList<Integer> calcularMedia(ArrayList<String> arrayNotas){
-        private void calcularMedia(ArrayList<String> arrayNotas){
-        for (String elemento :arrayNotas){
-//            System.out.println(elemento);
+    // private ArrayList<Integer> calcularMedia(ArrayList<String> arrayNotas){
+    private void calcularMedia(ArrayList<String> arrayNotas) {
+        for (String elemento : arrayNotas) {
+            // System.out.println(elemento);
         }
     }
 
     private void setSubjectSelectOptions() {
         ArrayList<Subject> subjects = initData();
         ArrayList arrayElementos = new ArrayList<>();
-        for (Subject subject : subjects){
+        for (Subject subject : subjects) {
             arrayElementos.add(subject.getName());
         }
         final ObservableList<String> dadosDasDisciplinas = FXCollections.observableArrayList(arrayElementos);
@@ -182,7 +187,7 @@ public class GradesTeacher implements Initializable {
         this.tableView.setTableMenuButtonVisible(true);
     }
 
-    private int converterEmInt (TextField grade){
+    private int converterEmInt(TextField grade) {
         String textGrade = grade.getText(); // Sua String de entrada
         try {
             Integer intGrade = Integer.valueOf(textGrade);
@@ -197,28 +202,29 @@ public class GradesTeacher implements Initializable {
     private ArrayList initData() {
         ArrayList<Subject> arrayListSubject = new ArrayList<>();
         String path = UserUtil.getPathTeacher() + "subjects.json";
-        JSONArray jsonArray =  JsonFile.readJsonFile(path);
+        JSONArray jsonArray = JsonFile.readJsonFile(path);
         if (jsonArray != null) {
-        JSONObject jsonObject = (JSONObject) jsonArray.get(0);
-        JSONArray jsonArrayListOfSubjects = (JSONArray) jsonObject.get("list_of_subjects");
-        for (Object object : jsonArrayListOfSubjects) {
-            Subject subject = new Subject();
-            String subjectId = (String) object;
-            subject.setId(subjectId);
-            String pathDiscipline = "db/subjects/" + subjectId + "/informations.json";
-            JSONArray jsonArray2 = JsonFile.readJsonFile(pathDiscipline);
-            JSONObject jsonObject1 = (JSONObject) jsonArray2.get(0);
-            String subjectName = (String) jsonObject1.get("name");
-            ArrayList<String> enrolledStudents = (ArrayList<String>) jsonObject1.get("students");
-            subject.setName(subjectName);
-            ArrayList<Student> students = new ArrayList<>();
-            for (String student : enrolledStudents){
-                Student atualStudent = StudentService.setStudentInfoForList(UserUtil.getStudentUserPathById(student));
-                students.add(atualStudent);
+            JSONObject jsonObject = (JSONObject) jsonArray.get(0);
+            JSONArray jsonArrayListOfSubjects = (JSONArray) jsonObject.get("list_of_subjects");
+            for (Object object : jsonArrayListOfSubjects) {
+                Subject subject = new Subject();
+                String subjectId = (String) object;
+                subject.setId(subjectId);
+                String pathDiscipline = "db/subjects/" + subjectId + "/informations.json";
+                JSONArray jsonArray2 = JsonFile.readJsonFile(pathDiscipline);
+                JSONObject jsonObject1 = (JSONObject) jsonArray2.get(0);
+                String subjectName = (String) jsonObject1.get("name");
+                ArrayList<String> enrolledStudents = (ArrayList<String>) jsonObject1.get("students");
+                subject.setName(subjectName);
+                ArrayList<Student> students = new ArrayList<>();
+                for (String student : enrolledStudents) {
+                    Student atualStudent = StudentService
+                            .setStudentInfoForList(UserUtil.getStudentUserPathById(student));
+                    students.add(atualStudent);
+                }
+                subject.setEnrolledStudents(students);
+                arrayListSubject.add(subject);
             }
-            subject.setEnrolledStudents(students);
-            arrayListSubject.add(subject);
-        }
         }
         return arrayListSubject;
     }
@@ -235,12 +241,14 @@ public class GradesTeacher implements Initializable {
                 for (Student student : subject.getEnrolledStudents()) {
                     String idAlunos = student.getRegistration();
                     arrayMatricula.add(idAlunos);
-                    String pathSubject = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/subjects.json";
-                    String pathInformations = "db/users/students/" + idAlunos.substring(1, 5) + "/" + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/informations.txt";
+                    String pathSubject = "db/users/students/" + idAlunos.substring(1, 5) + "/"
+                            + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/subjects.json";
+                    String pathInformations = "db/users/students/" + idAlunos.substring(1, 5) + "/"
+                            + idAlunos.substring(0, 1) + "/" + idAlunos.substring(5) + "/informations.txt";
                     JSONArray jsonArray = JsonFile.readJsonFile(pathSubject);
-                    for (Object element: jsonArray) {
+                    for (Object element : jsonArray) {
                         JSONObject jsonObject = (JSONObject) element;
-                        if(jsonObject.get("name").equals(subjectSelect.getValue())){
+                        if (jsonObject.get("name").equals(subjectSelect.getValue())) {
                             arrayNotas.add(jsonObject.get("notas").toString());
                         }
                     }
@@ -261,11 +269,11 @@ public class GradesTeacher implements Initializable {
                 }
             }
         }
-        for (int i = 0; i < arrayNotas.size(); i++){
-                studentGradeData studentData = new studentGradeData(arrayNomesAlunos.get(i), arrayMatricula.get(i));
-                studentData.initializeArrayCurrentGrade(arrayNotas.get(i).replaceAll("[\\[\\]\"]", ""));
-                dadosDosAlunos.add(studentData);
-            }
+        for (int i = 0; i < arrayNotas.size(); i++) {
+            studentGradeData studentData = new studentGradeData(arrayNomesAlunos.get(i), arrayMatricula.get(i));
+            studentData.initializeArrayCurrentGrade(arrayNotas.get(i).replaceAll("[\\[\\]\"]", ""));
+            dadosDosAlunos.add(studentData);
+        }
         tableView.getItems().clear();
         this.sendGradeButton.setVisible(true);
         this.tableView.setVisible(true);

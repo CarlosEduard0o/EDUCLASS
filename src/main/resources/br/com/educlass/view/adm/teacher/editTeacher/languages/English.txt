@@ -1,10 +1,10 @@
-textTitle: Edit Teacher
-textName: Name
-textCpf: CPF
-textAddress: Address
-textEmail: Email
-textPassword: Password
-textPassword1: Status
-buttonUploadPicture: Change Picture
-buttonCancel: Cancel
-buttonSave: Save
+textTitle:Edit Teacher
+textName:Name
+textCpf:CPF
+textAddress:Address
+textEmail:Email
+textPassword:Password
+textPassword1:Status
+buttonUploadPicture:Change Picture
+buttonCancel:Cancel
+buttonSave:Save

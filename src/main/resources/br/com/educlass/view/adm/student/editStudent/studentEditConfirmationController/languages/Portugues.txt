@@ -1,4 +1,4 @@
-textTitle: Revisão
+textTitle:Revisão
 textCpf:CPF
 textAddress:Endereço
 textEmail:E-mail

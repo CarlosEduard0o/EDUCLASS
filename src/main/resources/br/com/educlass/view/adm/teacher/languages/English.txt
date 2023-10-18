@@ -1,6 +1,6 @@
-textTitle: Select a Teacher
-comboTeacherSelected: Select a Teacher
-tableFirstColumn: Registration
-tableSecondColumn: Name
-buttonEditTeacher: Edit
-buttonCreateNewTeacher: Add a Teacher
+textTitle:Select a Teacher
+comboTeacherSelected:Select a Teacher
+tableFirstColumn:Registration
+tableSecondColumn:Name
+buttonEditTeacher:Edit
+buttonCreateNewTeacher:Add a Teacher

@@ -1,10 +1,10 @@
-textTitle: Criar Disciplina
-textSubjectName: Insira um nome para o curso
-textQuantityLessions: Insira o número de aulas (somente números são considerados)
-comboBoxSelectTeacher: Selecione um professor
-textInserrtStudent: Insira os alunos
-selectColumn: Seleção
-idColumn: ID
-nameColumn: Nome
-buttonCancel: Cancelar
-buttonConfirm: Confirmar
+textTitle:Criar Disciplina
+textSubjectName:Insira um nome para o curso
+textQuantityLessions:Insira o número de aulas (somente números são considerados)
+comboBoxSelectTeacher:Selecione um professor
+textInserrtStudent:Insira os alunos
+selectColumn:Seleção
+idColumn:ID
+nameColumn:Nome
+buttonCancel:Cancelar
+buttonConfirm:Confirmar
