@@ -8,6 +8,7 @@ import br.com.educlass.util.UserUtil;
 import br.com.educlass.model.person.student.Student;
 import br.com.educlass.service.student.StudentService;
 import br.com.educlass.view.student.frequency.Frequency;
+import br.com.educlass.view.student.template.informations.InformationsController;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -158,6 +159,15 @@ public class Template extends Application implements Initializable {
         CursorUtil.setMainPane(this.templatePane);
         setUserPicture();
         setLanguage();
+
+
+        try {
+            Parent root = FXMLLoader.load(InformationsController.class.getResource("informations.fxml"));
+            contentContainer.getChildren().add(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 }

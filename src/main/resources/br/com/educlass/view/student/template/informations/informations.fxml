@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.template.informations.InformationsController">
+   <children>
+      <Text fx:id="frequencyTitle" layoutX="485.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Frequência" />
+      <Text fx:id="gradesTitle" layoutX="512.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Notas" />
+      <Text fx:id="extraTitle" layoutX="518.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Extra" />
+      <Text fx:id="frequencyContent" layoutX="254.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="A frequencia é o local onde o aluno pode consultar quantas faltas ele tem em determinada disciplina ." textAlignment="JUSTIFY" wrappingWidth="580.0" />
+      <Text fx:id="gradesContent" layoutX="254.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Notas é o local aonde o aluno pode sverificar suas notas em uma disciplina e também verificar o quanto ele precisaria tirar em uma prova final com aquelas notas." textAlignment="JUSTIFY" wrappingWidth="580.0" />
+      <Text fx:id="extraContent" layoutX="254.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="No extra, o aluno poderá encontrar ferramentas úteis para o seu cotidiano e ao mesmo tempo ter um entretermimento" textAlignment="JUSTIFY" wrappingWidth="580.0" />
+      <Text fx:id="titleText" layoutX="436.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Textos informativos" />
+   </children>
+</AnchorPane>

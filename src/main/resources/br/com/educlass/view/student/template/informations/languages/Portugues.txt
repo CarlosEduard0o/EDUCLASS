@@ -1,0 +1,7 @@
+titleText:Textos informativos
+frequencyTitle:Frequência
+gradesTitle:Notas
+extraTitle:Extra
+frequencyContent:A frequencia é o local onde o aluno pode consultar quantas faltas ele tem em determinada disciplina .
+gradesContent:Notas é o local aonde o aluno pode sverificar suas notas em uma disciplina e também verificar o quanto ele precisaria tirar em uma prova final com aquelas notas.
+extraContent:No extra, o aluno poderá encontrar ferramentas úteis para o seu cotidiano e ao mesmo tempo ter um entretermimento
