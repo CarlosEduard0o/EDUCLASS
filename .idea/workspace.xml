@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fdf912a-f8b9-4a15-8475-5c400577a6c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/alanf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/adm/template/informations/InformationsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/cache/user.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/cache/user.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/configurations/language.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/configurations/language.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/students/informations.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/grades/GradesTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/grades/GradesTeacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/template/TemplateTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/template/TemplateTeacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/languages/Portugues.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/informations/informations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/informations/informations.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/informations/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/informations/languages/English.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/informations/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/informations/languages/Portugues.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/template.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/adm/template/AdmTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/adm/template/AdmTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/informations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/informations.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/Portugues.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -41,13 +43,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/alanf/OneDrive/Documentos/Faitec/FAITEC-EDUCLASS/src/main/java/br/com/educlass/view/adm/template",
+    "settings.editor.selected.configurable": "preferences.editor"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alanf\OneDrive\Documentos\Faitec\FAITEC-EDUCLASS\src\main\java\br\com\educlass\view\adm\template" />
       <recent name="C:\Users\CarlosEduardodeAlmei\Desktop\FAITEC-EDUCLASS\src\main\resources\br\com\educlass\view\teacher\template\languages" />
       <recent name="C:\Users\CarlosEduardodeAlmei\Desktop\FAITEC-EDUCLASS\db\users\teachers\0003" />
     </key>
@@ -86,10 +91,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

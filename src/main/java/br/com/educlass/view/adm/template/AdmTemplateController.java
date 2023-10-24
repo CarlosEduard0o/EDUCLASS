@@ -1,10 +1,7 @@
 package br.com.educlass.view.adm.template;
 
 import br.com.educlass.model.institution.Institution;
-import br.com.educlass.model.person.student.Student;
-import br.com.educlass.model.subjects.Subject;
 import br.com.educlass.service.admnistrator.AdmnistratorService;
-import br.com.educlass.service.student.StudentService;
 import br.com.educlass.util.ContentContainer;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.Language;
@@ -12,6 +9,7 @@ import br.com.educlass.util.SceneController;
 import br.com.educlass.view.adm.student.StudentController;
 import br.com.educlass.view.adm.subjects.SubjectsController;
 import br.com.educlass.view.adm.teacher.TeacherController;
+import br.com.educlass.view.adm.template.informations.InformationsController;
 import br.com.educlass.view.login.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -29,7 +27,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -163,5 +160,12 @@ public class AdmTemplateController extends Application implements Initializable 
         CursorUtil.setMainPane(this.templatePane);
         setAdmnistratorInfo();
         setLanguage();
+
+        try {
+            Parent root = FXMLLoader.load(InformationsController.class.getResource("informations.fxml"));
+            contentContainer.getChildren().add(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -1,7 +1,7 @@
-titleText:Informational Texts
-frequencyTitle:Frequency
-gradesTitle:Grades
-extraTitle:Extra
-frequencyContent:Frequency is the place where the student can check how many absences they have in a particular subject.
-gradesContent:Grades is where the student can check their grades in a subject and also see how much they would need to score on a final exam with those grades.
-extraContent:In the Extra section, the student can find useful tools for their daily life while also having some entertainment.
+titleText:Informative Texts
+studentTitle:Students
+teacherTitle:Teachers
+subjectTitle:Subjects
+studentContent:The place where you can add or edit students.
+teacherContent:The place where you can add or edit teachers.
+subjectContent:Where you can create subjects, assigning students and teachers to them, and in the future, also the option to edit a subject.

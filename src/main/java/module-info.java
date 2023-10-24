@@ -23,6 +23,8 @@ module br.com.educlass.educlass {
     opens br.com.educlass.view.teacher.template.informations to javafx.fxml;
     exports br.com.educlass.view.teacher.template.informations;
 
+    opens br.com.educlass.view.adm.template.informations to javafx.fxml;
+    exports br.com.educlass.view.adm.template.informations;
 
     opens br.com.educlass.view.teacher.grades to javafx.fxml;
     exports br.com.educlass.view.teacher.grades;
