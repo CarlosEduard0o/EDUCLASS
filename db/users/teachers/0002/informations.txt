@@ -1,7 +1,6 @@
-nome:JAOZINHO
-curso:SI
-cpf:1451
-endereço:ASDASDA
-email:SDAD2@GMAIL.COM
+nome:ProfessorTeste
+cpf:123
+endereço:123
+email:123
 matricula:T0002
 situation:ativo

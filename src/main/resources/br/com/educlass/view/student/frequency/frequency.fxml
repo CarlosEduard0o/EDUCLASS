@@ -15,7 +15,7 @@
       <TableView fx:id="tableView" layoutX="24.0" layoutY="99.0" prefHeight="539.0" prefWidth="1042.0" styleClass="tableView">
         <columns>
           <TableColumn fx:id="dateColumn" prefWidth="170.0" styleClass="centralize-column-table" text="quantidade" />
-          <TableColumn fx:id="subjectColumn" prefWidth="867.0" text="Disciplina" />
+          <TableColumn fx:id="subjectColumn" prefWidth="871.0" text="Disciplina" />
         </columns>
       </TableView>
       <Text fx:id="titleText" layoutX="23.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Disciplina" wrappingWidth="146.37182235717773" />

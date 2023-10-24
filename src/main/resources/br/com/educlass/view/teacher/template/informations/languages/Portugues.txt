@@ -1,0 +1,5 @@
+titleText:Textos informativos
+frequencyTitle:Frequência
+gradesTitle:Notas
+frequencyContent:Frequência é o local onde o professor pode registrar a presença do aluno em uma determinada disciplina.
+gradesContent:Notas é o local onde o professor pode registrar as notas do aluno em uma determinada disciplina.

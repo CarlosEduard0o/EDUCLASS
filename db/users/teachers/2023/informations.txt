@@ -1,7 +1,0 @@
-nome:Professor teste
-curso:SI
-cpf:123.456.789-12
-endereço:Rua x; Número x; Bairro XXX XXXXX
-email:carlos@gmail.com
-matricula:T2023
-situation:ativo

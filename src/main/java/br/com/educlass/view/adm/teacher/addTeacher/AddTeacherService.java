@@ -72,10 +72,15 @@ public class AddTeacherService {
     }
 
     private static void saveProfilePicture(File file, String registration) throws IOException {
+        String path = UserUtil.getTeacherUserPathById(registration)+"photo.jpeg";
         if(file != null) {
-            String path = UserUtil.getTeacherUserPathById(registration)+"photo.jpeg";
             Path origem = file.toPath();
             Files.copy(origem,
+                    (new File(path).toPath()),
+                    StandardCopyOption.REPLACE_EXISTING);
+        } else {
+            Path profile = Path.of("src/main/resources/br/com/educlass/images/userIcon.png");
+            Files.copy(profile,
                     (new File(path).toPath()),
                     StandardCopyOption.REPLACE_EXISTING);
         }

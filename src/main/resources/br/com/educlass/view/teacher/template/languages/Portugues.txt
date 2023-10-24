@@ -3,3 +3,12 @@ course:Curso
 register:Matrícula
 frequencyText:Frequência
 gradesText:Notas
+frequencyTitle:FREQUÊNCIA
+frequencyStep1:Passo 1 - Escolha a disciplina para a qual deseja adicionar frequência. Mais abaixo na tela, você verá uma tabela com os alunos matriculados na disciplina escolhida.
+frequencyStep2:Passo 2 - Na coluna "Presença", você verá um Check Box para cada aluno. Marque o Check Box se o aluno estiver ausente na aula ou deixe-o desmarcado se o aluno estiver presente.
+frequencyStep3:Passo 3 - Após preencher, clique no botão "Enviar". Você deve receber uma mensagem de confirmação informando que a presença e as faltas foram registradas com sucesso.
+gradeTitle:NOTAS
+gradeStep1:Passo 1 - Escolha a disciplina para a qual deseja adicionar notas. Mais abaixo na tela, você verá uma tabela com os alunos matriculados na disciplina escolhida.
+gradeStep2:Passo 2 - Insira o valor da prova em "Valor da prova". Isso representa a nota máxima que um aluno pode obter na prova.
+gradeStep3:Passo 3 - Na coluna "Adicionar", você verá um campo de texto para cada aluno. Insira as notas dos alunos nesses campos. Certifique-se de que as notas inseridas não sejam maiores do que o valor da prova que você definiu anteriormente.
+gradeStep4:Passo 4 - Quando você estiver pronto para enviar as notas clique no botão "Enviar". O software verificará automaticamente se o campo "Valor da prova" não está vazio e se as notas inseridas para cada aluno não são maiores do que o valor da prova.

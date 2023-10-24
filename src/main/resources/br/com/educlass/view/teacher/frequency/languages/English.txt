@@ -1,0 +1,8 @@
+subjectTitle:Subject
+subjectSelect:Select a subject
+presenceColumn:Attendance
+studentColumn:Student
+skipClassColumn:Absences
+tableView:There is no content in the table
+sendButton:Send
+ThereIsNotContentInTheTable:There is no content in the table

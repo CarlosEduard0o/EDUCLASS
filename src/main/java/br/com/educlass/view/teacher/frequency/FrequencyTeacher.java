@@ -7,6 +7,7 @@ import br.com.educlass.service.student.StudentService;
 import br.com.educlass.service.teacher.TeacherService;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.JsonFile;
+import br.com.educlass.util.Language;
 import br.com.educlass.util.UserUtil;
 
 import javafx.collections.FXCollections;
@@ -14,12 +15,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javafx.scene.text.Text;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -31,12 +30,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class FrequencyTeacher implements Initializable {
 
     @FXML
     private ComboBox<String> subjectSelect;
+
     @FXML
     private TableView<stutendData> tableView;
 
@@ -52,10 +53,26 @@ public class FrequencyTeacher implements Initializable {
     @FXML
     private Button sendButton;
 
+    @FXML
+    private Text subjectTitle;
+
+    private String ThereIsNotContentInTheTable;
+
     Teacher teacher;
 
     ObservableList<stutendData> dadosDosAlunos;
 
+    private void setLanguage() {
+        HashMap<String, String> texts = Language.getTexts("src/main/resources/br/com/educlass/view/teacher/frequency/languages/");
+        subjectSelect.setPromptText(texts.get("subjectSelect"));
+//        tableView.setText(texts.get("register")+": " + teacher.getRegistration());
+        subjectTitle.setText(texts.get("subjectTitle"));
+        studentColumn.setText(texts.get("studentColumn"));
+        skipClassColumn.setText(texts.get("skipClassColumn"));
+        presenceColumn.setText(texts.get("presenceColumn"));
+        sendButton.setText(texts.get("sendButton"));
+        ThereIsNotContentInTheTable=texts.get("ThereIsNotContentInTheTable");
+    }
     @FXML
     private void onSendButtonClick() {
        // String data = null;
@@ -87,6 +104,11 @@ public class FrequencyTeacher implements Initializable {
                 }
             }
         }
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Sucesso");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("Frequência enviada com sucesso!");
+        successAlert.showAndWait();
         refreshTable();
     }
 
@@ -133,6 +155,7 @@ public class FrequencyTeacher implements Initializable {
         tableView.getItems().clear();
         this.sendButton.setVisible(true);
         this.tableView.setVisible(true);
+        tableView.setPlaceholder(new Label(ThereIsNotContentInTheTable));
         tableView.setItems(dadosDosAlunos);
     }
 
@@ -226,14 +249,17 @@ public class FrequencyTeacher implements Initializable {
         tableView.getItems().clear();
         this.sendButton.setVisible(true);
         this.tableView.setVisible(true);
+        tableView.setPlaceholder(new Label(ThereIsNotContentInTheTable));
         tableView.setItems(dadosDosAlunos);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setFactoryTable();
+        setLanguage();
         this.sendButton.setVisible(false);
         this.tableView.setVisible(false);
+        tableView.setPlaceholder(new Label(ThereIsNotContentInTheTable));
         this.teacher = TeacherService.getTeacher();
         setSubjectSelectOptions();
         CursorUtil.handleCursorType(Cursor.DEFAULT);

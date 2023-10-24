@@ -1,0 +1,14 @@
+gradesTitle:Grades
+subjectSelect:Select a subject
+studentNameColumn:Name
+addGradeColumn:Add
+currentGradeColumn:Grades
+tableView:There is no content in the table
+sendGradeButton:Send
+testMessage:Test value
+AlertTitle:Alert
+WarningValueGradeGreaterThanValueTest:The value of the grade cannot be greater than the value of the test!
+WarningPutValueTest:It is necessary to put the value of the test!
+Success:Success
+NotesSentSuccessfully:Notes sent successfully!
+ThereIsNotContentInTheTable:There is no content in the table

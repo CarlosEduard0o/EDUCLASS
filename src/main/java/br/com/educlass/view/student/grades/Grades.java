@@ -46,6 +46,7 @@ public class Grades implements Initializable {
     private void setFactoryTable() {
         subjectColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("subject"));
+        this.tableView.setTableMenuButtonVisible(true);
     }
 
     private void setDataInTable(String date, String subject) {

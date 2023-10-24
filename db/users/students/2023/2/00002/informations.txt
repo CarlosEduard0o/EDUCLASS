@@ -1,7 +1,7 @@
-nome:Testando
+nome:teste1
 curso:SI
-cpf:58481
-endereço:Eheaun
-email:SDMAIKDM2@GMAIL.COM
+cpf:asdad
+endereço:asdasd
+email:asdasd123456
 matricula:2202300002
 situation:matriculado

@@ -1,5 +1,7 @@
 package br.com.educlass.view.student.template;
 
+import br.com.educlass.model.person.teacher.Teacher;
+import br.com.educlass.service.teacher.TeacherService;
 import br.com.educlass.view.student.extra.ExtraController;
 import br.com.educlass.view.student.grades.Grades;
 import br.com.educlass.util.CursorUtil;
@@ -159,7 +161,6 @@ public class Template extends Application implements Initializable {
         CursorUtil.setMainPane(this.templatePane);
         setUserPicture();
         setLanguage();
-
 
         try {
             Parent root = FXMLLoader.load(InformationsController.class.getResource("informations.fxml"));

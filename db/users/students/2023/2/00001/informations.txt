@@ -1,7 +1,7 @@
-nome:Carlos
+nome:Estudante
 curso:SI
-cpf:159154147268
-endereço:Rua da Rua
-email:asdanodas@gmail.com
+cpf:1234567885
+endereço:54654
+email:5645646
 matricula:2202300001
 situation:matriculado

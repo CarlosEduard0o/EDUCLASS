@@ -1,0 +1,14 @@
+gradesTitle:Notas
+subjectSelect:Selecione uma disciplina
+studentNameColumn:Nome
+addGradeColumn:Adicionar
+currentGradeColumn:Notas
+tableView:Não há conteúdo na tabela
+testMessage:Valor da prova
+sendGradeButton:Enviar
+AlertTitle:Alerta
+WarningValueGradeGreaterThanValueTest:O valor da nota não pode ser maior que o valor da prova!
+WarningPutValueTest:É necessário colocar o valor da prova!
+Success:Sucesso
+NotesSentSuccessfully:Notas enviadas com sucesso!
+ThereIsNotContentInTheTable:Não há conteúdo na tabela

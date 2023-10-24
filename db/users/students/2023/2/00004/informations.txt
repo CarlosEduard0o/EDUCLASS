@@ -1,0 +1,7 @@
+nome:teste3
+curso:SI
+cpf:asasd
+endereço:asdasd
+email:asdasd
+matricula:2202300004
+situation:matriculado

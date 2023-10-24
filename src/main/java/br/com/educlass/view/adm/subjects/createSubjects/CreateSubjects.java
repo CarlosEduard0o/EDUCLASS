@@ -107,7 +107,10 @@ public class CreateSubjects implements Initializable {
     @FXML
     private void verifyInformationsSetteds() {
         String nameInput = textFieldNameSubject.getText();
-        Long quantityInput = Long.parseLong(textFieldQuantityLessions.getText());
+        Long quantityInput = null;
+        if(textFieldQuantityLessions.getText() != null && textFieldQuantityLessions.getText().length() > 0) {
+            quantityInput = Long.parseLong(textFieldQuantityLessions.getText());
+        }
         String comboboxTeacher = comboBoxSelectTeacher.getValue();
 
         if(nameInput != null && nameInput != "" &&
@@ -168,7 +171,7 @@ public class CreateSubjects implements Initializable {
         String comboboxTeacher = comboBoxSelectTeacher.getValue();
 
         ArrayList<String> gradesNotFound = new ArrayList<>();
-        gradesNotFound.add("Sem notas");
+        gradesNotFound.add("----------");
 
         for (CreateSubjectTable createSubjectTable: subjectsData) {
             if(createSubjectTable.getSelectColumn().isSelected()) {

@@ -9,21 +9,25 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="450.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.teacher.grades.GradesTeacher">
+<AnchorPane prefHeight="720.0" prefWidth="1044.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.teacher.grades.GradesTeacher">
    <children>
-      <ComboBox fx:id="subjectSelect" layoutX="20.0" layoutY="51.0" onAction="#handleSubjectSelect" prefHeight="26.0" prefWidth="410.0" promptText="Selecione uma disciplina" />
-      <TableView fx:id="tableView" layoutX="20.0" layoutY="101.0" prefHeight="214.0" prefWidth="410.0">
+      <ComboBox fx:id="subjectSelect" layoutX="20.0" layoutY="71.0" onAction="#handleSubjectSelect" prefHeight="33.0" prefWidth="980.0" promptText="Selecione uma disciplina" />
+      <TableView fx:id="tableView" layoutX="20.0" layoutY="121.0" prefHeight="473.0" prefWidth="980.0">
         <columns>
-          <TableColumn fx:id="studentNameColumn" prefWidth="177.0" text="Nome" />
-          <TableColumn fx:id="addGradeColumn" prefWidth="79.0" text="Adicionar" />
-            <TableColumn fx:id="currentGradeColumn" prefWidth="152.0" text="Notas" />
+          <TableColumn fx:id="studentNameColumn" prefWidth="413.0" text="Nome" />
+          <TableColumn fx:id="addGradeColumn" minWidth="0.0" prefWidth="113.0" text="Adicionar" />
+            <TableColumn fx:id="currentGradeColumn" prefWidth="453.0" text="Notas" />
         </columns>
       </TableView>
-      <Text layoutX="209.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Notas" />
-      <Button fx:id="sendGradeButton" layoutX="370.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#onSendGradeButtonClick" text="Enviar" />
-      <Label fx:id="testMessage" layoutX="20.0" layoutY="346.0" text="Valor da prova: " />
-      <TextField fx:id="testValue" layoutX="135.0" layoutY="341.0" prefHeight="31.0" prefWidth="60.0" />
+      <Text fx:id="gradesTitle" layoutX="21.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Notas" />
+      <Button fx:id="sendGradeButton" layoutX="863.0" layoutY="613.0" mnemonicParsing="false" onMouseClicked="#onSendGradeButtonClick" prefHeight="47.0" prefWidth="137.0" stylesheets="@styles.css" text="Enviar" />
+      <Label fx:id="testMessage" layoutX="21.0" layoutY="611.0" prefHeight="25.0" prefWidth="126.0" styleClass="text_valor_da_prova" stylesheets="@styles.css" text="Valor da prova: ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="testValue" layoutX="19.0" layoutY="648.0" prefHeight="31.0" prefWidth="97.0" />
    </children>
 </AnchorPane>

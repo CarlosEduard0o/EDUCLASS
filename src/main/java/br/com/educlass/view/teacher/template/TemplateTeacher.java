@@ -7,6 +7,7 @@ import br.com.educlass.util.Language;
 import br.com.educlass.util.UserUtil;
 import br.com.educlass.view.teacher.frequency.FrequencyTeacher;
 import br.com.educlass.view.teacher.grades.GradesTeacher;
+import br.com.educlass.view.teacher.template.informations.TeacherInformationsController;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -73,6 +74,17 @@ public class TemplateTeacher extends Application implements Initializable{
     @FXML
     private AnchorPane contentContainer; //w=450 h=400
 
+
+    private void setLanguage() {
+        Teacher teacher = TeacherService.setTeacherInfo();
+        HashMap<String, String> texts = Language.getTexts("src/main/resources/br/com/educlass/view/teacher/template/languages/");
+        name.setText(texts.get("name")+": " + teacher.getName());
+//        course.setText(texts.get("course")+": " + teacher.getRegistration());
+        register.setText(texts.get("register")+": " + teacher.getRegistration());
+        frequencyText.setText(texts.get("frequencyText"));
+        gradesText.setText(texts.get("gradesText"));
+    }
+
     private void setUserPicture() {
         this.pathUser = UserUtil.getPathTeacher();
 
@@ -84,24 +96,6 @@ public class TemplateTeacher extends Application implements Initializable{
             userImageContainer.setFill(new ImagePattern(image));
         }
 
-    }
-
-    private void setUserInformations() {
-        Teacher teacher = TeacherService.setTeacherInfo();
-        HashMap<String, String> texts = Language.getTexts("src/main/resources/br/com/educlass/view/teacher/template/languages/");
-
-        name.setText(texts.get("name")+": " + teacher.getName());
-
-//        JSONArray courseInfoArray = JsonFile.readJsonFile
-//                ("db/course/"+teacher.getCourseId()+"/informations.json");
-
-
-//        JSONObject courseInfoJson = (JSONObject) courseInfoArray.get(0);
-
-//        course.setText(texts.get("course")+": " + courseInfoJson.get("courseSimble"));
-        register.setText(texts.get("register")+": " + teacher.getRegistration());
-        frequencyText.setText(texts.get("frequencyText"));
-        gradesText.setText(texts.get("gradesText"));
     }
 
     @FXML
@@ -127,7 +121,6 @@ public class TemplateTeacher extends Application implements Initializable{
         contentContainer.getChildren().clear();
         frequencyOptionContainer.setStyle("-fx-background-color:hover: #D1D1D1");
         gradesOptionContainer.setStyle("-fx-background-color: white");
-
         Parent root = FXMLLoader.load(GradesTeacher.class.getResource("grades.fxml"));
         contentContainer.getChildren().add(root);
     }
@@ -135,8 +128,14 @@ public class TemplateTeacher extends Application implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         CursorUtil.setMainPane(this.templatePane);
+        setLanguage();
         setUserPicture();
-        setUserInformations();
+        try {
+            Parent root = FXMLLoader.load(TeacherInformationsController.class.getResource("informations.fxml"));
+            contentContainer.getChildren().add(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

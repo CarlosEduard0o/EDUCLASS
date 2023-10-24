@@ -1,0 +1,7 @@
+nome:teste3
+curso:SI
+cpf:12123
+endereço:123123
+email:12312
+matricula:2202300005
+situation:matriculado

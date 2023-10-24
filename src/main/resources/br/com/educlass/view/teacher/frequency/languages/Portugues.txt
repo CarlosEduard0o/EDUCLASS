@@ -1,0 +1,8 @@
+subjectTitle:Disciplina
+subjectSelect:Selecione uma disciplina
+presenceColumn:Presenca
+studentColumn:Aluno
+skipClassColumn:Faltas
+tableView:Não há conteúdo na tabela
+sendButton:Enviar
+ThereIsNotContentInTheTable:Não há conteúdo na tabela

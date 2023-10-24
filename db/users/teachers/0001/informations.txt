@@ -1,0 +1,6 @@
+nome:Pardal
+cpf:123456789
+endereço:12345689
+email:123456789
+matricula:T0001
+situation:ativo

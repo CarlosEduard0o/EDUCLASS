@@ -10,30 +10,27 @@ import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class studentGradeData {
     private String studentName;
     private TextField addGrade;
     private ArrayList<String> currentGrade;
     private String idStudent;
 
-    public studentGradeData(String name, String idStudent) {
-        this.studentName = name;
+    public studentGradeData() {
         this.currentGrade = new ArrayList<>();
         this.addGrade = new TextField();
-        this.idStudent = idStudent;
     }
 
     public void setCurrentGrade (TextField grade, String testValue){
         if (!grade.getText().isEmpty()){
-            this.currentGrade.add(" " + grade.getText() + " de " + testValue);
+            this.currentGrade.add(grade.getText() + "-" + testValue);
         }
     }
 
     public void setFirstCurrentGrade (TextField grade, String testValue){
         if (!grade.getText().isEmpty()){
             this.currentGrade.remove(0);
-            this.currentGrade.add(0,  grade.getText() + " de " + testValue);
+            this.currentGrade.add(0,  grade.getText() + "-" + testValue);
         }
     }
 

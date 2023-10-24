@@ -63,6 +63,7 @@ public class Frequency implements Initializable {
     private void setFactoryTable() {
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         subjectColumn.setCellValueFactory(new PropertyValueFactory<>("subject"));
+        this.tableView.setTableMenuButtonVisible(true);
     }
 
     private void setDataInTable(String date, String subject) {

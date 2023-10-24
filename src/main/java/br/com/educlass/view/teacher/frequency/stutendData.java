@@ -19,13 +19,8 @@ public class stutendData {
         this.presence = new CheckBox();
         this.idStudent = idStudent;
     }
-//    public void checkBoxAnalysis(){
-//        System.out.println(this.presence.isSelected());
-//    }
+
     public CheckBox getPresenca() {
         return presence;
     }
-//    public void setPresenca(CheckBox presence){
-//        this.presence = presence;
-//    }
 }
