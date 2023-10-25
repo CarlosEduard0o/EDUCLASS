@@ -62,17 +62,22 @@ public class Grades implements Initializable {
                 for (Subject subject : subjects) {
                     if (subjectSelect.getValue().split("-")[0].trim().equalsIgnoreCase(subject.getId())) {
                         for (String grade : subject.getGrades()) {
-                            setDataInTable(grade.replace("-", "/"), subject.getName());
-                            System.out.println(grade);
-                            if(!grade.replace("-", "/").equals("Sem notas")) {
-                                mediaFinalNecessaria =mediaFinalNecessaria +
-                                        Integer.parseInt(grade.split("-")[0].trim());
+                            if(!grade.equals("----------")) {
+                                setDataInTable(grade.replace("-", "/"), subject.getName());
+                                if(!grade.replace("-", "/").equals("----------")) {
+                                    mediaFinalNecessaria =mediaFinalNecessaria +
+                                            Integer.parseInt(grade.split("-")[0].trim());
+                                }
                             }
                         }
                     }
-                    mediaFinalNecessaria = (1 * ((500 - (mediaFinalNecessaria * 6)) / 4));
-                    mediaFinalNecessaria = mediaFinalNecessaria >= 100 ? 100 : mediaFinalNecessaria;
                 }
+            if (mediaFinalNecessaria >= 70) {
+                mediaFinalNecessaria = 0;
+            } else {
+                mediaFinalNecessaria =((500 - (mediaFinalNecessaria * 6)) / 4);
+            }
+            mediaFinalNecessaria = mediaFinalNecessaria >= 100 ? 100 : mediaFinalNecessaria;
             infoText.setText(this.infoTextWithLanguage + ": " + mediaFinalNecessaria);
         }
     }

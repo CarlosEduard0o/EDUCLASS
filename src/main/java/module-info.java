@@ -5,6 +5,9 @@ module br.com.educlass.educlass {
     requires lombok;
     requires json.simple;
 
+    requires java.mail;
+    requires activation;
+
     opens br.com.educlass to javafx.fxml;
     exports br.com.educlass;
 
