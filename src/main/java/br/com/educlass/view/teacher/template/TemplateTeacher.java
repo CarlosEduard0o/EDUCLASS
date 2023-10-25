@@ -78,7 +78,7 @@ public class TemplateTeacher extends Application implements Initializable{
     private void setLanguage() {
         Teacher teacher = TeacherService.setTeacherInfo();
         HashMap<String, String> texts = Language.getTexts("src/main/resources/br/com/educlass/view/teacher/template/languages/");
-        name.setText(texts.get("name")+": " + teacher.getName());
+        name.setText(texts.get("name")+": " + teacher.getName().split(" ")[0]);
 //        course.setText(texts.get("course")+": " + teacher.getRegistration());
         register.setText(texts.get("register")+": " + teacher.getRegistration());
         frequencyText.setText(texts.get("frequencyText"));

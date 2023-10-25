@@ -1,0 +1,7 @@
+nome:Joaozinho
+curso:SI
+cpf:15415415485
+endereço:Rua teste
+email:emailteste@gmail.com
+matricula:2202300008
+situation:matriculado

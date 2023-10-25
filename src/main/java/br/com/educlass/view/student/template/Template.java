@@ -101,7 +101,7 @@ public class Template extends Application implements Initializable {
         HashMap<String, String> texts = Language
                 .getTexts("src/main/resources/br/com/educlass/view/student/template/languages/");
 
-        name.setText(texts.get("name") + ": " + student.getName());
+        name.setText(texts.get("name") + ": " + student.getName().split(" ")[0]);
 
         course.setText(texts.get("course") + ": " + student.getCourseId().toUpperCase());
         register.setText(texts.get("register") + ": " + student.getRegistration());
