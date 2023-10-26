@@ -5,21 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fdf912a-f8b9-4a15-8475-5c400577a6c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/service/email/Email.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/configurations/language.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/configurations/language.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/informations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/photo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00002/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00002/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00002/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00002/login.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/informations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/login.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/subjects.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00002/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00002/photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00002/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00002/subjects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/informations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/login.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/subjects.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/login.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/photo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00005/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00005/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00005/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00005/login.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00005/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00005/photo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/student/grades/Grades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/student/grades/Grades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/subjects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00006/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00006/subjects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00007/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00007/subjects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00008/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00008/informations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00008/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00008/photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00008/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00008/subjects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/teachers/0001/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/teachers/0001/subjects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/student/template/Template.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/student/template/Template.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/template/TemplateTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/template/TemplateTeacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/template.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/template.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

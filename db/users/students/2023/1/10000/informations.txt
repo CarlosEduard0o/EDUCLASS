@@ -1,7 +1,7 @@
-nome:Alan Silva
+nome:Alan F Silva
 curso:SI
 cpf:123.456.789-12
-endereço:Rua x; Número x; Bairro XXX XXXXX
+endereço:Rua 3 173
 email:alan@gmail.com
 matricula:1202310000
 situation:matriculado

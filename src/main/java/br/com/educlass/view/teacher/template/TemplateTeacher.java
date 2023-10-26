@@ -4,7 +4,9 @@ import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.service.teacher.TeacherService;
 import br.com.educlass.util.CursorUtil;
 import br.com.educlass.util.Language;
+import br.com.educlass.util.SceneController;
 import br.com.educlass.util.UserUtil;
+import br.com.educlass.view.login.Controller;
 import br.com.educlass.view.teacher.frequency.FrequencyTeacher;
 import br.com.educlass.view.teacher.grades.GradesTeacher;
 import br.com.educlass.view.teacher.template.informations.TeacherInformationsController;
@@ -83,6 +85,15 @@ public class TemplateTeacher extends Application implements Initializable{
         register.setText(texts.get("register")+": " + teacher.getRegistration());
         frequencyText.setText(texts.get("frequencyText"));
         gradesText.setText(texts.get("gradesText"));
+
+    }
+
+    @FXML
+    private void exitButtonPressed() {
+        SceneController sceneController = new SceneController();
+
+        sceneController.switchScene(templatePane.getScene().getWindow(),
+                Controller.class.getResource("view.fxml"));
     }
 
     private void setUserPicture() {

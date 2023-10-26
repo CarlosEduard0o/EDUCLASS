@@ -2,6 +2,8 @@ package br.com.educlass.view.student.template;
 
 import br.com.educlass.model.person.teacher.Teacher;
 import br.com.educlass.service.teacher.TeacherService;
+import br.com.educlass.util.SceneController;
+import br.com.educlass.view.login.Controller;
 import br.com.educlass.view.student.extra.ExtraController;
 import br.com.educlass.view.student.grades.Grades;
 import br.com.educlass.util.CursorUtil;
@@ -94,6 +96,14 @@ public class Template extends Application implements Initializable {
             userImageContainer.setFill(new ImagePattern(image));
         }
 
+    }
+
+    @FXML
+    private void exitButtonPressed() {
+        SceneController sceneController = new SceneController();
+
+        sceneController.switchScene(templatePane.getScene().getWindow(),
+                Controller.class.getResource("view.fxml"));
     }
 
     private void setLanguage() {

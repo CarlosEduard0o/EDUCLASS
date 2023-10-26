@@ -2,13 +2,15 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="templatePane" prefHeight="400.0" prefWidth="600.0" styleClass="content" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.teacher.template.TemplateTeacher">
+<AnchorPane fx:id="templatePane" prefHeight="400.0" prefWidth="600.0" styleClass="content" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.teacher.template.TemplateTeacher">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="150.0" styleClass="sidebar" stylesheets="@styles.css">
          <children>
@@ -47,6 +49,11 @@
                         </Text>
                      </children>
                   </Pane>
+                  <Button fx:id="exitButton" layoutX="51.0" layoutY="431.0" mnemonicParsing="false" onMousePressed="#exitButtonPressed" prefHeight="35.0" prefWidth="88.0" styleClass="sidebar-exitButton" text="SAIR">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
                <opaqueInsets>
                   <Insets />

@@ -1,4 +1,4 @@
-nome:teste2
+nome:Manoel
 curso:SI
 cpf:1123123
 endereço:12123123

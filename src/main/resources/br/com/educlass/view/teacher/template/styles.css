@@ -26,3 +26,9 @@
     -fx-background-color: #D1D1D1;
 }
 
+.sidebar-exitButton {
+    -fx-background-color: #BA342B;
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+}
+

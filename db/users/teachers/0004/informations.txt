@@ -1,0 +1,7 @@
+nome:Professor 25
+curso:SI
+cpf:1414141
+endereço:Rua x 150
+email:akasdjandjand@gmail.com
+matricula:T0004
+situation:ativo
