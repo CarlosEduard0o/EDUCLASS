@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.extra.ExtraController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Pane layoutX="28.0" layoutY="21.0" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-border-width: 3; -fx-border-radius: 10;">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" onMousePressed="#astroGameButtonHasPressed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@astro_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

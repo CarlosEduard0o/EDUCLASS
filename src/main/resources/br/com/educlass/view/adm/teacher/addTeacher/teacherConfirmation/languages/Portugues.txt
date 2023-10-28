@@ -5,3 +5,4 @@ textAddress:Endereço
 textEmail:E-mail
 textRegistration:Matrícula
 textPassword:Senha
+logoutButton:Sair

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="templatePane" prefHeight="720.0" prefWidth="1280.0" styleClass="content" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.student.template.Template">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="190.0" styleClass="sidebar" stylesheets="@styles.css">
+         <children>
+            <AnchorPane layoutX="-1.0" prefHeight="222.0" prefWidth="190.0" styleClass="sidebar-informations" stylesheets="@styles.css">
+               <children>
+                  <Circle fx:id="userImageContainer" fill="TRANSPARENT" layoutX="95.0" layoutY="71.0" radius="50.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Text fx:id="name" fill="WHITE" layoutX="4.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Text>
+                  <Text fx:id="course" fill="WHITE" layoutX="5.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso:">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Text>
+                  <Text fx:id="register" fill="WHITE" layoutX="3.0" layoutY="205.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matrícula:">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="225.0" prefHeight="495.0" prefWidth="190.0">
+               <children>
+                  <Pane fx:id="frequencyOptionContainer" layoutY="14.0" onMousePressed="#handleCursor" onMouseReleased="#frequencyOptionSelect" prefHeight="43.0" prefWidth="190.0" styleClass="sidebar-options" stylesheets="@styles.css">
+                     <children>
+                        <Text fx:id="frequencyText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#frequencyOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequência" textAlignment="CENTER" wrappingWidth="190.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="gradesOptionContainer" layoutY="57.0" onMousePressed="#handleCursor" onMouseReleased="#notesOptionSelect" prefHeight="43.0" prefWidth="190.0" styleClass="sidebar-options" stylesheets="@styles.css">
+                     <children>
+                        <Text fx:id="gradesText" layoutY="26.0" onMousePressed="#handleCursor" onMouseReleased="#notesOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Notas" textAlignment="CENTER" wrappingWidth="190.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="extraOptionContainer" layoutY="100.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" prefHeight="43.0" prefWidth="190.0" styleClass="sidebar-options" stylesheets="@styles.css">
+                     <children>
+                        <Text fx:id="extraText" layoutY="28.0" onMousePressed="#handleCursor" onMouseReleased="#extraOptionSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra" textAlignment="CENTER" wrappingWidth="190.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Text>
+                     </children>
+                  </Pane>
+
+                  <Button fx:id="exitButton" layoutX="51.0" layoutY="436.0" mnemonicParsing="false" onMousePressed="#exitButtonPressed" prefHeight="35.0" prefWidth="88.0" styleClass="sidebar-exitButton" text="SAIR">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentContainer" layoutX="190.0" prefHeight="720.0" prefWidth="1040.0">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </AnchorPane>
+   </children>
+</AnchorPane>

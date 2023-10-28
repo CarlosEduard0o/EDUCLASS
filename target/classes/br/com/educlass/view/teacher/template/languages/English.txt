@@ -1,0 +1,14 @@
+name:Name
+course:Course
+register:Register
+frequencyText:Frequency
+gradesText:Grades
+frequencyTitle:FREQUENCY
+frequencyStep1:Step 1 - Choose the subject for which you want to add frequency. Further down the screen, you will see a table with the students enrolled in the chosen subject.
+frequencyStep2:Step 2 - In the "Attendance" column, you will see a Check Box for each student. Check the Check Box if the student is absent from class or leave it unchecked if the student is present.
+frequencyStep3:Step 3 - After filling out, click the "Send" button. You should receive a confirmation message stating that attendance and absences have been recorded successfully.
+gradeTitle:GRADES
+gradeStep1:Step 1 - Choose the subject you want to add grades for. Further down the screen, you will see a table with the students enrolled in the chosen subject.
+gradeStep2:Step 2 - Enter the proof value in "Proof value". This represents the maximum grade a student can obtain on the test.
+gradeStep3:Step 3 - In the "Add" column, you will see a text field for each student. Enter student grades in these fields. Make sure the grades you enter are not higher than the test value you set previously.
+gradeStep4:Step 4 - When you are ready to send the notes click the "Send" button. The software will automatically check that the "Test value" field is not empty and that the grades entered for each student are not higher than the test value.

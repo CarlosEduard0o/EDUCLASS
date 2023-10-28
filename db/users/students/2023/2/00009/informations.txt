@@ -1,0 +1,7 @@
+nome:Aluno 100
+curso:SI
+cpf:12345678996
+endereço:Rua para teste
+email:teste@gmail.com
+matricula:2202300009
+situation:matriculado

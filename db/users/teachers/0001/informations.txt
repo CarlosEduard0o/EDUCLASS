@@ -1,4 +1,5 @@
-nome:Pardal
+nome:Joao
+curso:SI
 cpf:123456789
 endereço:12345689
 email:123456789

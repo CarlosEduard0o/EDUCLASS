@@ -1,0 +1,7 @@
+nome:tesremsn
+curso:SI
+cpf:12345678913
+endereço:rua teste
+email:@gmail
+matricula:2202300010
+situation:matriculado

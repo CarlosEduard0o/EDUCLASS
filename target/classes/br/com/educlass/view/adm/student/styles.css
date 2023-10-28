@@ -1,0 +1,28 @@
+.title {
+  -fx-font-size: 18;
+}
+
+.text {
+ -fx-font-size: 16;
+}
+
+.text-informations {
+ -fx-font-size: 19;
+ -fx-font-weight: 800;
+}
+
+.comboBox {
+   -fx-pref-height: 18;
+}
+
+.tableView {
+  -fx-font-size: 16;
+}
+
+.button {
+    -fx-font-size: 16;
+}
+
+.centralize-column-table {
+    -fx-alignment: center;
+}

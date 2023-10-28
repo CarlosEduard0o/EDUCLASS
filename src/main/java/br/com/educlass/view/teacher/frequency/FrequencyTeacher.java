@@ -58,6 +58,10 @@ public class FrequencyTeacher implements Initializable {
 
     private String ThereIsNotContentInTheTable;
 
+    private String sentFrequencyMessage;
+
+    private String successTitle;
+
     Teacher teacher;
 
     ObservableList<stutendData> dadosDosAlunos;
@@ -72,6 +76,8 @@ public class FrequencyTeacher implements Initializable {
         presenceColumn.setText(texts.get("presenceColumn"));
         sendButton.setText(texts.get("sendButton"));
         ThereIsNotContentInTheTable=texts.get("ThereIsNotContentInTheTable");
+        successTitle=texts.get("successTitle");
+        sentFrequencyMessage=texts.get("sentFrequencyMessage");
     }
     @FXML
     private void onSendButtonClick() {
@@ -105,9 +111,9 @@ public class FrequencyTeacher implements Initializable {
             }
         }
         Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle("Sucesso");
+        successAlert.setTitle(successTitle);
         successAlert.setHeaderText(null);
-        successAlert.setContentText("Frequência enviada com sucesso!");
+        successAlert.setContentText(sentFrequencyMessage);
         successAlert.showAndWait();
         refreshTable();
     }

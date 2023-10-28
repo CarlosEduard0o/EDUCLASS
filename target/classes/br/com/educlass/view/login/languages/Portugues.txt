@@ -1,0 +1,6 @@
+userText:Usuário
+passwordText:Senha
+enterButton:Entrar
+notFoundText1:O usuário não pode ser encontrado
+notFoundText2:ou a senha está incorreta
+notFoundText3:Por favor, enre em contato com o suporte

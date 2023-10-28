@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1090.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.educlass.view.adm.student.editStudent.EditStudentController">
+   <children>
+      <Pane prefHeight="73.0" prefWidth="447.0" styleClass="header">
+         <children>
+            <Text fx:id="textTitle" layoutX="491.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Editar Aluno">
+               <font>
+                  <Font name="Yu Gothic Bold" size="20.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fx:id="textName" layoutX="118.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Nome" textAlignment="CENTER" wrappingWidth="600.0">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </Text>
+      <TextField fx:id="textFieldName" layoutX="-2.0" layoutY="195.0" styleClass="input" />
+      <Text fx:id="textCpf" layoutX="118.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Cpf" textAlignment="CENTER" wrappingWidth="600.0" />
+      <TextField fx:id="textFieldCpf" layoutY="262.0" styleClass="input" />
+      <TextField fx:id="textFieldAddress" layoutX="-2.0" layoutY="323.0" styleClass="input" />
+      <Text fx:id="textAddress" layoutX="118.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Endereço" textAlignment="CENTER" wrappingWidth="600.0" />
+      <TextField fx:id="textFieldEmail" layoutY="390.0" styleClass="input" />
+      <TextField fx:id="textFieldPassword" layoutY="457.0" styleClass="input" />
+      <Text fx:id="textPassword" layoutX="118.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Senha" textAlignment="CENTER" wrappingWidth="600.0" />
+      <Text fx:id="textEmail" layoutX="120.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Email" textAlignment="CENTER" wrappingWidth="600.0" />
+      <ComboBox fx:id="comboBoxSituation" layoutY="514.0" prefWidth="150.0" styleClass="input" />
+      <Text fx:id="textPassword1" layoutX="120.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Situação" textAlignment="CENTER" wrappingWidth="600.0" />
+      <Button layoutX="814.0" layoutY="569.0" mnemonicParsing="false" onMousePressed="#buttonCancelPressed" prefHeight="26.0" prefWidth="150.0" text="Cancelar" />
+      <Button layoutX="814.0" layoutY="627.0" mnemonicParsing="false" onMousePressed="#buttonSavePressed" onMouseReleased="#buttonSaveReleased" prefHeight="26.0" prefWidth="150.0" text="Salvar" />
+      <Button layoutX="813.0" layoutY="514.0" mnemonicParsing="false" onMousePressed="#buttonEditProfilePicturePressed" prefHeight="26.0" prefWidth="150.0" text="Alterar foto" />
+      <Circle fx:id="profilePictureContainer" fill="#2197ff00" layoutX="888.0" layoutY="333.0" radius="125.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

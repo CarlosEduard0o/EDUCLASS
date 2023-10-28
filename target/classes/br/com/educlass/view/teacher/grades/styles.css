@@ -1,0 +1,27 @@
+.title {
+  -fx-font-size: 18;
+}
+
+.text {
+ -fx-font-size: 16;
+}
+
+.comboBox {
+   -fx-pref-height: 18;
+}
+
+.tableView {b5dbf2
+  -fx-font-size: 16;
+}
+
+.button {
+    -fx-font-size: 16;
+}
+
+.textField {
+    -fx-font-size: 16;
+}
+
+.text_valor_da_prova{
+    -fx-font-size: 30;
+}

@@ -1,0 +1,2 @@
+languageText:Language
+informationText:If you changed the language and save, your application exit to load with diff language.

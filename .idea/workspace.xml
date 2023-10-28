@@ -6,35 +6,59 @@
   <component name="ChangeListManager">
     <list default="true" id="3fdf912a-f8b9-4a15-8475-5c400577a6c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/configurations/language.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/configurations/language.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/cache/user.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/cache/user.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/1/10000/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/1/10000/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/login.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/photo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00001/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00001/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00002/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00002/photo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00002/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00002/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/login.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/photo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00003/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00003/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/photo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00004/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00004/subjects.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00006/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00006/subjects.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00007/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00007/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00008/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00008/informations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00008/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00008/photo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/users/students/2023/2/00008/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/students/2023/2/00008/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/users/teachers/0001/subjects.json" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/teachers/0001/subjects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/student/template/Template.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/student/template/Template.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/template/TemplateTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/template/TemplateTeacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/template.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/template/template.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/teachers/0001/informations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/teachers/0001/informations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/teachers/0001/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/teachers/0001/login.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/users/teachers/0001/photo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/db/users/teachers/0001/photo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/frequency/FrequencyTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/educlass/view/teacher/frequency/FrequencyTeacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/studentConfirmation/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/studentConfirmation/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/studentConfirmation/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/addStudent/studentConfirmation/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/studentEditConfirmationController/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/studentEditConfirmationController/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/studentEditConfirmationController/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/editStudent/studentEditConfirmationController/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/student/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/createSubjects/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/createSubjects/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/createSubjects/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/createSubjects/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/subjects/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/teacherConfirmation/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/teacherConfirmation/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/teacherConfirmation/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/addTeacher/teacherConfirmation/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/teacherEditConfirmation/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/teacherEditConfirmation/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/teacherEditConfirmation/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/editTeacher/teacherEditConfirmation/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/teacher/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/informations/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/adm/template/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/frequency/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/frequency/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/frequency/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/frequency/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/grades/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/grades/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/grades/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/grades/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/informations/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/informations/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/informations/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/informations/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/student/template/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/frequency/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/frequency/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/frequency/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/frequency/languages/Portugues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/grades/languages/English.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/grades/languages/English.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/grades/languages/Portugues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/com/educlass/view/teacher/grades/languages/Portugues.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +95,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/alanf/OneDrive/Documentos/Faitec/FAITEC-EDUCLASS/src/main/java/br/com/educlass/view/adm/template&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alanf\OneDrive\Documentos\Faitec\FAITEC-EDUCLASS\src\main\java\br\com\educlass\view\adm\template" />

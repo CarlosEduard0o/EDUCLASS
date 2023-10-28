@@ -1,0 +1,6 @@
+nome:professor
+cpf:123456
+endereço:123456
+email:123
+matricula:T0005
+situation:ativo

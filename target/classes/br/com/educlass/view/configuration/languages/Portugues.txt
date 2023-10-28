@@ -1,0 +1,2 @@
+languageText:Idioma
+informationText:Se vocë alterar a linguagem e salvar, a sua aplicação irá fechart para carregar com as mudanças.

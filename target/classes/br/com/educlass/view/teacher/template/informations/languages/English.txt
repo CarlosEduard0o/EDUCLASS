@@ -1,0 +1,5 @@
+titleText:Informational Texts
+frequencyTitle:Frequency
+gradesTitle:Grades
+frequencyContent:Frequency is the place where the teacher can record the student's presence in a particular subject.
+gradesContent:Grades is where the teacher can record the student's grades in a particular subject.
